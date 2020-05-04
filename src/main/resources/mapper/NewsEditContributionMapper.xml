@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjfu.news.dao.NewsEditContributionMapper">
+  <resultMap id="BaseResultMap" type="com.bjfu.news.entity.NewsEditContribution">
+    <result column="ID" jdbcType="BIGINT" property="id" />
+    <result column="EDITOR_ID" jdbcType="VARCHAR" property="editorId" />
+    <result column="CONTRIBUTION_ID" jdbcType="BIGINT" property="contributionId" />
+    <result column="OPRATION" jdbcType="INTEGER" property="opration" />
+    <result column="DISABLED" jdbcType="BIT" property="disabled" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="SUGGESTION" jdbcType="LONGVARCHAR" property="suggestion" />
+  </resultMap>
+  <insert id="insert" parameterType="com.bjfu.news.entity.NewsEditContribution">
+    insert into news_edit_contribution (ID, EDITOR_ID, CONTRIBUTION_ID, 
+      OPRATION, DISABLED, CREATE_TIME, 
+      UPDATE_TIME, SUGGESTION)
+    values (#{id,jdbcType=BIGINT}, #{editorId,jdbcType=VARCHAR}, #{contributionId,jdbcType=BIGINT}, 
+      #{opration,jdbcType=INTEGER}, #{disabled,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{suggestion,jdbcType=LONGVARCHAR})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ID, EDITOR_ID, CONTRIBUTION_ID, OPRATION, DISABLED, CREATE_TIME, UPDATE_TIME, 
+    SUGGESTION
+    from news_edit_contribution
+  </select>
+</mapper>
