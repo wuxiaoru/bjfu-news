@@ -1,0 +1,2 @@
+# bjfu-news
+bjfu-news
