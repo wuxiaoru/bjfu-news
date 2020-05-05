@@ -4,12 +4,14 @@ import com.bjfu.news.service.NewsCategroyLoader;
 import com.bjfu.news.service.NewsCategroyService;
 import com.bjfu.news.untils.MapMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-@RestController
+@Controller
+@RequestMapping("/v1/category")
 public class CategoryController {
 
     @Autowired
@@ -19,28 +21,29 @@ public class CategoryController {
     private NewsCategroyLoader newsCategroyLoader;
 
     //新建
-    @RequestMapping(value = "v1/category/insert", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
-    public MapMessage inser(
-            @RequestParam(required = false, defaultValue = "20") String name) {
+    @RequestMapping(value = "insert", method = RequestMethod.POST)
+    @ResponseBody
+    public MapMessage insert(String name) {
         return MapMessage.successMessage();
     }
 
     //编辑
-    @RequestMapping(value = "v1/category/edit", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
-    public MapMessage edit(
-            @RequestParam(required = false, defaultValue = "20") String name) {
+    @RequestMapping(value = "edit", method = RequestMethod.POST)
+    @ResponseBody
+    public MapMessage edit(Long id,String name) {
         return MapMessage.successMessage();
     }
 
     //删除
-    @RequestMapping(value = "v1/category/delete", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
-    public MapMessage delete(
-            @RequestParam(required = false, defaultValue = "20") String name) {
+    @RequestMapping(value = "delete", method = RequestMethod.POST)
+    @ResponseBody
+    public MapMessage delete(Long id) {
         return MapMessage.successMessage();
     }
 
     //所有
-    @RequestMapping(value = "v1/category/list", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "list", method = RequestMethod.POST)
+    @ResponseBody
     public MapMessage list(
             @RequestParam(required = false, defaultValue = "20") String name) {
         return MapMessage.successMessage();
