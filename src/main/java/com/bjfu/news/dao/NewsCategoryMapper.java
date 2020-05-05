@@ -11,5 +11,7 @@ public interface NewsCategoryMapper {
 
     List<NewsCategory> selectAll();
 
+    int update(NewsCategory newsCategory);
+
     NewsCategory selectById(Long id);
 }
