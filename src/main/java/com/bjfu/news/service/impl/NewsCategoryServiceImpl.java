@@ -19,6 +19,7 @@ public class NewsCategoryServiceImpl implements NewsCategoryService {
         try {
             NewsCategory newsCategory = new NewsCategory();
             newsCategory.setCategoryName(name);
+            newsCategory.setDisabled(false);
             return newsCategoryMapper.insert(newsCategory);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
