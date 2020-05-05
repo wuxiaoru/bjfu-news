@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>新闻发布审批平台</title>
+    <link rel="icon" href="favicon.ico" type="image/ico">
+    <meta name="author" content="">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<aside class="lyear-layout-sidebar" th:fragment="lefterBar">
+    <!-- logo -->
+    <div id="logo" class="sidebar-header">
+        <a th:href="@{/index}">
+            <img src="images/logo-sidebar.png" title="LightYear"/></a>
+    </div>
+    <div class="lyear-layout-sidebar-scroll">
+        <nav class="sidebar-main">
+            <ul class="nav nav-drawer">
+                <li class="nav-item nav-item-has-subnav"><a href="javascript:void(0)"><i
+                        class="mdi mdi-lead-pencil"></i> 稿件列表</a>
+                </li>
+                <li class="nav-item nav-item-has-subnav">
+                    <a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i> 审批列表</a>
+                </li>
+                <li class="nav-item nav-item-has-subnav">
+                    <a href="javascript:void(0)"><i
+                            class="mdi mdi-file-outline"></i> 编辑列表</a>
+                </li>
+                <li class="nav-item nav-item-has-subnav">
+                    <a href="javascript:void(0)"><i
+                            class="mdi mdi-file-outline"></i> 配置管理</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

@@ -1,9 +1,8 @@
 package com.bjfu.news.service;
 
-import com.bjfu.news.entity.NewsWriterContribution;
-
-import java.util.List;
+import com.bjfu.news.req.IdsParam;
 
 public interface NewsWriterContributionService {
-    List<NewsWriterContribution> selectById(NewsWriterContribution record);
+
+    int delete(IdsParam idsParam);
 }

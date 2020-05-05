@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>绿色新闻网数据挖掘平台</title>
+    <link rel="icon" href="favicon.ico" type="image/ico">
+
+
+    <meta name="author" content="yinqi">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/materialdesignicons.min.css" rel="stylesheet">
+    <!--标签插件-->
+    <link rel="stylesheet" href="js/jquery-tags-input/jquery.tagsinput.min.css">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body data-logobg="color_8" data-sidebarbg="color_8">
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <aside th:replace="/lefter.html :: lefterBar"></aside>
+
+
+        <!--页面头部-->
+        <header th:replace="/header.html :: headerBar"></header>
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header"><h4>生成摘要及关键词</h4></div>
+                            <div class="card-body">
+                                <form name="edit-form" class="edit-form" id="myForm">
+
+
+                                    <div class="form-group">
+                                        <label class="col-xs-12" for="newsContent">新闻内容</label>
+                                        <textarea class="form-control" id="newsContent" name="newsContent" rows="20" placeholder="内容.."></textarea>
+
+                                    </div>
+
+                                    <div class="form-group" style="text-align:right">
+                                        <button  class="btn btn-primary btn-w-s creatButton abstractCreate" type="button" id="abstractCreate">生成摘要</button>
+                                        <button  class="btn btn-primary btn-w-s creatButton keywordCreate" type="button" id="keywordCreate">生成关键词</button>
+                                    </div>
+
+
+
+                                </form>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+<!--                    <div class="col-md-12">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header"><i class="mdi mdi-lead-pencil"></i></div>-->
+<!--                            <div class="card-body">-->
+
+<!--                                    <div class="form-group">-->
+<!--                                        <label class="col-xs-12" for="abstractContent">摘要</label>-->
+<!--                                        <textarea class="form-control" id="abstractContent" name="abstractContent" rows="6" placeholder="摘要.."></textarea>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group text-right">-->
+<!--                                        <button class="btn btn-primary m-r-5 " type="submit">复制</button>-->
+<!--                                    </div>-->
+
+
+<!--&lt;!&ndash;                                <label class="col-xs-12" for="keywordContent">关键字</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <textarea class="form-control" id="keywordContent" name="keywordContent" rows="6" placeholder="关键字.."></textarea>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                                    <div class="form-group text-right">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <button class="btn btn-primary m-r-5" type="submit">复制</button>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+
+
+
+
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <div class="col-lg-12"  style="display: block">
+                        <div class="card">
+                            <div class="card-header"><h4 >关键词</h4></div>
+                            <div class="card-body "  >
+                                <h4 id="keyWords"></h4>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<!--标签插件-->
+<script src="js/jquery-tags-input/jquery.tagsinput.min.js"></script>
+<script type="text/javascript">
+
+
+    $('.creatButton').on('click',function(){
+
+        debugger
+        var newsContent = "";
+        newsContent = $('#newsContent').val();
+        debugger
+        if($(this).hasClass('keywordCreate')){
+            debugger
+            keywordGenerate(newsContent);
+        }
+
+
+    });
+
+
+//     function keywordGenerate(newsContent){
+//         debugger
+//         $.ajax({
+//             url:"/keywordsGenerate",
+//             method:"post",
+//             data:{newsContent:newsContent},
+//             dataType:"json",
+//             success:function(map){
+// debugger
+//                 var keywords=map.test;
+//
+//                 var html1 = '';
+//                 html1 +='<h4>'+map.keywords+'</h4>';
+//                 $('#keyWords').html(html1);
+//
+//                 // $('#keywordContent').val(keywords);
+//             },
+//             error:function(data){
+//                 alert("wrong");
+//             }
+//         });
+//     }
+    function keywordGenerate(newsContent){
+        debugger
+        $.ajax({
+            url:"/keywordsGenerate",
+            method:"post",
+            data:{newsContent:newsContent},
+            dataType:"json",
+            success:function(map){
+debugger
+                var html1='';
+                // var info = JSON.stringify(map);
+                // var data = eval('(' + info + ')');
+                // var keywords=eval("("+map.keyWords+")");
+                var keywords=map.keywords;
+                html1 +="本篇新闻的关键词为："+keywords;
+                $('#keyWords').html(html1);
+            },
+            error:function(data){
+                debugger
+                alert("wrong");
+            }
+        });
+    }
+
+</script>
+</body>
+</html>

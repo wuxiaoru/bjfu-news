@@ -10,7 +10,9 @@ public class NewsWriterContribution {
 
     private String title;
 
-    private String categoryId;
+    private Long categoryId;
+
+    private String fileName;
 
     private String fileUrl;
 

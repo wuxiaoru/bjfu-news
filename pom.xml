@@ -36,6 +36,12 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- 对Thymeleaf模板引擎的支持，包括和Spring的集成-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
@@ -63,7 +69,7 @@
             <artifactId>druid</artifactId>
             <version>1.1.9</version>
         </dependency>
-        <!--数据库使用 end-->
+        <!--数据库使用 size-->
     </dependencies>
 
 

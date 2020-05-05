@@ -22,12 +22,12 @@ public enum ApproveStatus {
     @Getter
     private final String desc;
 
-    public static final Map<Integer, ApproveStatus> CODE_MAPPING;
+    public static final Map<Integer, String> CODE_MAPPING;
 
     static {
-        Map<Integer, ApproveStatus> codeMap = new LinkedHashMap<>();
+        Map<Integer, String> codeMap = new LinkedHashMap<>();
         for (ApproveStatus approveStatus : ApproveStatus.values()) {
-            codeMap.put(approveStatus.code, approveStatus);
+            codeMap.put(approveStatus.code, approveStatus.desc);
         }
         CODE_MAPPING = Collections.unmodifiableMap(codeMap);
     }

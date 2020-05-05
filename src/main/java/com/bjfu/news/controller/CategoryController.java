@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Objects;
 
@@ -41,7 +42,7 @@ public class CategoryController {
     //编辑
     @RequestMapping(value = "edit", method = RequestMethod.POST)
     @ResponseBody
-    public MapMessage edit(@Validated @NotBlank @Min(value = 1, message = "id必须大于0") Long id, @Validated @NotBlank(message = "类别名称不能为空") String name) {
+    public MapMessage edit(@Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id, @Validated @NotBlank(message = "类别名称不能为空") String name) {
         NewsCategory newsCategory = newsCategoryLoader.selectById(id);
         if (Objects.isNull(newsCategory)) {
             return MapMessage.errorMessage().add("info", "id有误");
@@ -49,6 +50,7 @@ public class CategoryController {
         if (newsCategory.getCategoryName().equals(name)) {
             return MapMessage.successMessage();
         }
+        newsCategory.setCategoryName(name);
         int result = newsCategoryService.update(newsCategory);
         if (result == 0) {
             return MapMessage.errorMessage().add("info", "编辑失败");
