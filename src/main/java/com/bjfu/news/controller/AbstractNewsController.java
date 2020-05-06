@@ -1,6 +1,5 @@
 package com.bjfu.news.controller;
 
-import com.bjfu.news.req.ContributionReq;
 import com.bjfu.news.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
