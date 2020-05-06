@@ -8,10 +8,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @RequiredArgsConstructor
-public enum ApproveStatus {
+public enum EditStatus {
     NONE("无操作"),
-    AGREE("审批通过"),
-    REJECTION("审批不通过");
+    AGREE("接受处理"),
+    REJECTION("拒绝处理");
 
     @Getter
     private final String desc;
@@ -20,9 +20,9 @@ public enum ApproveStatus {
 
     static {
         Map<String, String> codeMap = new LinkedHashMap<>();
-        for (ApproveStatus approveStatus : ApproveStatus.values()) {
-            if (!approveStatus.equals(ApproveStatus.NONE)) {
-                codeMap.put(approveStatus.name(), approveStatus.desc);
+        for (EditStatus editStatus : EditStatus.values()) {
+            if (!editStatus.equals(EditStatus.NONE)) {
+                codeMap.put(editStatus.name(), editStatus.desc);
             }
         }
         NAME_MAPPING = Collections.unmodifiableMap(codeMap);

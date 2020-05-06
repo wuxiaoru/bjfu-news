@@ -12,7 +12,7 @@ public class NewsApproveContribution {
 
     private Long approverId;
 
-    private Integer operation;
+    private String operation;
 
     private Boolean disabled;
 

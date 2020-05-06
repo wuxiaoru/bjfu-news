@@ -12,7 +12,7 @@ public class NewsEditContribution {
 
     private Long contributionId;
 
-    private Integer opration;
+    private String operation;
 
     private Boolean disabled;
 

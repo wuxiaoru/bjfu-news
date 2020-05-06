@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bjfu.news.dao.NewsApproveContributionMapper">
-  <resultMap id="BaseResultMap" type="com.bjfu.news.entity.NewsApproveContribution">
-    <result column="ID" jdbcType="BIGINT" property="id" />
-    <result column="CONTRIBUTION_ID" jdbcType="BIGINT" property="contributionId" />
-    <result column="APPROVER_ID" jdbcType="BIGINT" property="approverId" />
-    <result column="OPERATION" jdbcType="INTEGER" property="operation" />
-    <result column="DISABLED" jdbcType="BIT" property="disabled" />
-    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="SUGGESTION" jdbcType="LONGVARCHAR" property="suggestion" />
-  </resultMap>
-  <insert id="insert" parameterType="com.bjfu.news.entity.NewsApproveContribution">
+    <insert id="insert" parameterType="com.bjfu.news.entity.NewsApproveContribution">
     insert into news_approve_contribution (ID, CONTRIBUTION_ID, APPROVER_ID, 
       OPERATION, DISABLED, CREATE_TIME, 
       UPDATE_TIME, SUGGESTION)
@@ -19,9 +9,56 @@
       #{operation,jdbcType=INTEGER}, #{disabled,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{suggestion,jdbcType=LONGVARCHAR})
   </insert>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select ID, CONTRIBUTION_ID, APPROVER_ID, OPERATION, DISABLED, CREATE_TIME, UPDATE_TIME, 
-    SUGGESTION
-    from news_approve_contribution
+    <select id="selectAll" resultMap="BaseResultMap">
+    select * from news_approve_contribution
   </select>
+
+    <select id="selectById" resultType="com.bjfu.news.entity.NewsApproveContribution">
+       select * from news_approve_contribution where  DISABLED=false  and ID=#{id}
+   </select>
+
+    <select id="selectByCId" resultType="com.bjfu.news.entity.NewsApproveContribution">
+        select * from news_approve_contribution  where disabled = false and contributionId=#{contributionId}
+   </select>
+
+    <select id="selectByApproveId" resultType="com.bjfu.news.entity.NewsApproveContribution">
+        select * from news_approve_contribution  where disabled = false and approverId=#{approverId}
+   </select>
+
+    <select id="list" parameterType="com.bjfu.news.req.ContributionReq"
+            resultType="com.bjfu.news.entity.NewsApproveContribution">
+        select * from news_approve_contribution where disabled = false and approverId=#{userId}
+        <if test="contributionIds!=null">
+            and contributionId in
+            <foreach item="contributionId" index="index" collection="contributionIds">
+                #{contributionId}
+            </foreach>
+        </if>
+        litmit #{start},#{size}
+    </select>
+
+    <select id="getCount" parameterType="com.bjfu.news.req.ContributionReq"
+            resultType="Integer">
+        select count(*) from news_approve_contribution where disabled = false and approverId=#{userId}
+        <if test="contributionIds!=null">
+            and contributionId in
+            <foreach item="contributionId" index="index" collection="contributionIds">
+                #{contributionId}
+            </foreach>
+        </if>
+    </select>
+
+    <update id="delete" parameterType="com.bjfu.news.req.IdsParam">
+        update news_approve_contribution set disabled = true where id in
+        <foreach item="id" index="index" collection="ids">
+            #{id}
+        </foreach>
+    </update>
+
+    <update id="updateOperate" parameterType="com.bjfu.news.entity.NewsApproveContribution">
+        update news_approve_contribution set
+        opration=#{opration},
+        suggestion=#{suggestion}
+        where ID=#{id}
+    </update>
 </mapper>

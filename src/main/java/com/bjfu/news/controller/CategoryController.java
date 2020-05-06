@@ -1,10 +1,7 @@
 package com.bjfu.news.controller;
 
 import com.bjfu.news.entity.NewsCategory;
-import com.bjfu.news.service.NewsCategoryLoader;
-import com.bjfu.news.service.NewsCategoryService;
 import com.bjfu.news.untils.MapMessage;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
 import org.springframework.validation.annotation.Validated;
@@ -20,13 +17,7 @@ import java.util.Objects;
 
 @Controller
 @RequestMapping("/v1/category")
-public class CategoryController {
-
-    @Autowired
-    private NewsCategoryService newsCategoryService;
-
-    @Autowired
-    private NewsCategoryLoader newsCategoryLoader;
+public class CategoryController extends AbstractNewsController{
 
     //新建
     @RequestMapping(value = "insert", method = RequestMethod.POST)

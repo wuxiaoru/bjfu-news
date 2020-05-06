@@ -1,17 +1,17 @@
 package com.bjfu.news.controller;
 
 
+import com.bjfu.news.constant.ApproveStatus;
+import com.bjfu.news.constant.EditStatus;
+import com.bjfu.news.entity.NewsApproveContribution;
 import com.bjfu.news.entity.NewsCategory;
+import com.bjfu.news.entity.NewsEditContribution;
 import com.bjfu.news.entity.NewsWriterContribution;
 import com.bjfu.news.model.ContributionDetail;
 import com.bjfu.news.req.ContributionReq;
 import com.bjfu.news.req.IdsParam;
-import com.bjfu.news.service.NewsCategoryLoader;
-import com.bjfu.news.service.NewsWriterContributionLoader;
-import com.bjfu.news.service.NewsWriterContributionService;
 import com.bjfu.news.untils.MapMessage;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
@@ -27,16 +27,7 @@ import java.util.Objects;
 
 @Controller
 @RequestMapping("/v1/contribution")
-public class WriterContributionController {
-
-    @Autowired
-    private NewsWriterContributionService newsWriterContributionService;
-
-    @Autowired
-    private NewsWriterContributionLoader newsWriterContributionLoader;
-
-    @Autowired
-    private NewsCategoryLoader newsCategoryLoader;
+public class WriterContributionController extends AbstractNewsController {
 
     //根据名字分页按时间倒叙 1页10条
     @RequestMapping(value = "list", method = RequestMethod.GET)
@@ -51,7 +42,7 @@ public class WriterContributionController {
         req.setStart((page - 1) * size);
         req.setSize(size);
         int count = newsWriterContributionLoader.getCount(req);
-        List<NewsWriterContribution> writerContributions = newsWriterContributionLoader.listByName(req);
+        List<NewsWriterContribution> writerContributions = newsWriterContributionLoader.pageByName(req);
         int maxPage = count % size == 0 ? count / size : count / size + 1;
         Map<String, Object> map = new HashMap<>();
         map.put("list", writerContributions);
@@ -80,6 +71,20 @@ public class WriterContributionController {
             categoryName = newsCategory.getCategoryName();
         }
         detail.setCategory(categoryName);
+        List<NewsApproveContribution> newsApproveContributions = approveContributionLoader.selectByCId(newsWriterContribution.getId());
+        if (!CollectionUtils.isEmpty(newsApproveContributions)) {
+            NewsApproveContribution newsApproveContribution = newsApproveContributions.stream().filter(e -> !e.getOperation().equals(ApproveStatus.NONE.name())).findFirst().orElse(null);
+            if (Objects.nonNull(newsApproveContribution)) {
+                detail.setApproveSuggestion(newsApproveContribution.getSuggestion());
+            }
+        }
+        List<NewsEditContribution> newsEditContributions = newsEditContributionLoader.selectByCId(newsWriterContribution.getId());
+        if (!CollectionUtils.isEmpty(newsEditContributions)) {
+            NewsEditContribution newsEditContribution = newsEditContributions.stream().filter(e -> !e.getOperation().equals(EditStatus.NONE.name())).findFirst().orElse(null);
+            if (Objects.nonNull(newsEditContribution)) {
+                detail.setApproveSuggestion(newsEditContribution.getSuggestion());
+            }
+        }
         return MapMessage.successMessage().add("data", detail);
     }
     //编辑

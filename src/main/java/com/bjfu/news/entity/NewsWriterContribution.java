@@ -18,7 +18,7 @@ public class NewsWriterContribution {
 
     private Integer status;
 
-    private String createUserId;
+    private Long createUserId;
 
     private Boolean disabled;
 

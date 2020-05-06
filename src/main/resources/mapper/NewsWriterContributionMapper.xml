@@ -15,18 +15,29 @@
          select * from news_writer_contribution where id = #{id}
   </select>
 
-    <select id="listByName" parameterType="com.bjfu.news.req.ContributionReq"
+    <select id="selectByIds" resultType="com.bjfu.news.entity.NewsWriterContribution">
+        select * from news_writer_contribution where id in
+        <foreach item="id" index="index" collection="ids">
+            #{id}
+        </foreach>
+    </select>
+
+    <select id="pageByName" parameterType="com.bjfu.news.req.ContributionReq"
             resultType="com.bjfu.news.entity.NewsWriterContribution">
-        select * from news_writer_contribution where disabled = false
+        select * from news_writer_contribution where disabled = false and createUserId=#{userId}
         <if test="name!=null">
             and title like #{name}
         </if>
         litmit #{start},#{size}
     </select>
 
+    <select id="listByName" resultType="com.bjfu.news.entity.NewsWriterContribution">
+        select * from news_writer_contribution where disabled = false and title like #{name}
+    </select>
+
     <select id="getCount" parameterType="com.bjfu.news.req.ContributionReq"
             resultType="Integer">
-        select count(*) from news_writer_contribution where disabled = false
+        select count(*) from news_writer_contribution where disabled = false and createUserId=#{userId}
         <if test="name!=null">
             and title like #{name}
         </if>
@@ -37,5 +48,11 @@
         <foreach item="id" index="index" collection="ids">
             #{id}
         </foreach>
+    </update>
+
+    <update id="updateStatus" parameterType="com.bjfu.news.entity.NewsWriterContribution">
+        update news_writer_contribution set
+        status=#{status}
+        where ID=#{id}
     </update>
 </mapper>
