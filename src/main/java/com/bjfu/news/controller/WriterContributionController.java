@@ -8,6 +8,7 @@ import com.bjfu.news.entity.NewsCategory;
 import com.bjfu.news.entity.NewsEditContribution;
 import com.bjfu.news.entity.NewsWriterContribution;
 import com.bjfu.news.model.ContributionDetail;
+import com.bjfu.news.req.ContributionCreateParam;
 import com.bjfu.news.req.ContributionReq;
 import com.bjfu.news.req.IdsParam;
 import com.bjfu.news.untils.FileUtils;
@@ -36,7 +37,8 @@ import java.util.Objects;
 @RequestMapping("/v1/contribution")
 public class WriterContributionController extends AbstractNewsController {
 
-    String  FILE_PATH ="D:\\file";
+    String FILE_PATH = "D:\\file";
+
     //根据名字分页按时间倒叙 1页10条
     @RequestMapping(value = "list", method = RequestMethod.GET)
     @ResponseBody
@@ -60,14 +62,14 @@ public class WriterContributionController extends AbstractNewsController {
         return MapMessage.successMessage().add("data", map);
     }
 
-    //新建
+    //上传
     @RequestMapping(value = "/upload",
             method = RequestMethod.POST)
     @ResponseBody
     public MapMessage upload(HttpServletRequest request) {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         if (multipartRequest == null) {
-            MapMessage.errorMessage().add("info","请上传文件");
+            MapMessage.errorMessage().add("info", "请上传文件");
         }
         // 为了获取文件，这个类是必须的
         MultiValueMap<String, MultipartFile> map = ((MultipartHttpServletRequest) request).getMultiFileMap();
@@ -80,7 +82,7 @@ public class WriterContributionController extends AbstractNewsController {
             in = multipartFile.getInputStream();
             String originalFilename = multipartFile.getOriginalFilename();
             //保存到本地服务器
-             filePath = FileUtils.saveFile(in, originalFilename, FILE_PATH);
+            filePath = FileUtils.saveFile(in, originalFilename, FILE_PATH);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -93,8 +95,17 @@ public class WriterContributionController extends AbstractNewsController {
                 e.printStackTrace();
             }
         }
-       return MapMessage.successMessage().add("data",filePath);
+        return MapMessage.successMessage().add("data", filePath);
     }
+
+    //新建稿件
+    @ResponseBody
+    @RequestMapping(value = "create", method = RequestMethod.POST)
+    public MapMessage create(@Validated @RequestBody ContributionCreateParam param) {
+
+        return MapMessage.successMessage();
+    }
+
 
     //查看详情
     @RequestMapping(value = "detail", method = RequestMethod.GET)
