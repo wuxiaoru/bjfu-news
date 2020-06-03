@@ -70,6 +70,13 @@
             <version>1.1.9</version>
         </dependency>
         <!--数据库使用 size-->
+
+        <!--openoffice-->
+        <dependency>
+            <groupId>com.github.livesense</groupId>
+            <artifactId>jodconverter-core</artifactId>
+            <version>1.0.5</version>
+        </dependency>
     </dependencies>
 
 
