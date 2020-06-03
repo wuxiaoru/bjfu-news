@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjfu.news.dao.NewsUserInfoMapper">
+
+    <insert id="insert" parameterType="com.bjfu.news.entity.NewsUserInfo">
+        insert into news_user_info (ID, ENO, USER_NAME, UNIT, JOB, MAIL, OFFICE_PHONE, MOBILE, DISABLED, CREATE_TIME, UPDATE_TIME)
+        values (#{id,jdbcType=BIGINT}, #{eno,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR},
+                #{unit,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, #{mail,jdbcType=VARCHAR},
+                #{officePhone,jdbcType=VARCHAR},#{mobile,jdbcType=VARCHAR},#{disabled,jdbcType=BIT},
+                #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+    <update id="update" parameterType="com.bjfu.news.entity.NewsUserInfo">
+        update news_user_info set
+        <if test="eno!=null">
+            ENO=#{eno},
+        </if>
+        DISABLED=#{disabled}
+        where ID=#{id}
+    </update>
+
+    <select id="selectById" resultType="com.bjfu.news.entity.NewsUserInfo">
+       select * from news_user_info where  DISABLED=false  and ID=#{id}
+   </select>
+
+    <select id="selectByEno" resultType="com.bjfu.news.entity.NewsUserInfo">
+       select * from news_user_info where  DISABLED=false  and ENO=#{eno}
+   </select>
+
+</mapper>

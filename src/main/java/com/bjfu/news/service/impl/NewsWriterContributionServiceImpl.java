@@ -1,7 +1,7 @@
 package com.bjfu.news.service.impl;
 
-import com.bjfu.news.dao.NewsWriterContributionMapper;
-import com.bjfu.news.entity.NewsWriterContribution;
+import com.bjfu.news.dao.NewsContributionMapper;
+import com.bjfu.news.entity.NewsContribution;
 import com.bjfu.news.req.IdsParam;
 import com.bjfu.news.service.NewsWriterContributionService;
 import lombok.extern.slf4j.Slf4j;
@@ -13,12 +13,12 @@ import org.springframework.stereotype.Service;
 public class NewsWriterContributionServiceImpl implements NewsWriterContributionService {
 
     @Autowired
-    NewsWriterContributionMapper newsWriterContributionMapper;
+    NewsContributionMapper newsContributionMapper;
 
     @Override
     public int delete(IdsParam idsParam) {
         try {
-            return newsWriterContributionMapper.delete(idsParam);
+            return newsContributionMapper.delete(idsParam);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
@@ -26,9 +26,9 @@ public class NewsWriterContributionServiceImpl implements NewsWriterContribution
     }
 
     @Override
-    public int updateStatus(NewsWriterContribution newsWriterContribution) {
+    public int updateStatus(NewsContribution newsContribution) {
         try {
-            return newsWriterContributionMapper.updateStatus(newsWriterContribution);
+            return newsContributionMapper.updateStatus(newsContribution);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }

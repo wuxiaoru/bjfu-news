@@ -3,7 +3,7 @@ package com.bjfu.news.controller;
 import com.bjfu.news.constant.ContributionStatus;
 import com.bjfu.news.constant.EditStatus;
 import com.bjfu.news.entity.NewsEditContribution;
-import com.bjfu.news.entity.NewsWriterContribution;
+import com.bjfu.news.entity.NewsContribution;
 import com.bjfu.news.model.ApproveList;
 import com.bjfu.news.req.ContributionReq;
 import com.bjfu.news.req.IdsParam;
@@ -34,14 +34,14 @@ public class EditContributionController extends AbstractNewsController {
         Map<String, Object> map = new HashMap<>();
         map.put("pageSize", page);
         if (StringUtils.isEmpty(req.getName())) {
-            List<NewsWriterContribution> newsWriterContributions = newsWriterContributionLoader.listByName(req.getName());
-            if (CollectionUtils.isEmpty(newsWriterContributions)) {
+            List<NewsContribution> newsContributions = newsWriterContributionLoader.listByName(req.getName());
+            if (CollectionUtils.isEmpty(newsContributions)) {
                 map.put("list", Collections.emptyList());
                 map.put("totalCount", 0);
                 map.put("maxPage", 0);
                 return MapMessage.successMessage().add("data", map);
             }
-            List<Long> contributionIds = newsWriterContributions.stream().map(NewsWriterContribution::getId).collect(Collectors.toList());
+            List<Long> contributionIds = newsContributions.stream().map(NewsContribution::getId).collect(Collectors.toList());
             req.setContributionIds(contributionIds);
         }
         req.setStart((page - 1) * size);
@@ -49,18 +49,18 @@ public class EditContributionController extends AbstractNewsController {
         int count = newsEditContributionLoader.getCount(req);
         List<NewsEditContribution> newsEditContributions = newsEditContributionLoader.list(req);
         List<Long> contributionIds = newsEditContributions.stream().map(NewsEditContribution::getContributionId).collect(Collectors.toList());
-        Map<Long, NewsWriterContribution> contributionMap = newsWriterContributionLoader.selectByIds(contributionIds).stream().collect(Collectors.toMap(NewsWriterContribution::getId, Function.identity()));
+        Map<Long, NewsContribution> contributionMap = newsWriterContributionLoader.selectByIds(contributionIds).stream().collect(Collectors.toMap(NewsContribution::getId, Function.identity()));
         List<ApproveList> approveList = new ArrayList<>();
         for (NewsEditContribution newsEditContribution : newsEditContributions) {
             ApproveList approve = new ApproveList();
             approve.setId(newsEditContribution.getId());
             approve.setContributionId(newsEditContribution.getContributionId());
-            NewsWriterContribution newsWriterContribution = contributionMap.get(newsEditContribution.getContributionId());
-            if (Objects.isNull(newsWriterContribution)) {
+            NewsContribution newsContribution = contributionMap.get(newsEditContribution.getContributionId());
+            if (Objects.isNull(newsContribution)) {
                 continue;
             }
-            approve.setTitle(newsWriterContribution.getTitle());
-            approve.setStatus(newsWriterContribution.getStatus());
+            approve.setTitle(newsContribution.getTitle());
+            approve.setStatus(newsContribution.getStatus());
             approveList.add(approve);
         }
         int maxPage = count % size == 0 ? count / size : count / size + 1;
@@ -84,20 +84,19 @@ public class EditContributionController extends AbstractNewsController {
         if (Objects.isNull(newsEditContribution)) {
             return MapMessage.errorMessage().add("info", "id有误");
         }
-        NewsWriterContribution newsWriterContribution = newsWriterContributionLoader.selectById(newsEditContribution.getContributionId());
-        if (Objects.isNull(newsWriterContribution)) {
+        NewsContribution newsContribution = newsWriterContributionLoader.selectById(newsEditContribution.getContributionId());
+        if (Objects.isNull(newsContribution)) {
             return MapMessage.errorMessage().add("info", "稿件信息有误");
         }
-        newsEditContribution.setOperation(status);
         newsEditContribution.setSuggestion(editorSuggestion);
         editContributionService.updateOperation(newsEditContribution);
         if (status.equals(EditStatus.AGREE.name())) {
-            newsWriterContribution.setStatus(ContributionStatus.APPROVE.getCode());
+            newsContribution.setStatus(ContributionStatus.APPROVE.name());
         }
         if (status.equals(EditStatus.REJECTION.name())) {
-            newsWriterContribution.setStatus(ContributionStatus.APPROVAL_REJECTION.getCode());
+            newsContribution.setStatus(ContributionStatus.APPROVAL_REJECTION.name());
         }
-        newsWriterContributionService.updateStatus(newsWriterContribution);
+        newsWriterContributionService.updateStatus(newsContribution);
         return MapMessage.successMessage();
     }
 

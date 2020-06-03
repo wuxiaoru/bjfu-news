@@ -2,18 +2,21 @@ package com.bjfu.news.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
-public class NewsEditor {
+public class NewsUserRole implements Serializable {
+
     private Long id;
 
-    private String name;
+    private Long userId;
+
+    private String role;
 
     private Boolean disabled;
 
     private Date createTime;
 
     private Date updateTime;
-
 }

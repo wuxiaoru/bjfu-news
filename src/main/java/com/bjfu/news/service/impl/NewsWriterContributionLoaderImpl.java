@@ -1,7 +1,7 @@
 package com.bjfu.news.service.impl;
 
-import com.bjfu.news.dao.NewsWriterContributionMapper;
-import com.bjfu.news.entity.NewsWriterContribution;
+import com.bjfu.news.dao.NewsContributionMapper;
+import com.bjfu.news.entity.NewsContribution;
 import com.bjfu.news.req.ContributionReq;
 import com.bjfu.news.service.NewsWriterContributionLoader;
 import lombok.extern.slf4j.Slf4j;
@@ -16,12 +16,12 @@ import java.util.List;
 public class NewsWriterContributionLoaderImpl implements NewsWriterContributionLoader {
 
     @Autowired
-    NewsWriterContributionMapper newsWriterContributionMapper;
+    NewsContributionMapper newsContributionMapper;
 
     @Override
-    public List<NewsWriterContribution> pageByName(ContributionReq req) {
+    public List<NewsContribution> pageByName(ContributionReq req) {
         try {
-            return newsWriterContributionMapper.pageByName(req);
+            return newsContributionMapper.pageByName(req);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
@@ -29,14 +29,14 @@ public class NewsWriterContributionLoaderImpl implements NewsWriterContributionL
     }
 
     @Override
-    public List<NewsWriterContribution> listByName(String name) {
-        return newsWriterContributionMapper.listByName(name);
+    public List<NewsContribution> listByName(String name) {
+        return newsContributionMapper.listByName(name);
     }
 
     @Override
     public int getCount(ContributionReq req) {
         try {
-            return newsWriterContributionMapper.getCount(req);
+            return newsContributionMapper.getCount(req);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
@@ -44,9 +44,9 @@ public class NewsWriterContributionLoaderImpl implements NewsWriterContributionL
     }
 
     @Override
-    public NewsWriterContribution selectById(Long id) {
+    public NewsContribution selectById(Long id) {
         try {
-            return newsWriterContributionMapper.selectById(id);
+            return newsContributionMapper.selectById(id);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
@@ -54,7 +54,7 @@ public class NewsWriterContributionLoaderImpl implements NewsWriterContributionL
     }
 
     @Override
-    public List<NewsWriterContribution> selectByIds(Collection<Long> ids) {
-        return newsWriterContributionMapper.selectByIds(ids);
+    public List<NewsContribution> selectByIds(Collection<Long> ids) {
+        return newsContributionMapper.selectByIds(ids);
     }
 }

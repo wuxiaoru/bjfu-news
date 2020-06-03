@@ -10,6 +10,6 @@ public class ApproveList implements Serializable {
     private Long id;
     private Long contributionId;
     private String title;
-    private Integer status;
+    private String status;
 
 }

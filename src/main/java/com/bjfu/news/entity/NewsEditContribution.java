@@ -8,18 +8,16 @@ import java.util.Date;
 public class NewsEditContribution {
     private Long id;
 
-    private String editorId;
+    private Long userId;
 
     private Long contributionId;
 
-    private String operation;
+    private String suggestion;
 
     private Boolean disabled;
 
     private Date createTime;
 
     private Date updateTime;
-
-    private String suggestion;
 
 }

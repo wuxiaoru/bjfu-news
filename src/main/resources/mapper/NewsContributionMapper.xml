@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.bjfu.news.dao.NewsWriterContributionMapper">
-    <insert id="insert" parameterType="com.bjfu.news.entity.NewsWriterContribution">
+<mapper namespace="com.bjfu.news.dao.NewsContributionMapper">
+    <insert id="insert" parameterType="com.bjfu.news.entity.NewsContribution">
     insert into news_writer_contribution (ID, TITLE, CATEGROY_ID, 
       FILE_URL, STATUS, CREATE_USER_ID, 
       DISABLED, CREATE_TIME, UPDATE_TIME
@@ -11,11 +11,11 @@
       #{disabled,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
-    <select id="selectById" resultType="com.bjfu.news.entity.NewsWriterContribution">
+    <select id="selectById" resultType="com.bjfu.news.entity.NewsContribution">
          select * from news_writer_contribution where id = #{id}
   </select>
 
-    <select id="selectByIds" resultType="com.bjfu.news.entity.NewsWriterContribution">
+    <select id="selectByIds" resultType="com.bjfu.news.entity.NewsContribution">
         select * from news_writer_contribution where id in
         <foreach item="id" index="index" collection="ids">
             #{id}
@@ -23,7 +23,7 @@
     </select>
 
     <select id="pageByName" parameterType="com.bjfu.news.req.ContributionReq"
-            resultType="com.bjfu.news.entity.NewsWriterContribution">
+            resultType="com.bjfu.news.entity.NewsContribution">
         select * from news_writer_contribution where disabled = false and createUserId=#{userId}
         <if test="name!=null">
             and title like #{name}
@@ -31,7 +31,7 @@
         litmit #{start},#{size}
     </select>
 
-    <select id="listByName" resultType="com.bjfu.news.entity.NewsWriterContribution">
+    <select id="listByName" resultType="com.bjfu.news.entity.NewsContribution">
         select * from news_writer_contribution where disabled = false and title like #{name}
     </select>
 
@@ -50,7 +50,7 @@
         </foreach>
     </update>
 
-    <update id="updateStatus" parameterType="com.bjfu.news.entity.NewsWriterContribution">
+    <update id="updateStatus" parameterType="com.bjfu.news.entity.NewsContribution">
         update news_writer_contribution set
         status=#{status}
         where ID=#{id}

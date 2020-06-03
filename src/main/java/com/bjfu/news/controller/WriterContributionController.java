@@ -1,12 +1,8 @@
 package com.bjfu.news.controller;
 
 
-import com.bjfu.news.constant.ApproveStatus;
-import com.bjfu.news.constant.EditStatus;
 import com.bjfu.news.entity.NewsApproveContribution;
-import com.bjfu.news.entity.NewsCategory;
-import com.bjfu.news.entity.NewsEditContribution;
-import com.bjfu.news.entity.NewsWriterContribution;
+import com.bjfu.news.entity.NewsContribution;
 import com.bjfu.news.model.ContributionDetail;
 import com.bjfu.news.req.ContributionCreateParam;
 import com.bjfu.news.req.ContributionReq;
@@ -52,7 +48,7 @@ public class WriterContributionController extends AbstractNewsController {
         req.setStart((page - 1) * size);
         req.setSize(size);
         int count = newsWriterContributionLoader.getCount(req);
-        List<NewsWriterContribution> writerContributions = newsWriterContributionLoader.pageByName(req);
+        List<NewsContribution> writerContributions = newsWriterContributionLoader.pageByName(req);
         int maxPage = count % size == 0 ? count / size : count / size + 1;
         Map<String, Object> map = new HashMap<>();
         map.put("list", writerContributions);
@@ -111,33 +107,28 @@ public class WriterContributionController extends AbstractNewsController {
     @RequestMapping(value = "detail", method = RequestMethod.GET)
     @ResponseBody
     public MapMessage detail(@Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id) {
-        NewsWriterContribution newsWriterContribution = newsWriterContributionLoader.selectById(id);
-        if (Objects.isNull(newsWriterContribution)) {
+        NewsContribution newsContribution = newsWriterContributionLoader.selectById(id);
+        if (Objects.isNull(newsContribution)) {
             return MapMessage.errorMessage().add("info", "id有误");
         }
         ContributionDetail detail = new ContributionDetail();
-        BeanUtils.copyProperties(newsWriterContribution, detail);
-        Long categoryId = newsWriterContribution.getCategoryId();
-        NewsCategory newsCategory = newsCategoryLoader.selectById(categoryId);
+        BeanUtils.copyProperties(newsContribution, detail);
         String categoryName = "";
-        if (Objects.nonNull(newsCategory)) {
-            categoryName = newsCategory.getCategoryName();
-        }
         detail.setCategory(categoryName);
-        List<NewsApproveContribution> newsApproveContributions = approveContributionLoader.selectByCId(newsWriterContribution.getId());
-        if (!CollectionUtils.isEmpty(newsApproveContributions)) {
-            NewsApproveContribution newsApproveContribution = newsApproveContributions.stream().filter(e -> !e.getOperation().equals(ApproveStatus.NONE.name())).findFirst().orElse(null);
-            if (Objects.nonNull(newsApproveContribution)) {
-                detail.setApproveSuggestion(newsApproveContribution.getSuggestion());
-            }
-        }
-        List<NewsEditContribution> newsEditContributions = newsEditContributionLoader.selectByCId(newsWriterContribution.getId());
-        if (!CollectionUtils.isEmpty(newsEditContributions)) {
-            NewsEditContribution newsEditContribution = newsEditContributions.stream().filter(e -> !e.getOperation().equals(EditStatus.NONE.name())).findFirst().orElse(null);
-            if (Objects.nonNull(newsEditContribution)) {
-                detail.setApproveSuggestion(newsEditContribution.getSuggestion());
-            }
-        }
+        List<NewsApproveContribution> newsApproveContributions = approveContributionLoader.selectByCId(newsContribution.getId());
+//        if (!CollectionUtils.isEmpty(newsApproveContributions)) {
+//            NewsApproveContribution newsApproveContribution = newsApproveContributions.stream().filter(e -> !e.getOperation().equals(ApproveStatus.NONE.name())).findFirst().orElse(null);
+//            if (Objects.nonNull(newsApproveContribution)) {
+//                detail.setApproveSuggestion(newsApproveContribution.getSuggestion());
+//            }
+//        }
+//        List<NewsEditContribution> newsEditContributions = newsEditContributionLoader.selectByCId(newsContribution.getId());
+//        if (!CollectionUtils.isEmpty(newsEditContributions)) {
+//            NewsEditContribution newsEditContribution = newsEditContributions.stream().filter(e -> !e.getOperation().equals(EditStatus.NONE.name())).findFirst().orElse(null);
+//            if (Objects.nonNull(newsEditContribution)) {
+//                detail.setApproveSuggestion(newsEditContribution.getSuggestion());
+//            }
+//        }
         return MapMessage.successMessage().add("data", detail);
     }
     //编辑
