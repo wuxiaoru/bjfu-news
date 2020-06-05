@@ -9,7 +9,7 @@
       #{operation,jdbcType=INTEGER}, #{disabled,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{suggestion,jdbcType=LONGVARCHAR})
   </insert>
-    <select id="selectAll" resultMap="BaseResultMap">
+    <select id="selectAll" resultType="com.bjfu.news.entity.NewsApproveContribution">
     select * from news_approve_contribution
   </select>
 

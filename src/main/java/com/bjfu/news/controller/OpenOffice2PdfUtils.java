@@ -63,12 +63,12 @@ public class OpenOffice2PdfUtils {
         System.out.println("关闭office转换成功!");
     }
 
-    public static void main(String[] args) throws Exception {
-        String path = "D:\\Project\\newsDoc\\";
-        OpenOffice2PdfUtils opc = new OpenOffice2PdfUtils();
-        // opc.convert2PDF(path+"8dd29733248744e5a59b4027f92dbf8c.pptx", path+"1.pdf");
-        // opc.convert2PDF(path+"工作梳理.docx", path+"2.pdf");
-         opc.convert2PDF(path+"新闻系统表结构设计.docx", path+"target.pdf");
-    }
+//    public static void main(String[] args) throws Exception {
+//        String path = "D:\\Project\\newsDoc\\";
+//        OpenOffice2PdfUtils opc = new OpenOffice2PdfUtils();
+//        // opc.convert2PDF(path+"8dd29733248744e5a59b4027f92dbf8c.pptx", path+"1.pdf");
+//        // opc.convert2PDF(path+"工作梳理.docx", path+"2.pdf");
+//         opc.convert2PDF(path+"新闻系统表结构设计.docx", path+"target.pdf");
+//    }
 
 }

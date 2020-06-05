@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bjfu.news.dao.NewsContributionMapper">
     <insert id="insert" parameterType="com.bjfu.news.entity.NewsContribution">
-    insert into news_writer_contribution (ID, TITLE, CATEGROY_ID, 
+    insert into news_writer_contribution (TITLE, CATEGROY_ID,
       FILE_URL, STATUS, CREATE_USER_ID, 
       DISABLED, CREATE_TIME, UPDATE_TIME
       )
-    values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{categroyId,jdbcType=VARCHAR}, 
+    values (#{title,jdbcType=VARCHAR}, #{categroyId,jdbcType=VARCHAR},
       #{fileUrl,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{createUserId,jdbcType=VARCHAR}, 
       #{disabled,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )

@@ -26,9 +26,6 @@ public abstract class AbstractNewsController {
     protected NewsWriterContributionLoader newsWriterContributionLoader;
 
     @Autowired
-    protected NewsCategoryLoader newsCategoryLoader;
-
-    @Autowired
-    protected NewsCategoryService newsCategoryService;
+    protected NewsUserInfoService newsUserInfoService;
 
 }

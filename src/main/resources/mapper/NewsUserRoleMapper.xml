@@ -2,4 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bjfu.news.dao.NewUserRoleMapper">
 
+    <insert id="insertUserRole" parameterType="com.bjfu.news.entity.NewsUserRole" keyProperty="id"  useGeneratedKeys="true">
+        insert into news_user_role ( USER_ID, ROLE, DISABLED, CREATE_TIME, UPDATE_TIME)
+        values (#{eno,jdbcType=BIGINT}, #{userName,jdbcType=VARCHAR},
+                #{disabled,jdbcType=BIT},#{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+        )
+    </insert>
+
 </mapper>

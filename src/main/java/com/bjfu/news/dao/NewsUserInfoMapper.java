@@ -6,11 +6,11 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface NewsUserInfoMapper {
 
-    int insert(NewsUserInfo record);
+     Long insertUserInfo(NewsUserInfo record);
 
-    int update(NewsUserInfo newsUserInfo);
-
-    NewsUserInfo selectById(Long id);
-
-    NewsUserInfo selectByEno(String eno);
+//    int update(NewsUserInfo newsUserInfo);
+//
+//    NewsUserInfo selectById(Long id);
+//
+//    NewsUserInfo selectByEno(String eno);
 }
