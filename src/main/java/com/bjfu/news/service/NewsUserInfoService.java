@@ -6,7 +6,7 @@ import com.bjfu.news.untils.MapMessage;
 
 public interface NewsUserInfoService {
 
-    Long insert(NewsUserInfo newsUserInfo);
+    NewsUserInfo insert(NewsUserInfo newsUserInfo);
 
     MapMessage createUserInfo(UserInfoCreateParam param);
 

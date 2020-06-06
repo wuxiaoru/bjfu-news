@@ -2,7 +2,6 @@ package com.bjfu.news.dao;
 
 import com.bjfu.news.entity.NewsContribution;
 import com.bjfu.news.req.ContributionReq;
-import com.bjfu.news.req.IdsParam;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.Collection;
@@ -24,5 +23,5 @@ public interface NewsContributionMapper {
 
     int getCount(ContributionReq req);
 
-    int delete(IdsParam idsParam);
+    int delete(Long id);
 }

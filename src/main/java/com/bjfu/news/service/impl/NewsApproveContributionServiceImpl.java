@@ -34,4 +34,15 @@ public class NewsApproveContributionServiceImpl implements NewsApproveContributi
         }
         return 0;
     }
+
+    @Override
+    public NewsApproveContribution create(NewsApproveContribution contribution) {
+        try {
+            newsApproveContributionMapper.insert(contribution);
+            return contribution;
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        }
+        return null;
+    }
 }

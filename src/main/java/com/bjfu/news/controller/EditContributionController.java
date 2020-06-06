@@ -33,8 +33,8 @@ public class EditContributionController extends AbstractNewsController {
         int page = req.getStart() == null ? 1 : req.getStart();
         Map<String, Object> map = new HashMap<>();
         map.put("pageSize", page);
-        if (StringUtils.isEmpty(req.getName())) {
-            List<NewsContribution> newsContributions = newsWriterContributionLoader.listByName(req.getName());
+        if (StringUtils.isEmpty(req.getUserName())) {
+            List<NewsContribution> newsContributions = newsWriterContributionLoader.listByName(req.getUserName());
             if (CollectionUtils.isEmpty(newsContributions)) {
                 map.put("list", Collections.emptyList());
                 map.put("totalCount", 0);

@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bjfu.news.dao.NewsApproveContributionMapper">
-    <insert id="insert" parameterType="com.bjfu.news.entity.NewsApproveContribution">
-    insert into news_approve_contribution (ID, CONTRIBUTION_ID, APPROVER_ID, 
-      OPERATION, DISABLED, CREATE_TIME, 
-      UPDATE_TIME, SUGGESTION)
-    values (#{id,jdbcType=BIGINT}, #{contributionId,jdbcType=BIGINT}, #{approverId,jdbcType=BIGINT}, 
-      #{operation,jdbcType=INTEGER}, #{disabled,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{suggestion,jdbcType=LONGVARCHAR})
+    <insert id="insert" parameterType="com.bjfu.news.entity.NewsApproveContribution"  keyProperty="id"
+            useGeneratedKeys="true">
+    insert into news_approve_contribution (CONTRIBUTION_ID, USER_ID, DISABLED)
+    values (#{contributionId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{disabled,jdbcType=BIT})
   </insert>
     <select id="selectAll" resultType="com.bjfu.news.entity.NewsApproveContribution">
     select * from news_approve_contribution

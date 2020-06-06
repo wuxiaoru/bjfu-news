@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bjfu.news.dao.NewsUserInfoMapper">
-    <insert id="insertUserInfo" parameterType="com.bjfu.news.entity.NewsUserInfo" keyProperty="id"  useGeneratedKeys="true">
-        insert into news_user_info ( ENO, USER_NAME, UNIT, JOB, MAIL, OFFICE_PHONE, MOBILE, DISABLED, CREATE_TIME, UPDATE_TIME)
+    <insert id="insertUserInfo" parameterType="com.bjfu.news.entity.NewsUserInfo" keyProperty="id"
+            useGeneratedKeys="true">
+        insert into news_user_info ( ENO, USER_NAME, UNIT, JOB, MAIL, OFFICE_PHONE, MOBILE, DISABLED)
         values (#{eno,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR},
                 #{unit,jdbcType=VARCHAR}, #{job,jdbcType=VARCHAR}, #{mail,jdbcType=VARCHAR},
-                #{officePhone,jdbcType=VARCHAR},#{mobile,jdbcType=VARCHAR},#{disabled,jdbcType=BIT},
-                #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+                #{officePhone,jdbcType=VARCHAR},#{mobile,jdbcType=VARCHAR},#{disabled,jdbcType=BIT}
         )
     </insert>
+
+    <select id="list" parameterType="com.bjfu.news.req.UserReq" resultType="com.bjfu.news.entity.NewsUserInfo">
+        select * from news_user_info where DISABLED = false
+        <if test="userName!=null">
+            and USER_NAME like #{userName}
+        </if>
+        <if test="unit!=null">
+            and UNIT like #{unit}
+        </if>
+        <if test="userIds!=null and userIds.size()>0">
+            and ID in
+            <foreach collection="userIds" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+            </foreach>
+
+        </if>
+    </select>
 </mapper>

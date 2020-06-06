@@ -26,13 +26,14 @@ public class NewsUserInfoServiceImpl implements NewsUserInfoService {
     private NewUserRoleMapper newUserRoleMapper;
 
     @Override
-    public Long insert(NewsUserInfo newsUserInfo) {
+    public NewsUserInfo insert(NewsUserInfo newsUserInfo) {
         try {
-            return newsUserInfoMapper.insertUserInfo(newsUserInfo);
+            newsUserInfoMapper.insertUserInfo(newsUserInfo);
+            return newsUserInfo;
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
-        return 0L;
+        return null;
     }
 
     @Override
@@ -43,10 +44,10 @@ public class NewsUserInfoServiceImpl implements NewsUserInfoService {
         newsUserInfo.setDisabled(false);
         newsUserInfo.setCreateTime(new Date());
         newsUserInfo.setUpdateTime(new Date());
-        Long userId = insert(newsUserInfo);
+        NewsUserInfo userInfo = insert(newsUserInfo);
         NewsUserRole userRole = new NewsUserRole();
         userRole.setRole(param.getRoleType());
-        userRole.setUserId(userId);
+        userRole.setUserId(userInfo.getId());
         userRole.setDisabled(false);
         newUserRoleMapper.insertUserRole(userRole);
         return MapMessage.successMessage();

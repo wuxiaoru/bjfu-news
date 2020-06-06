@@ -28,4 +28,7 @@ public abstract class AbstractNewsController {
     @Autowired
     protected NewsUserInfoService newsUserInfoService;
 
+    @Autowired
+    protected NewsUserInfoLoader newsUserInfoLoader;
+
 }

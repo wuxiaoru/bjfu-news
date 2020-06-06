@@ -3,10 +3,12 @@
 <mapper namespace="com.bjfu.news.dao.NewUserRoleMapper">
 
     <insert id="insertUserRole" parameterType="com.bjfu.news.entity.NewsUserRole" keyProperty="id"  useGeneratedKeys="true">
-        insert into news_user_role ( USER_ID, ROLE, DISABLED, CREATE_TIME, UPDATE_TIME)
-        values (#{eno,jdbcType=BIGINT}, #{userName,jdbcType=VARCHAR},
-                #{disabled,jdbcType=BIT},#{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
-        )
+        insert into news_user_role ( USER_ID, ROLE, DISABLED)
+        values (#{userId,jdbcType=BIGINT}, #{role,jdbcType=VARCHAR},#{disabled,jdbcType=BIT})
     </insert>
+
+    <select id="loadByRole" resultType="com.bjfu.news.entity.NewsUserRole">
+       select * from news_user_role where  DISABLED=false  and ROLE=#{roleType}
+   </select>
 
 </mapper>

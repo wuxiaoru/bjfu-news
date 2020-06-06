@@ -1,21 +1,22 @@
 package com.bjfu.news.controller;
 
 
+import com.bjfu.news.constant.ContributionStatus;
 import com.bjfu.news.entity.NewsApproveContribution;
 import com.bjfu.news.entity.NewsContribution;
 import com.bjfu.news.model.ContributionDetail;
 import com.bjfu.news.req.ContributionCreateParam;
 import com.bjfu.news.req.ContributionReq;
-import com.bjfu.news.req.IdsParam;
 import com.bjfu.news.untils.FileUtils;
 import com.bjfu.news.untils.MapMessage;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.CollectionUtils;
 import org.springframework.util.MultiValueMap;
-import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -38,13 +39,9 @@ public class WriterContributionController extends AbstractNewsController {
     //根据名字分页按时间倒叙 1页10条
     @RequestMapping(value = "list", method = RequestMethod.GET)
     @ResponseBody
-    public MapMessage list(@RequestParam(required = false) String name,
-                           @RequestParam(required = false, defaultValue = "1") int page,
-                           @RequestParam(required = false, defaultValue = "10") int size) {
-        ContributionReq req = new ContributionReq();
-        if (!StringUtils.isEmpty(name)) {
-            req.setName(name);
-        }
+    public MapMessage list(@Validated @RequestBody ContributionReq req) {
+        int size = req.getSize() != null ? req.getSize() : 10;
+        int page = req.getPage() != null ? req.getPage() : 0;
         req.setStart((page - 1) * size);
         req.setSize(size);
         int count = newsWriterContributionLoader.getCount(req);
@@ -94,11 +91,39 @@ public class WriterContributionController extends AbstractNewsController {
         return MapMessage.successMessage().add("data", filePath);
     }
 
-    //新建稿件
     @ResponseBody
-    @RequestMapping(value = "create", method = RequestMethod.POST)
-    public MapMessage create(@Validated @RequestBody ContributionCreateParam param) {
+    @RequestMapping(value = "submit.vpage", method = RequestMethod.POST)
+    public MapMessage submit(@Validated @RequestBody ContributionCreateParam param) {
+        MapMessage check = check(param);
+        if (!check.isSuccess()) {
+            return check;
+        }
+        if (param.getApproveId() == null || param.getApproveId() <= 0L) {
+            return MapMessage.errorMessage().add("info", "审批人不能为空");
+        }
+        return newsWriterContributionService.submitContribution(param);
+    }
 
+    @ResponseBody
+    @RequestMapping(value = "draft.vpage", method = RequestMethod.POST)
+    public MapMessage draft(@Validated @RequestBody ContributionCreateParam param) {
+        MapMessage check = check(param);
+        if (!check.isSuccess()) {
+            return check;
+        }
+        return newsWriterContributionService.saveDraft(param);
+    }
+
+    private MapMessage check(ContributionCreateParam param) {
+        if (param.getTitle() == null || param.getTitle().isEmpty()) {
+            return MapMessage.errorMessage().add("info", "题目不能为空");
+        }
+        if (param.getDocUrl() == null || param.getDocUrl().isEmpty()) {
+            return MapMessage.errorMessage().add("info", "稿件地址不能为空");
+        }
+        if (param.getDocAuthor() == null || param.getDocAuthor().isEmpty()) {
+            return MapMessage.errorMessage().add("info", "稿件作者不能为空");
+        }
         return MapMessage.successMessage();
     }
 
@@ -133,17 +158,38 @@ public class WriterContributionController extends AbstractNewsController {
     }
     //编辑
 
-    //批量删除
-    @RequestMapping(value = "delete", method = RequestMethod.POST)
+
+    @RequestMapping(value = "delete.vpage", method = RequestMethod.POST)
     @ResponseBody
-    public MapMessage delete(@RequestBody @Validated IdsParam idsParam) {
-        List<Long> ids = idsParam.getIds();
-        if (CollectionUtils.isEmpty(ids)) {
-            return MapMessage.successMessage();
+    public MapMessage delete(@Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id) {
+        NewsContribution newsContribution = newsWriterContributionLoader.selectById(id);
+        if (Objects.isNull(newsContribution)) {
+            return MapMessage.errorMessage().add("info", "id有误");
         }
-        int delete = newsWriterContributionService.delete(idsParam);
+        if (!newsContribution.getStatus().equals(ContributionStatus.DRAFT.name())) {
+            return MapMessage.errorMessage().add("info", "当前稿件不是草稿状态，不能删除");
+        }
+        int delete = newsWriterContributionService.delete(id);
         if (delete == 0) {
             return MapMessage.errorMessage().add("info", "删除失败");
+        }
+        return MapMessage.successMessage();
+    }
+
+    @RequestMapping(value = "withDraw.vpage", method = RequestMethod.POST)
+    @ResponseBody
+    public MapMessage withDraw(@Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id) {
+        NewsContribution newsContribution = newsWriterContributionLoader.selectById(id);
+        if (Objects.isNull(newsContribution)) {
+            return MapMessage.errorMessage().add("info", "id有误");
+        }
+        if (!newsContribution.getStatus().equals(ContributionStatus.APPROVAL_PENDING.name())) {
+            return MapMessage.errorMessage().add("info", "当前稿件不是待审批状态，不能撤回");
+        }
+        newsContribution.setStatus(ContributionStatus.DRAFT.name());
+        int delete = newsWriterContributionService.updateStatus(newsContribution);
+        if (delete == 0) {
+            return MapMessage.errorMessage().add("info", "撤回失败");
         }
         return MapMessage.successMessage();
     }

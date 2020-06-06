@@ -1,11 +1,18 @@
 package com.bjfu.news.service;
 
 import com.bjfu.news.entity.NewsContribution;
-import com.bjfu.news.req.IdsParam;
+import com.bjfu.news.req.ContributionCreateParam;
+import com.bjfu.news.untils.MapMessage;
 
 public interface NewsWriterContributionService {
 
-    int delete(IdsParam idsParam);
+    int delete(Long id);
 
     int updateStatus(NewsContribution newsContribution);
+
+    NewsContribution create(NewsContribution contribution);
+
+    MapMessage submitContribution(ContributionCreateParam param);
+
+    MapMessage saveDraft(ContributionCreateParam param);
 }

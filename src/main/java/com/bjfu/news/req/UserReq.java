@@ -3,9 +3,10 @@ package com.bjfu.news.req;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data
-public class UserInfoCreateParam implements Serializable {
+public class UserReq implements Serializable {
 
     private String eno;
 
@@ -13,13 +14,7 @@ public class UserInfoCreateParam implements Serializable {
 
     private String unit;
 
-    private String job;
-
-    private String mail;
-
-    private String officePhone;
-
-    private String mobile;
+    private List<Long> userIds;
 
     private String roleType;
 }
