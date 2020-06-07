@@ -9,7 +9,7 @@ public interface NewsEditContributionLoader {
 
     int getCount(ContributionReq req);
 
-    List<NewsEditContribution> selectByCId(Long contributionId);
+    NewsEditContribution selectByCId(Long contributionId);
 
     NewsEditContribution selectById(Long id);
 

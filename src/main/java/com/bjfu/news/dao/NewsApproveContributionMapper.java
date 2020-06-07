@@ -18,7 +18,7 @@ public interface NewsApproveContributionMapper {
 
     NewsApproveContribution selectById(Long id);
 
-    List<NewsApproveContribution> selectByCId(Long contributionId);
+    NewsApproveContribution selectByCId(Long contributionId);
 
     List<NewsApproveContribution> selectByApproveId(Long approveId);
 

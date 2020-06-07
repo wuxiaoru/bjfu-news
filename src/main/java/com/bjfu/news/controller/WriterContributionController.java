@@ -1,17 +1,22 @@
 package com.bjfu.news.controller;
 
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.bjfu.news.constant.ContributionStatus;
-import com.bjfu.news.entity.NewsApproveContribution;
-import com.bjfu.news.entity.NewsContribution;
-import com.bjfu.news.model.ContributionDetail;
+import com.bjfu.news.constant.UserRoleType;
+import com.bjfu.news.entity.*;
+import com.bjfu.news.model.*;
 import com.bjfu.news.req.ContributionCreateParam;
 import com.bjfu.news.req.ContributionEditParam;
 import com.bjfu.news.req.ContributionReq;
+import com.bjfu.news.req.UserReq;
+import com.bjfu.news.untils.DateUtils;
 import com.bjfu.news.untils.FileUtils;
 import com.bjfu.news.untils.MapMessage;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.MultiValueMap;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,6 +32,7 @@ import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/v1/contribution")
@@ -44,9 +50,16 @@ public class WriterContributionController extends AbstractNewsController {
         req.setSize(size);
         int count = newsWriterContributionLoader.getCount(req);
         List<NewsContribution> writerContributions = newsWriterContributionLoader.page(req);
+        List<ContributionList> list = new ArrayList<>();
+        for (NewsContribution contribution : writerContributions) {
+            ContributionList contributionList = new ContributionList();
+            BeanUtils.copyProperties(contribution, contributionList);
+            contributionList.setSubmitTime(DateUtils.DateToString(contribution.getSubmitTime()));
+            list.add(contributionList);
+        }
         int maxPage = count % size == 0 ? count / size : count / size + 1;
         Map<String, Object> map = new HashMap<>();
-        map.put("list", writerContributions);
+        map.put("list", list);
         map.put("pageSize", page);
         map.put("totalCount", count);
         map.put("maxPage", maxPage);
@@ -127,7 +140,7 @@ public class WriterContributionController extends AbstractNewsController {
 
 
     //查看详情
-    @RequestMapping(value = "detail", method = RequestMethod.GET)
+    @RequestMapping(value = "detail.vpage", method = RequestMethod.GET)
     @ResponseBody
     public MapMessage detail(@Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id) {
         NewsContribution newsContribution = newsWriterContributionLoader.selectById(id);
@@ -136,22 +149,60 @@ public class WriterContributionController extends AbstractNewsController {
         }
         ContributionDetail detail = new ContributionDetail();
         BeanUtils.copyProperties(newsContribution, detail);
-        String categoryName = "";
-        detail.setCategory(categoryName);
-        List<NewsApproveContribution> newsApproveContributions = approveContributionLoader.selectByCId(newsContribution.getId());
-//        if (!CollectionUtils.isEmpty(newsApproveContributions)) {
-//            NewsApproveContribution newsApproveContribution = newsApproveContributions.stream().filter(e -> !e.getOperation().equals(ApproveStatus.NONE.name())).findFirst().orElse(null);
-//            if (Objects.nonNull(newsApproveContribution)) {
-//                detail.setApproveSuggestion(newsApproveContribution.getSuggestion());
-//            }
-//        }
-//        List<NewsEditContribution> newsEditContributions = newsEditContributionLoader.selectByCId(newsContribution.getId());
-//        if (!CollectionUtils.isEmpty(newsEditContributions)) {
-//            NewsEditContribution newsEditContribution = newsEditContributions.stream().filter(e -> !e.getOperation().equals(EditStatus.NONE.name())).findFirst().orElse(null);
-//            if (Objects.nonNull(newsEditContribution)) {
-//                detail.setApproveSuggestion(newsEditContribution.getSuggestion());
-//            }
-//        }
+        detail.setSubmitTime(DateUtils.DateToString(newsContribution.getSubmitTime()));
+
+        NewsApproveContribution newsApproveContribution = approveContributionLoader.selectByCId(newsContribution.getId());
+        if (Objects.nonNull(newsApproveContribution)) {
+            if (newsApproveContribution.getUserId() != null) {
+                detail.setApproveId(newsApproveContribution.getUserId());
+                NewsUserInfo newsUserInfo = newsUserInfoLoader.loadById(newsApproveContribution.getUserId());
+                if (Objects.nonNull(newsUserInfo)) {
+                    detail.setApproveName(newsUserInfo.getUserName());
+                }
+            }
+            if (newsApproveContribution.getApproveTime() != null) {
+                detail.setApproveTime(DateUtils.DateToString(newsApproveContribution.getApproveTime()));
+            }
+            if (newsApproveContribution.getSuggestion() != null && !newsApproveContribution.getSuggestion().isEmpty()) {
+                detail.setApproveSuggestion(newsApproveContribution.getSuggestion());
+            }
+        }
+        NewsEditContribution newsEditContribution = newsEditContributionLoader.selectByCId(newsContribution.getId());
+        if (Objects.nonNull(newsEditContribution)) {
+            if (newsEditContribution.getUserId() != null) {
+                detail.setEditorId(newsEditContribution.getUserId());
+                NewsUserInfo newsUserInfo = newsUserInfoLoader.loadById(newsEditContribution.getUserId());
+                if (Objects.nonNull(newsUserInfo)) {
+                    detail.setEditorName(newsUserInfo.getUserName());
+                }
+            }
+            if (newsEditContribution.getSuggestion() != null && !newsEditContribution.getSuggestion().isEmpty()) {
+                detail.setEditSuggestion(newsEditContribution.getSuggestion());
+                if (newsEditContribution.getUpdateTime() != null) {
+                    detail.setApproveTime(DateUtils.DateToString(newsEditContribution.getUpdateTime()));
+                }
+            }
+        }
+        List<NewsOperateLog> newsOperateLogs = newsLogLoader.loadByCId(newsContribution.getId());
+        if (!CollectionUtils.isEmpty(newsOperateLogs)) {
+            List<OperateLogDetail> list = new ArrayList<>();
+            for (NewsOperateLog log : newsOperateLogs) {
+                OperateLogDetail logDetail = new OperateLogDetail();
+                logDetail.setOperateId(log.getOperateId());
+                logDetail.setOperateTime(DateUtils.DateToString(log.getOperateTime()));
+                logDetail.setStatus(log.getStatus());
+                OperateLogBean jsonObject = JSONObject.toJavaObject(JSON.parseObject(log.getOperateDetail()), OperateLogBean.class);
+                if (Objects.nonNull(jsonObject)) {
+                    logDetail.setDocAuthor(jsonObject.getDocAuthor());
+                    logDetail.setDocUrl(jsonObject.getDocUrl());
+                    logDetail.setPicUrl(jsonObject.getPicUrl());
+                    logDetail.setPicAuthor(jsonObject.getPicAuthor());
+                    logDetail.setSuggestion(jsonObject.getSuggestion());
+                }
+                list.add(logDetail);
+            }
+            detail.setLogList(list);
+        }
         return MapMessage.successMessage().add("data", detail);
     }
 
@@ -211,5 +262,29 @@ public class WriterContributionController extends AbstractNewsController {
             return MapMessage.errorMessage().add("info", "撤回失败");
         }
         return MapMessage.successMessage();
+    }
+
+    @RequestMapping(value = "approve/list.vpage", method = RequestMethod.GET)
+    @ResponseBody
+    public MapMessage approveList(@Validated @NotNull @Min(value = 1, message = "id必须大于0") Long userId) {
+        NewsUserInfo newsUserInfo = newsUserInfoLoader.loadById(userId);
+        if (Objects.isNull(newsUserInfo)) {
+            return MapMessage.errorMessage().add("info", "用户id有误");
+        }
+        UserReq req = new UserReq();
+        req.setUnit(newsUserInfo.getUnit());
+        req.setRoleType(UserRoleType.APPROVER.name());
+        List<NewsUserInfo> list = newsUserInfoLoader.list(req);
+        if (CollectionUtils.isEmpty(list)) {
+            return MapMessage.successMessage().add("data", Collections.emptyList());
+        }
+        List<UserInfo> userInfoList = new ArrayList<>();
+        for (NewsUserInfo user : list) {
+            UserInfo info = new UserInfo();
+            info.setId(user.getId());
+            info.setName(user.getUserName());
+            userInfoList.add(info);
+        }
+        return MapMessage.successMessage().add("data", userInfoList);
     }
 }

@@ -17,7 +17,7 @@ public interface NewsEditContributionMapper {
 
     NewsEditContribution selectById(Long id);
 
-    List<NewsEditContribution> selectByCId(Long contributionId);
+    NewsEditContribution selectByCId(Long contributionId);
 
     List<NewsEditContribution> selectByEditorId(Long editor);
 

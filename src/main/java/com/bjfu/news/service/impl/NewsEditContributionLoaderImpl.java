@@ -21,7 +21,7 @@ public class NewsEditContributionLoaderImpl implements NewsEditContributionLoade
     }
 
     @Override
-    public List<NewsEditContribution> selectByCId(Long contributionId) {
+    public NewsEditContribution selectByCId(Long contributionId) {
         return newsEditContributionMapper.selectByCId(contributionId);
     }
 

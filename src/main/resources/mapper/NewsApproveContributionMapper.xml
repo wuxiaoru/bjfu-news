@@ -15,7 +15,7 @@
    </select>
 
     <select id="selectByCId" resultType="com.bjfu.news.entity.NewsApproveContribution">
-        select * from news_approve_contribution  where disabled = false and contributionId=#{contributionId}
+        select * from news_approve_contribution  where disabled = false and CONTRIBUTION_ID=#{contributionId}
    </select>
 
     <select id="selectByApproveId" resultType="com.bjfu.news.entity.NewsApproveContribution">

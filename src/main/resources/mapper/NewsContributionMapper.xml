@@ -23,7 +23,7 @@
     <select id="page" parameterType="com.bjfu.news.req.ContributionReq"
             resultType="com.bjfu.news.entity.NewsContribution">
         select * from news_contribution where disabled = false and USER_ID=#{userId}
-        <if test="userName!=null">
+        <if test="docAuthor!=null">
             and DOC_AUTHOR like #{userName}
         </if>
         <if test="title!=null">
@@ -41,7 +41,7 @@
     <select id="list" parameterType="com.bjfu.news.req.ContributionReq"
             resultType="com.bjfu.news.entity.NewsContribution">
         select * from news_contribution where disabled = false and USER_ID=#{userId}
-        <if test="userName!=null">
+        <if test="docAuthor!=null">
             and DOC_AUTHOR like #{userName}
         </if>
         <if test="title!=null">
@@ -58,7 +58,7 @@
     <select id="getCount" parameterType="com.bjfu.news.req.ContributionReq"
             resultType="Integer">
         select count(*) from news_contribution where disabled = false and USER_ID=#{userId}
-        <if test="userName!=null">
+        <if test="docAuthor!=null">
             and DOC_AUTHOR like #{userName}
         </if>
         <if test="title!=null">
@@ -80,19 +80,19 @@
         update news_contribution
         <set>
             <if test="status!=null">
-                status=#{status}
+                status=#{status},
             </if>
             <if test="docUrl!=null">
-                DOC_URL=#{docUrl}
+                DOC_URL=#{docUrl},
             </if>
             <if test="docAuthor!=null">
-                DOC_AUTHOR=#{docAuthor}
+                DOC_AUTHOR=#{docAuthor},
             </if>
             <if test="picAuthor!=null">
-                PIC_AUTHOR=#{picAuthor}
+                PIC_AUTHOR=#{picAuthor,
             </if>
             <if test="picUrl!=null">
-                PIC_URL=#{picUrl}
+               PIC_URL=#{picUrl},
             </if>
             <if test="note!=null">
                 note=#{note}

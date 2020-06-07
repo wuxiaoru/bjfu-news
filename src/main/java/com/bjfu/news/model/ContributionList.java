@@ -3,7 +3,6 @@ package com.bjfu.news.model;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Date;
 
 @Data
 public class ContributionList implements Serializable {
@@ -16,5 +15,5 @@ public class ContributionList implements Serializable {
 
     private String docAuthor;
 
-    private Date submitTime;
+    private String submitTime;
 }

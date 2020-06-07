@@ -21,7 +21,7 @@ public class NewsApproveContributionLoaderImpl implements NewsApproveContributio
     }
 
     @Override
-    public List<NewsApproveContribution> selectByCId(Long contributionId) {
+    public NewsApproveContribution selectByCId(Long contributionId) {
         return newsApproveContributionMapper.selectByCId(contributionId);
     }
 

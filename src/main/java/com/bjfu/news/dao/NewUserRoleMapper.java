@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface NewUserRoleMapper {
 
-    NewsUserRole insertUserRole(NewsUserRole record);
+    int insertUserRole(NewsUserRole record);
 
     List<NewsUserRole> loadByRole(String roleType);
 

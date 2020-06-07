@@ -11,9 +11,9 @@ public interface NewsUserInfoMapper {
 
     Long insertUserInfo(NewsUserInfo record);
 
-//    int update(NewsUserInfo newsUserInfo);
+    //    int update(NewsUserInfo newsUserInfo);
 //
-//    NewsUserInfo selectById(Long id);
+    NewsUserInfo selectById(Long id);
 //
 //    NewsUserInfo selectByEno(String eno);
 

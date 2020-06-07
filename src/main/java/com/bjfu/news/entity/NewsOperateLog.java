@@ -18,7 +18,7 @@ public class NewsOperateLog implements Serializable {
 
     private String operateType;
 
-    private String operateId;
+    private Long operateId;
 
     private Date operateTime;
 

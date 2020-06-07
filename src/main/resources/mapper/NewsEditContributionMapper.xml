@@ -3,10 +3,10 @@
 <mapper namespace="com.bjfu.news.dao.NewsEditContributionMapper">
     <insert id="insert" parameterType="com.bjfu.news.entity.NewsEditContribution"  keyProperty="id"
             useGeneratedKeys="true">
-    insert into news_edit_contribution (ID, EDITOR_ID, CONTRIBUTION_ID, 
+    insert into news_edit_contribution (ID, USER_ID, CONTRIBUTION_ID,
       OPRATION, DISABLED, CREATE_TIME, 
       UPDATE_TIME, SUGGESTION)
-    values (#{id,jdbcType=BIGINT}, #{editorId,jdbcType=VARCHAR}, #{contributionId,jdbcType=BIGINT}, 
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=VARCHAR}, #{contributionId,jdbcType=BIGINT},
       #{opration,jdbcType=INTEGER}, #{disabled,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{suggestion,jdbcType=LONGVARCHAR})
   </insert>
@@ -21,16 +21,16 @@
    </select>
 
     <select id="selectByCId" resultType="com.bjfu.news.entity.NewsEditContribution">
-        select * from news_edit_contribution  where disabled = false and contributionId=#{contributionId}
+        select * from news_edit_contribution  where disabled = false and CONTRIBUTION_ID=#{contributionId}
    </select>
 
     <select id="selectByEditorId" resultType="com.bjfu.news.entity.NewsEditContribution">
-        select * from news_edit_contribution  where disabled = false and editorId=#{editorId}
+        select * from news_edit_contribution  where disabled = false and USER_ID=#{editorId}
    </select>
 
     <select id="list" parameterType="com.bjfu.news.req.ContributionReq"
             resultType="com.bjfu.news.entity.NewsEditContribution">
-        select * from news_edit_contribution where disabled = false and editorId=#{userId}
+        select * from news_edit_contribution where disabled = false and USER_ID=#{userId}
         <if test="contributionIds!=null">
             and contributionId in
             <foreach item="contributionId" index="index" collection="contributionIds">
@@ -42,7 +42,7 @@
 
     <select id="getCount" parameterType="com.bjfu.news.req.ContributionReq"
             resultType="Integer">
-        select count(*) from news_edit_contribution where disabled = false and editorId=#{userId}
+        select count(*) from news_edit_contribution where disabled = false and USER_ID=#{userId}
         <if test="contributionIds!=null">
             and contributionId in
             <foreach item="contributionId" index="index" collection="contributionIds">

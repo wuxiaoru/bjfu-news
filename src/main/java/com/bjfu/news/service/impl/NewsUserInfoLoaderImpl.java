@@ -34,4 +34,14 @@ public class NewsUserInfoLoaderImpl implements NewsUserInfoLoader {
         req.setUserIds(userIds.stream().map(NewsUserRole::getUserId).collect(Collectors.toList()));
         return newsUserInfoMapper.list(req);
     }
+
+    @Override
+    public NewsUserInfo loadById(Long userId) {
+        return newsUserInfoMapper.selectById(userId);
+    }
+
+    @Override
+    public List<NewsUserRole> loadByRole(String roleType) {
+        return newUserRoleMapper.loadByRole(roleType);
+    }
 }
