@@ -6,6 +6,7 @@ import com.bjfu.news.entity.NewsApproveContribution;
 import com.bjfu.news.entity.NewsContribution;
 import com.bjfu.news.model.ContributionDetail;
 import com.bjfu.news.req.ContributionCreateParam;
+import com.bjfu.news.req.ContributionEditParam;
 import com.bjfu.news.req.ContributionReq;
 import com.bjfu.news.untils.FileUtils;
 import com.bjfu.news.untils.MapMessage;
@@ -25,10 +26,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 @Controller
 @RequestMapping("/v1/contribution")
@@ -37,15 +35,15 @@ public class WriterContributionController extends AbstractNewsController {
     String FILE_PATH = "D:\\file";
 
     //根据名字分页按时间倒叙 1页10条
-    @RequestMapping(value = "list", method = RequestMethod.GET)
+    @RequestMapping(value = "list.vpage", method = RequestMethod.POST)
     @ResponseBody
     public MapMessage list(@Validated @RequestBody ContributionReq req) {
         int size = req.getSize() != null ? req.getSize() : 10;
         int page = req.getPage() != null ? req.getPage() : 0;
-        req.setStart((page - 1) * size);
+        req.setStart((page - 1) * size > 0 ? (page - 1) * size : 0);
         req.setSize(size);
         int count = newsWriterContributionLoader.getCount(req);
-        List<NewsContribution> writerContributions = newsWriterContributionLoader.pageByName(req);
+        List<NewsContribution> writerContributions = newsWriterContributionLoader.page(req);
         int maxPage = count % size == 0 ? count / size : count / size + 1;
         Map<String, Object> map = new HashMap<>();
         map.put("list", writerContributions);
@@ -156,8 +154,29 @@ public class WriterContributionController extends AbstractNewsController {
 //        }
         return MapMessage.successMessage().add("data", detail);
     }
-    //编辑
 
+    //编辑
+    @RequestMapping(value = "edit.vpage", method = RequestMethod.POST)
+    @ResponseBody
+    public MapMessage edit(@Validated @RequestBody ContributionEditParam param) {
+        if (param.getId() == null || param.getId() <= 0L) {
+            return MapMessage.errorMessage().add("info", "稿件id不能为空");
+        }
+        NewsContribution newsContribution = newsWriterContributionLoader.selectById(param.getId());
+        if (Objects.isNull(newsContribution)) {
+            return MapMessage.errorMessage().add("info", "稿件id有误");
+        }
+        if (!(newsContribution.getStatus().equals(ContributionStatus.DRAFT.name()) || newsContribution.getStatus().equals(ContributionStatus.APPROVAL_REJECTION.name()))) {
+            return MapMessage.errorMessage().add("info", "当前稿件状态不是草稿或者审批不过，不能编辑");
+        }
+        BeanUtils.copyProperties(param, newsContribution);
+        newsContribution.setSubmitTime(new Date());
+        int result = newsWriterContributionService.update(newsContribution);
+        if (result == 0) {
+            return MapMessage.errorMessage().add("info", "编辑失败");
+        }
+        return MapMessage.successMessage();
+    }
 
     @RequestMapping(value = "delete.vpage", method = RequestMethod.POST)
     @ResponseBody
@@ -187,7 +206,7 @@ public class WriterContributionController extends AbstractNewsController {
             return MapMessage.errorMessage().add("info", "当前稿件不是待审批状态，不能撤回");
         }
         newsContribution.setStatus(ContributionStatus.DRAFT.name());
-        int delete = newsWriterContributionService.updateStatus(newsContribution);
+        int delete = newsWriterContributionService.update(newsContribution);
         if (delete == 0) {
             return MapMessage.errorMessage().add("info", "撤回失败");
         }

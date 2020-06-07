@@ -37,9 +37,9 @@ public class NewsWriterContributionServiceImpl implements NewsWriterContribution
     }
 
     @Override
-    public int updateStatus(NewsContribution newsContribution) {
+    public int update(NewsContribution newsContribution) {
         try {
-            return newsContributionMapper.updateStatus(newsContribution);
+            return newsContributionMapper.update(newsContribution);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }

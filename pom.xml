@@ -81,7 +81,7 @@
 
 
     <build>
-        <finalName>infostream</finalName>
+        <finalName>news</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

@@ -33,8 +33,8 @@ public class EditContributionController extends AbstractNewsController {
         int page = req.getStart() == null ? 1 : req.getStart();
         Map<String, Object> map = new HashMap<>();
         map.put("pageSize", page);
-        if (StringUtils.isEmpty(req.getUserName())) {
-            List<NewsContribution> newsContributions = newsWriterContributionLoader.listByName(req.getUserName());
+        if (StringUtils.isEmpty(req.getDocAuthor())) {
+            List<NewsContribution> newsContributions = newsWriterContributionLoader.list(req);
             if (CollectionUtils.isEmpty(newsContributions)) {
                 map.put("list", Collections.emptyList());
                 map.put("totalCount", 0);
@@ -96,7 +96,7 @@ public class EditContributionController extends AbstractNewsController {
         if (status.equals(EditStatus.REJECTION.name())) {
             newsContribution.setStatus(ContributionStatus.APPROVAL_REJECTION.name());
         }
-        newsWriterContributionService.updateStatus(newsContribution);
+        newsWriterContributionService.update(newsContribution);
         return MapMessage.successMessage();
     }
 

@@ -19,9 +19,9 @@ public class NewsWriterContributionLoaderImpl implements NewsWriterContributionL
     NewsContributionMapper newsContributionMapper;
 
     @Override
-    public List<NewsContribution> pageByName(ContributionReq req) {
+    public List<NewsContribution> page(ContributionReq req) {
         try {
-            return newsContributionMapper.pageByName(req);
+            return newsContributionMapper.page(req);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
@@ -29,8 +29,8 @@ public class NewsWriterContributionLoaderImpl implements NewsWriterContributionL
     }
 
     @Override
-    public List<NewsContribution> listByName(String name) {
-        return newsContributionMapper.listByName(name);
+    public List<NewsContribution> list(ContributionReq req) {
+        return newsContributionMapper.list(req);
     }
 
     @Override

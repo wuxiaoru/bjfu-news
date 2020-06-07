@@ -9,7 +9,7 @@ import java.util.List;
 @Data
 public class ContributionReq implements Serializable {
 
-    private String userName;
+    private String docAuthor;
     private String title;
     private Integer start;
     private Integer page;

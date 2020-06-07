@@ -8,7 +8,7 @@ public interface NewsWriterContributionService {
 
     int delete(Long id);
 
-    int updateStatus(NewsContribution newsContribution);
+    int update(NewsContribution newsContribution);
 
     NewsContribution create(NewsContribution contribution);
 

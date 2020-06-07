@@ -11,15 +11,15 @@ import java.util.List;
 public interface NewsContributionMapper {
     int insert(NewsContribution record);
 
-    int updateStatus(NewsContribution record);
+    int update(NewsContribution record);
 
     NewsContribution selectById(Long id);
 
     List<NewsContribution> selectByIds(Collection<Long> ids);
 
-    List<NewsContribution> pageByName(ContributionReq req);
+    List<NewsContribution> list(ContributionReq req);
 
-    List<NewsContribution> listByName(String name);
+    List<NewsContribution> page(ContributionReq req);
 
     int getCount(ContributionReq req);
 

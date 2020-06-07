@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface NewsWriterContributionLoader {
 
-    List<NewsContribution> pageByName(ContributionReq req);
+    List<NewsContribution> page(ContributionReq req);
 
-    List<NewsContribution> listByName(String name);
+    List<NewsContribution> list(ContributionReq req);
 
     int getCount(ContributionReq req);
 

@@ -6,14 +6,14 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-public class ContributionCreateParam implements Serializable {
+public class ContributionEditParam implements Serializable {
 
+    private Long id;
     private String title;
     private String docUrl;
     private String docAuthor;
-    private Long approveId;
     private String picUrl;
-    private String picAuthor;
+    private String picAuth;
     private String note;
     private Long userId;
 }
