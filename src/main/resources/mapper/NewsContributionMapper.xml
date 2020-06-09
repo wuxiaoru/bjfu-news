@@ -24,13 +24,13 @@
             resultType="com.bjfu.news.entity.NewsContribution">
         select * from news_contribution where disabled = false and USER_ID=#{userId}
         <if test="docAuthor!=null">
-            and DOC_AUTHOR like #{userName}
+            and DOC_AUTHOR like concat('%',#{docAuthor},'%')
         </if>
         <if test="title!=null">
-            and title like #{title}
+            and title like concat('%',#{title},'%')
         </if>
         <if test="status!=null">
-            and status like #{status}
+            and status = #{status}
         </if>
         <if test="startTime!=null and endTime!=null">
             and SUBMIT_TIME between #{startTime} and #{endTime}
@@ -42,13 +42,13 @@
             resultType="com.bjfu.news.entity.NewsContribution">
         select * from news_contribution where disabled = false and USER_ID=#{userId}
         <if test="docAuthor!=null">
-            and DOC_AUTHOR like #{userName}
+            and DOC_AUTHOR like concat('%',#{docAuthor},'%')
         </if>
         <if test="title!=null">
-            and title like #{title}
+            and title like concat('%',#{title},'%')
         </if>
         <if test="status!=null">
-            and status like #{status}
+            and status = #{status}
         </if>
         <if test="startTime!=null and endTime!=null">
             and SUBMIT_TIME between #{startTime} and #{endTime}
@@ -59,13 +59,13 @@
             resultType="Integer">
         select count(*) from news_contribution where disabled = false and USER_ID=#{userId}
         <if test="docAuthor!=null">
-            and DOC_AUTHOR like #{userName}
+            and DOC_AUTHOR like #{docAuthor}
         </if>
         <if test="title!=null">
-            and title like #{title}
+            and title like  concat('%',#{title},'%')
         </if>
         <if test="status!=null">
-            and status like #{status}
+            and status = #{status}
         </if>
         <if test="startTime!=null and endTime!=null">
             and SUBMIT_TIME between #{startTime} and #{endTime}
@@ -89,7 +89,7 @@
                 DOC_AUTHOR=#{docAuthor},
             </if>
             <if test="picAuthor!=null">
-                PIC_AUTHOR=#{picAuthor,
+                PIC_AUTHOR=#{picAuthor},
             </if>
             <if test="picUrl!=null">
                PIC_URL=#{picUrl},

@@ -1,11 +1,15 @@
 package com.bjfu.news.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.bjfu.news.constant.ContributionStatus;
+import com.bjfu.news.constant.OperateType;
 import com.bjfu.news.dao.NewsContributionMapper;
 import com.bjfu.news.entity.NewsApproveContribution;
 import com.bjfu.news.entity.NewsContribution;
+import com.bjfu.news.entity.NewsOperateLog;
+import com.bjfu.news.model.OperateLogBean;
 import com.bjfu.news.req.ContributionCreateParam;
-import com.bjfu.news.req.IdsParam;
+import com.bjfu.news.service.NewsLogService;
 import com.bjfu.news.service.NewsWriterContributionService;
 import com.bjfu.news.untils.MapMessage;
 import lombok.extern.slf4j.Slf4j;
@@ -25,6 +29,9 @@ public class NewsWriterContributionServiceImpl implements NewsWriterContribution
 
     @Autowired
     private NewsApproveContributionServiceImpl newsApproveContributionService;
+
+    @Autowired
+    private NewsLogService newsLogService;
 
     @Override
     public int delete(Long id) {
@@ -77,6 +84,36 @@ public class NewsWriterContributionServiceImpl implements NewsWriterContribution
         if (approveContribution1 == null) {
             return MapMessage.errorMessage().add("info", "提交稿件失败");
         }
+        return MapMessage.successMessage();
+    }
+
+    @Override
+    @Transactional
+    public MapMessage fastSubmit(Long id, Long approveId) {
+        NewsContribution contribution = newsContributionMapper.selectById(id);
+        if (contribution == null) {
+            return MapMessage.errorMessage().add("info", "提交稿件失败");
+        }
+        contribution.setStatus(ContributionStatus.APPROVAL_PENDING.name());
+        contribution.setSubmitTime(new Date());
+        update(contribution);
+        NewsApproveContribution approveContribution = new NewsApproveContribution();
+        approveContribution.setContributionId(contribution.getId());
+        approveContribution.setDisabled(false);
+        approveContribution.setUserId(approveId);
+        newsApproveContributionService.create(approveContribution);
+        NewsOperateLog log = new NewsOperateLog();
+        log.setOperateType(OperateType.CONTRIBUTOR_SUBMIT.name());
+        log.setOperateId(1L);
+        log.setContributionId(contribution.getId());
+        log.setStatus(contribution.getStatus());
+        OperateLogBean bean = new OperateLogBean();
+        bean.setDocAuthor(contribution.getDocAuthor());
+        bean.setDocUrl(contribution.getDocUrl());
+        bean.setPicAuthor(contribution.getPicAuthor());
+        bean.setPicUrl(contribution.getPicUrl());
+        log.setOperateDetail(JSON.toJSONString(bean));
+        newsLogService.insertLog(log);
         return MapMessage.successMessage();
     }
 

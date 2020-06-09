@@ -32,7 +32,6 @@ import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/v1/contribution")
@@ -113,6 +112,24 @@ public class WriterContributionController extends AbstractNewsController {
             return MapMessage.errorMessage().add("info", "审批人不能为空");
         }
         return newsWriterContributionService.submitContribution(param);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "fast-submit.vpage", method = RequestMethod.POST)
+    public MapMessage fastSubmit(@Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id,
+                                 @Validated @NotNull @Min(value = 1, message = "id必须大于0") Long approveId) {
+        NewsContribution newsContribution = newsWriterContributionLoader.selectById(id);
+        if (Objects.isNull(newsContribution)) {
+            return MapMessage.errorMessage().add("info", "稿件id有误");
+        }
+        if (!newsContribution.getStatus().equals(ContributionStatus.DRAFT.name())) {
+            return MapMessage.errorMessage().add("info", "当前稿件不是草稿状态，不能提交");
+        }
+        NewsUserInfo newsUserInfo = newsUserInfoLoader.loadById(approveId);
+        if (Objects.isNull(newsUserInfo)) {
+            return MapMessage.errorMessage().add("info", "审稿人id有误");
+        }
+        return newsWriterContributionService.fastSubmit(id, approveId);
     }
 
     @ResponseBody
