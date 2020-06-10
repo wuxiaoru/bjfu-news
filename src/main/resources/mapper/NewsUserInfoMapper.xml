@@ -23,7 +23,6 @@
             <foreach collection="userIds" item="item" index="index" open="(" separator="," close=")">
                 #{item}
             </foreach>
-
         </if>
     </select>
 

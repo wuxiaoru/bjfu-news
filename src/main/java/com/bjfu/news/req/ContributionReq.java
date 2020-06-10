@@ -4,6 +4,7 @@ package com.bjfu.news.req;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 
 @Data
@@ -19,4 +20,5 @@ public class ContributionReq implements Serializable {
     private Integer size;
     private String startTime;
     private List<Long> contributionIds;
+    private Collection<String> statusList;
 }

@@ -35,7 +35,7 @@ public class FileUtils {
                 e.printStackTrace();
             }
         }
-        return path + "\\" + fileName;
+        return path + "/" + fileName;
     }
 
     public static InputStream readFile(String path) {

@@ -12,7 +12,7 @@ public interface NewsApproveContributionMapper {
 
     int insert(NewsApproveContribution record);
 
-    int updateOpetation(NewsApproveContribution record);
+    int update(NewsApproveContribution record);
 
     List<NewsApproveContribution> selectAll();
 

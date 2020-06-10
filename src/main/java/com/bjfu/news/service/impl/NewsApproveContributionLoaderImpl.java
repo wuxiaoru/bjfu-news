@@ -34,4 +34,9 @@ public class NewsApproveContributionLoaderImpl implements NewsApproveContributio
     public NewsApproveContribution selectById(Long id) {
         return newsApproveContributionMapper.selectById(id);
     }
+
+    @Override
+    public List<NewsApproveContribution> selectByApproveId(Long userId) {
+        return newsApproveContributionMapper.selectByApproveId(userId);
+    }
 }

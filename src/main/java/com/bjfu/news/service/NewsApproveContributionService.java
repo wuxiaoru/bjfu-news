@@ -7,7 +7,7 @@ public interface NewsApproveContributionService {
 
     int delete(IdsParam idsParam);
 
-    int updateOperation(NewsApproveContribution approveContribution);
+    int update(NewsApproveContribution approveContribution);
 
     NewsApproveContribution create(NewsApproveContribution contribution);
 }

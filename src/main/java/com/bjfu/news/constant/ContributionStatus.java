@@ -22,13 +22,20 @@ public enum ContributionStatus {
     @Getter
     private final String desc;
 
-    public static final Map<Integer, String> CODE_MAPPING;
+    public static final Map<String, String> CODE_MAPPING;
+
+    public static final Map<String, String> APPROVE_MAPPING;
 
     static {
-        Map<Integer, String> codeMap = new LinkedHashMap<>();
+        Map<String, String> codeMap = new LinkedHashMap<>();
+        Map<String, String> approveMap = new LinkedHashMap<>();
         for (ContributionStatus contributionStatus : ContributionStatus.values()) {
-            codeMap.put(contributionStatus.code, contributionStatus.desc);
+            codeMap.put(contributionStatus.name(), contributionStatus.desc);
+            if (contributionStatus.equals(APPROVAL_PENDING) || contributionStatus.equals(APPROVAL_REJECTION) || contributionStatus.equals(APPROVE)) {
+                approveMap.put(contributionStatus.name(), contributionStatus.desc);
+            }
         }
         CODE_MAPPING = Collections.unmodifiableMap(codeMap);
+        APPROVE_MAPPING = Collections.unmodifiableMap(approveMap);
     }
 }

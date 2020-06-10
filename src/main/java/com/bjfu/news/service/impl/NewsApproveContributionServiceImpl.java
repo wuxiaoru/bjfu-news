@@ -26,9 +26,9 @@ public class NewsApproveContributionServiceImpl implements NewsApproveContributi
     }
 
     @Override
-    public int updateOperation(NewsApproveContribution approveContribution) {
+    public int update(NewsApproveContribution approveContribution) {
         try {
-            return newsApproveContributionMapper.updateOpetation(approveContribution);
+            return newsApproveContributionMapper.update(approveContribution);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }

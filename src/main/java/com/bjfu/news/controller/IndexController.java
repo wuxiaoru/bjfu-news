@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class IndexController {
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/v1/")
     public String index() {
         return "index/index"; //当浏览器输入/index时，会返回 /templates/index.html页面
     }
 
-    @RequestMapping(value = "enum", method = RequestMethod.GET)
+    @RequestMapping(value = "enum.vpage", method = RequestMethod.GET)
     @ResponseBody
     public MapMessage enumList() {
-        return MapMessage.successMessage().add("status", ContributionStatus.CODE_MAPPING).add("role", UserRoleType.NAME_MAPPING);
+        return MapMessage.successMessage().add("status", ContributionStatus.CODE_MAPPING).add("role", UserRoleType.NAME_MAPPING).add("approveStatus", ContributionStatus.APPROVE_MAPPING);
     }
 }

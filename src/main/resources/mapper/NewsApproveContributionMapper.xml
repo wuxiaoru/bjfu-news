@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bjfu.news.dao.NewsApproveContributionMapper">
-    <insert id="insert" parameterType="com.bjfu.news.entity.NewsApproveContribution"  keyProperty="id"
+    <insert id="insert" parameterType="com.bjfu.news.entity.NewsApproveContribution" keyProperty="id"
             useGeneratedKeys="true">
     insert into news_approve_contribution (CONTRIBUTION_ID, USER_ID, DISABLED)
     values (#{contributionId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{disabled,jdbcType=BIT})
@@ -52,10 +52,16 @@
         </foreach>
     </update>
 
-    <update id="updateOperate" parameterType="com.bjfu.news.entity.NewsApproveContribution">
-        update news_approve_contribution set
-        opration=#{opration},
-        suggestion=#{suggestion}
+    <update id="update" parameterType="com.bjfu.news.entity.NewsApproveContribution">
+        update news_approve_contribution
+        <set>
+            <if test="approveTime!=null">
+                APPROVE_TIME=#{approveTime},
+            </if>
+            <if test="suggestion!=null">
+                suggestion=#{suggestion},
+            </if>
+        </set>
         where ID=#{id}
     </update>
 </mapper>

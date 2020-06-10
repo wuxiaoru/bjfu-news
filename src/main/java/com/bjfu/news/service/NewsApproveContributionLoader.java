@@ -14,4 +14,6 @@ public interface NewsApproveContributionLoader {
     List<NewsApproveContribution> list(ContributionReq req);
 
     NewsApproveContribution selectById(Long id);
+
+    List<NewsApproveContribution> selectByApproveId(Long userId);
 }
