@@ -19,6 +19,9 @@ public class IndexController {
     @RequestMapping(value = "enum.vpage", method = RequestMethod.GET)
     @ResponseBody
     public MapMessage enumList() {
-        return MapMessage.successMessage().add("status", ContributionStatus.CODE_MAPPING).add("role", UserRoleType.NAME_MAPPING).add("approveStatus", ContributionStatus.APPROVE_MAPPING);
+        return MapMessage.successMessage().add("status", ContributionStatus.CODE_MAPPING)
+                .add("role", UserRoleType.NAME_MAPPING)
+                .add("approveStatus", ContributionStatus.APPROVE_MAPPING)
+                .add("editStatus", ContributionStatus.EDITOR_MAPPING);
     }
 }

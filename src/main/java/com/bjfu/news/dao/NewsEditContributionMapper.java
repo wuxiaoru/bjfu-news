@@ -2,7 +2,6 @@ package com.bjfu.news.dao;
 
 import com.bjfu.news.entity.NewsEditContribution;
 import com.bjfu.news.req.ContributionReq;
-import com.bjfu.news.req.IdsParam;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -11,9 +10,7 @@ import java.util.List;
 public interface NewsEditContributionMapper {
     int insert(NewsEditContribution record);
 
-    int updateOpetation(NewsEditContribution record);
-
-    List<NewsEditContribution> selectAll();
+    int update(NewsEditContribution record);
 
     NewsEditContribution selectById(Long id);
 
@@ -22,8 +19,4 @@ public interface NewsEditContributionMapper {
     List<NewsEditContribution> selectByEditorId(Long editor);
 
     List<NewsEditContribution> list(ContributionReq req);
-
-    int getCount(ContributionReq req);
-
-    int delete(IdsParam idsParam);
 }

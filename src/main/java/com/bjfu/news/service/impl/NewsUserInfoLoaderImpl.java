@@ -11,8 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -27,17 +29,48 @@ public class NewsUserInfoLoaderImpl implements NewsUserInfoLoader {
 
     @Override
     public List<NewsUserInfo> list(UserReq req) {
-        List<NewsUserRole> userIds = newUserRoleMapper.loadByRole(req.getRoleType());
-        if (CollectionUtils.isEmpty(userIds)) {
+        UserReq userReq = getReq(req);
+        if (Objects.isNull(userReq)) {
             return Collections.emptyList();
         }
-        req.setUserIds(userIds.stream().map(NewsUserRole::getUserId).collect(Collectors.toList()));
         return newsUserInfoMapper.list(req);
+    }
+
+    @Override
+    public List<NewsUserInfo> page(UserReq req) {
+        UserReq userReq = getReq(req);
+        if (Objects.isNull(userReq)) {
+            return Collections.emptyList();
+        }
+        return newsUserInfoMapper.page(req);
+    }
+
+    @Override
+    public int getCount(UserReq req) {
+        UserReq userReq = getReq(req);
+        if (Objects.isNull(userReq)) {
+            return 0;
+        }
+        return newsUserInfoMapper.getCount(req);
+    }
+
+    private UserReq getReq(UserReq req) {
+        List<NewsUserRole> userIds = newUserRoleMapper.loadByRole(req.getRoleType());
+        if (CollectionUtils.isEmpty(userIds)) {
+            return null;
+        }
+        req.setUserIds(userIds.stream().map(NewsUserRole::getUserId).collect(Collectors.toList()));
+        return req;
     }
 
     @Override
     public NewsUserInfo loadById(Long userId) {
         return newsUserInfoMapper.selectById(userId);
+    }
+
+    @Override
+    public List<NewsUserInfo> loadByIds(Collection<Long> userIds) {
+        return newsUserInfoMapper.selectByIds(userIds);
     }
 
     @Override

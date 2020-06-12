@@ -22,7 +22,10 @@
 
     <select id="page" parameterType="com.bjfu.news.req.ContributionReq"
             resultType="com.bjfu.news.entity.NewsContribution">
-        select * from news_contribution where disabled = false and USER_ID=#{userId}
+        select * from news_contribution where disabled = false
+        <if test="userId!=null">
+            and USER_ID = #{userId}
+        </if>
         <if test="docAuthor!=null">
             and DOC_AUTHOR like concat('%',#{docAuthor},'%')
         </if>
@@ -44,6 +47,12 @@
         <if test="statusList!=null and statusList.size()>0">
             and status in
             <foreach collection="statusList" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="userIds!=null and userIds.size()>0">
+            and USER_ID in
+            <foreach collection="userIds" item="item" index="index" open="(" separator="," close=")">
                 #{item}
             </foreach>
         </if>
@@ -72,7 +81,10 @@
 
     <select id="getCount" parameterType="com.bjfu.news.req.ContributionReq"
             resultType="Integer">
-        select count(*) from news_contribution where disabled = false and USER_ID=#{userId}
+        select count(*) from news_contribution where disabled = false
+        <if test="userId!=null">
+            and USER_ID = #{userId}
+        </if>
         <if test="docAuthor!=null">
             and DOC_AUTHOR like #{docAuthor}
         </if>
@@ -94,6 +106,12 @@
         <if test="statusList!=null and statusList.size()>0">
             and status in
             <foreach collection="statusList" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="userIds!=null and userIds.size()>0">
+            and USER_ID in
+            <foreach collection="userIds" item="item" index="index" open="(" separator="," close=")">
                 #{item}
             </foreach>
         </if>

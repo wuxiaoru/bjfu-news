@@ -41,7 +41,6 @@ public class WriterContributionController extends AbstractNewsController {
 
     String FILE_PATH = "/usr/local/git/news/doc";
 
-    //根据名字分页按时间倒叙 1页10条
     @RequestMapping(value = "list.vpage", method = RequestMethod.POST)
     @ResponseBody
     public MapMessage list(@Validated @RequestBody ContributionReq req) {

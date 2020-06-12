@@ -2,11 +2,16 @@ package com.bjfu.news.controller;
 
 import com.bjfu.news.constant.ContributionStatus;
 import com.bjfu.news.constant.EditStatus;
+import com.bjfu.news.entity.NewsApproveContribution;
 import com.bjfu.news.entity.NewsContribution;
 import com.bjfu.news.entity.NewsEditContribution;
-import com.bjfu.news.model.ApproveList;
+import com.bjfu.news.entity.NewsUserInfo;
+import com.bjfu.news.model.EditorContributionList;
 import com.bjfu.news.req.ContributionReq;
+import com.bjfu.news.req.UserReq;
+import com.bjfu.news.untils.DateUtils;
 import com.bjfu.news.untils.MapMessage;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
@@ -27,42 +32,63 @@ public class EditContributionController extends AbstractNewsController {
     @RequestMapping(value = "list.vpage", method = RequestMethod.POST)
     @ResponseBody
     public MapMessage list(@Validated @RequestBody ContributionReq req) {
-        int size = req.getSize() == null ? 10 : req.getSize();
-        int page = req.getStart() == null ? 1 : req.getStart();
         Map<String, Object> map = new HashMap<>();
-        map.put("pageSize", page);
-        if (StringUtils.isEmpty(req.getDocAuthor())) {
-            List<NewsContribution> newsContributions = newsWriterContributionLoader.list(req);
-            if (CollectionUtils.isEmpty(newsContributions)) {
-                map.put("list", Collections.emptyList());
-                map.put("totalCount", 0);
-                map.put("maxPage", 0);
+        map.put("list", Collections.emptyList());
+        map.put("pageSize", 0);
+        map.put("totalCount", 0);
+        map.put("maxPage", 0);
+        if (req.getUserId() == null || req.getUserId() <= 0L) {
+            return MapMessage.successMessage().add("data", map);
+        }
+        if (req.getStartTime() != null && req.getEndTime() != null) {
+            List<NewsApproveContribution> contributions = approveContributionLoader.selectByDate(req.getStartTime(), req.getEndTime());
+            if (CollectionUtils.isEmpty(contributions)) {
                 return MapMessage.successMessage().add("data", map);
             }
-            List<Long> contributionIds = newsContributions.stream().map(NewsContribution::getId).collect(Collectors.toList());
+            List<Long> contributionIds = contributions.stream().map(NewsApproveContribution::getContributionId).collect(Collectors.toList());
             req.setContributionIds(contributionIds);
         }
-        req.setStart((page - 1) * size);
-        req.setSize(size);
-        int count = newsEditContributionLoader.getCount(req);
-        List<NewsEditContribution> newsEditContributions = newsEditContributionLoader.list(req);
-        List<Long> contributionIds = newsEditContributions.stream().map(NewsEditContribution::getContributionId).collect(Collectors.toList());
-        Map<Long, NewsContribution> contributionMap = newsWriterContributionLoader.selectByIds(contributionIds).stream().collect(Collectors.toMap(NewsContribution::getId, Function.identity()));
-        List<ApproveList> approveList = new ArrayList<>();
-        for (NewsEditContribution newsEditContribution : newsEditContributions) {
-            ApproveList approve = new ApproveList();
-            approve.setId(newsEditContribution.getId());
-            approve.setContributionId(newsEditContribution.getContributionId());
-            NewsContribution newsContribution = contributionMap.get(newsEditContribution.getContributionId());
-            if (Objects.isNull(newsContribution)) {
-                continue;
+        if (req.getUnit() != null && !StringUtils.isEmpty(req.getUnit())) {
+            UserReq req1 = new UserReq();
+            req1.setUnit(req.getUnit());
+            List<NewsUserInfo> list = newsUserInfoLoader.list(req1);
+            if (CollectionUtils.isEmpty(list)) {
+                return MapMessage.successMessage().add("data", map);
             }
-            approve.setTitle(newsContribution.getTitle());
-            approve.setStatus(newsContribution.getStatus());
-            approveList.add(approve);
+            List<Long> userIds = list.stream().map(NewsUserInfo::getId).collect(Collectors.toList());
+            req.setUserIds(userIds);
+        }
+        int size = req.getSize() != null ? req.getSize() : 10;
+        int page = req.getPage() != null ? req.getPage() : 0;
+        req.setStart((page - 1) * size > 0 ? (page - 1) * size : 0);
+        req.setSize(size);
+        if (req.getStatus() == null || StringUtils.isEmpty(req.getStatus())) {
+            req.setStatusList(ContributionStatus.EDITOR_MAPPING.keySet());
+        }
+        int count = newsWriterContributionLoader.getCount(req);
+        List<NewsContribution> writerContributions = newsWriterContributionLoader.page(req);
+        List<Long> cIds = writerContributions.stream().map(NewsContribution::getId).collect(Collectors.toList());
+        List<NewsApproveContribution> approveContributions = approveContributionLoader.selectByCIds(cIds);
+        List<Long> approveIds = approveContributions.stream().map(NewsApproveContribution::getUserId).collect(Collectors.toList());
+        Map<Long, NewsUserInfo> userMap = newsUserInfoLoader.loadByIds(approveIds).stream().collect(Collectors.toMap(NewsUserInfo::getId, Function.identity()));
+        Map<Long, NewsApproveContribution> approveContributionMap = approveContributions.stream().collect(Collectors.toMap(NewsApproveContribution::getContributionId, Function.identity()));
+        List<EditorContributionList> list = new ArrayList<>();
+        for (NewsContribution contribution : writerContributions) {
+            EditorContributionList contributionList = new EditorContributionList();
+            BeanUtils.copyProperties(contribution, contributionList);
+            NewsApproveContribution approveContribution = approveContributionMap.get(contribution.getId());
+            if (Objects.nonNull(approveContribution)) {
+                contributionList.setApproveTime(DateUtils.DateToString(approveContribution.getApproveTime()));
+                NewsUserInfo newsUserInfo = userMap.get(approveContribution.getUserId());
+                if (Objects.nonNull(newsUserInfo)) {
+                    contributionList.setApproveName(newsUserInfo.getUserName());
+                }
+            }
+            list.add(contributionList);
         }
         int maxPage = count % size == 0 ? count / size : count / size + 1;
-        map.put("list", approveList);
+        map.put("list", list);
+        map.put("pageSize", page);
         map.put("totalCount", count);
         map.put("maxPage", maxPage);
         return MapMessage.successMessage().add("data", map);
@@ -73,28 +99,27 @@ public class EditContributionController extends AbstractNewsController {
     //下载
 
     //审批
-    @RequestMapping(value = "deal", method = RequestMethod.POST)
+    @RequestMapping(value = "deal.vpage", method = RequestMethod.POST)
     @ResponseBody
     public MapMessage deal(@Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id,
                            @Validated @NotBlank(message = "状态不能为空") String status,
                            @RequestParam(required = false) String suggestion) {
-        NewsEditContribution newsEditContribution = newsEditContributionLoader.selectById(id);
-        if (Objects.isNull(newsEditContribution)) {
-            return MapMessage.errorMessage().add("info", "id有误");
+        NewsContribution contribution = newsWriterContributionLoader.selectById(id);
+        if (Objects.isNull(contribution)) {
+            return MapMessage.errorMessage().add("info", "稿件id有误");
         }
-        NewsContribution newsContribution = newsWriterContributionLoader.selectById(newsEditContribution.getContributionId());
-        if (Objects.isNull(newsContribution)) {
-            return MapMessage.errorMessage().add("info", "稿件信息有误");
-        }
-        newsEditContribution.setSuggestion(suggestion);
-        editContributionService.updateOperation(newsEditContribution);
+        NewsEditContribution editContribution = new NewsEditContribution();
+        editContribution.setSuggestion(suggestion);
+        editContribution.setContributionId(contribution.getId());
+        editContribution.setDisabled(false);
+        editContributionService.create(editContribution);
         if (status.equals(EditStatus.AGREE.name())) {
-            newsContribution.setStatus(ContributionStatus.APPROVE.name());
+            contribution.setStatus(ContributionStatus.HIRE.name());
         }
         if (status.equals(EditStatus.REJECTION.name())) {
-            newsContribution.setStatus(ContributionStatus.APPROVAL_REJECTION.name());
+            contribution.setStatus(ContributionStatus.REJECTION.name());
         }
-        newsWriterContributionService.update(newsContribution);
+        newsWriterContributionService.update(contribution);
         return MapMessage.successMessage();
     }
 

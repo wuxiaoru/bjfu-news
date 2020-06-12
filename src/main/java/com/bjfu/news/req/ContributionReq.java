@@ -21,4 +21,6 @@ public class ContributionReq implements Serializable {
     private String startTime;
     private List<Long> contributionIds;
     private Collection<String> statusList;
+    private Collection<Long> userIds;
+    private String unit;
 }

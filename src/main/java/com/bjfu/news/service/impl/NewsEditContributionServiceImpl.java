@@ -2,7 +2,6 @@ package com.bjfu.news.service.impl;
 
 import com.bjfu.news.dao.NewsEditContributionMapper;
 import com.bjfu.news.entity.NewsEditContribution;
-import com.bjfu.news.req.IdsParam;
 import com.bjfu.news.service.NewsEditContributionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +15,9 @@ public class NewsEditContributionServiceImpl implements NewsEditContributionServ
     private NewsEditContributionMapper newsEditContributionMapper;
 
     @Override
-    public int delete(IdsParam idsParam) {
+    public int update(NewsEditContribution newsEditContribution) {
         try {
-            return newsEditContributionMapper.delete(idsParam);
+            return newsEditContributionMapper.update(newsEditContribution);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
@@ -26,9 +25,9 @@ public class NewsEditContributionServiceImpl implements NewsEditContributionServ
     }
 
     @Override
-    public int updateOperation(NewsEditContribution newsEditContribution) {
+    public int create(NewsEditContribution newsEditContribution) {
         try {
-            return newsEditContributionMapper.updateOpetation(newsEditContribution);
+            return newsEditContributionMapper.insert(newsEditContribution);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }

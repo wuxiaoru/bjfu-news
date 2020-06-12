@@ -16,11 +16,6 @@ public class NewsEditContributionLoaderImpl implements NewsEditContributionLoade
     private NewsEditContributionMapper newsEditContributionMapper;
 
     @Override
-    public int getCount(ContributionReq req) {
-        return newsEditContributionMapper.getCount(req);
-    }
-
-    @Override
     public NewsEditContribution selectByCId(Long contributionId) {
         return newsEditContributionMapper.selectByCId(contributionId);
     }

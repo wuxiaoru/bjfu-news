@@ -7,8 +7,6 @@ import java.util.List;
 
 public interface NewsEditContributionLoader {
 
-    int getCount(ContributionReq req);
-
     NewsEditContribution selectByCId(Long contributionId);
 
     NewsEditContribution selectById(Long id);

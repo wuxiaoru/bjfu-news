@@ -17,4 +17,10 @@ public class UserReq implements Serializable {
     private List<Long> userIds;
 
     private String roleType;
+
+    private Integer start;
+
+    private Integer page;
+
+    private Integer size;
 }
