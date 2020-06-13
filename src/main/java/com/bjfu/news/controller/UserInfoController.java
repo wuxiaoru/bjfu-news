@@ -58,12 +58,8 @@ public class UserInfoController extends AbstractNewsController {
         req.setSize(size);
         int count = newsUserInfoLoader.getCount(req);
         List<NewsUserInfo> userInfos = newsUserInfoLoader.list(req);
-        int maxPage = count % size == 0 ? count / size : count / size + 1;
         Map<String, Object> map = new HashMap<>();
-        map.put("list", userInfos);
-        map.put("pageSize", page);
-        map.put("totalCount", count);
-        map.put("maxPage", maxPage);
-        return MapMessage.successMessage().add("data", map);
+        Map<String, Object> finalMap = getFinalMap(count, size, page, userInfos, map);
+        return MapMessage.successMessage().add("data", finalMap);
     }
 }

@@ -1,8 +1,54 @@
 package com.bjfu.news.untils;
 
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileUtils {
+
+    static String WIN_FILE_PATH = "D:\\file";
+    static String LIN_FILE_PATH = "/usr/local/git/news/doc";
+
+    public static List<String> uploadFile(HttpServletRequest request) {
+        InputStream in = null;
+        List<String> list = new ArrayList<>();
+        String FILE_PATH = LIN_FILE_PATH;
+        String os = System.getProperty("os.name");
+        if (os.toLowerCase().startsWith("win")) {
+            FILE_PATH = WIN_FILE_PATH;
+        }
+        try {
+            // 为了获取文件，这个类是必须的
+            MultiValueMap<String, MultipartFile> map = ((MultipartHttpServletRequest) request).getMultiFileMap();
+            // 获取到文件的列表
+            List<MultipartFile> listFile = map.get("file");
+            for (MultipartFile multipartFile : listFile) {
+                in = multipartFile.getInputStream();
+                String originalFilename = multipartFile.getOriginalFilename();
+                //保存到本地服务器
+                String filePath = FileUtils.saveFile(in, originalFilename, FILE_PATH);
+                list.add(filePath);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            //一定要关闭资源
+            try {
+                if (in != null) {
+                    in.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return list;
+    }
 
     public static String saveFile(InputStream inputStream, String fileName, String path) {
         OutputStream os = null;
@@ -35,19 +81,46 @@ public class FileUtils {
                 e.printStackTrace();
             }
         }
-        return path + "/" + fileName;
+
+        String url = path + "/" + fileName;
+        String systemName = System.getProperty("os.name");
+        if (systemName.toLowerCase().startsWith("win")) {
+            url = path + "\\" + fileName;
+        }
+        return url;
     }
 
-    public static InputStream readFile(String path) {
-        File file = new File(path);
-        FileInputStream fileInputStream = null;
-        try {
-            fileInputStream = new FileInputStream(file);
+    public static void downloadLocal(HttpServletResponse response, String path) throws FileNotFoundException {
+        // 下载本地文件
+        String[] temp;
+        String os = System.getProperty("os.name");
+        if (os.toLowerCase().startsWith("win")) {
+            temp = path.split("\\\\");
+        } else {
+            temp = path.split("/");
+        }
+        String fileName = "";
+        if (temp.length > 1) {
+            fileName = temp[temp.length - 1];
+        }
 
-        } catch (FileNotFoundException e) {
+        // 读到流中
+        InputStream inStream = new FileInputStream(path);// 文件的存放路径
+        // 设置输出的格式
+        response.reset();
+        response.addHeader("content-Type", "application/octet-stream");
+        //URLEncoder.encode(fileName, "UTF-8")
+        response.addHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
+        // 循环取出流中的数据
+        byte[] b = new byte[100];
+        int len;
+        try {
+            while ((len = inStream.read(b)) > 0)
+                response.getOutputStream().write(b, 0, len);
+            inStream.close();
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        return fileInputStream;
     }
 
 }

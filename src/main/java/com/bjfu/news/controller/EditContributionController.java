@@ -21,7 +21,10 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -32,11 +35,7 @@ public class EditContributionController extends AbstractNewsController {
     @RequestMapping(value = "list.vpage", method = RequestMethod.POST)
     @ResponseBody
     public MapMessage list(@Validated @RequestBody ContributionReq req) {
-        Map<String, Object> map = new HashMap<>();
-        map.put("list", Collections.emptyList());
-        map.put("pageSize", 0);
-        map.put("totalCount", 0);
-        map.put("maxPage", 0);
+        Map<String, Object> map = getInitialMap();
         if (req.getUserId() == null || req.getUserId() <= 0L) {
             return MapMessage.successMessage().add("data", map);
         }
@@ -86,12 +85,8 @@ public class EditContributionController extends AbstractNewsController {
             }
             list.add(contributionList);
         }
-        int maxPage = count % size == 0 ? count / size : count / size + 1;
-        map.put("list", list);
-        map.put("pageSize", page);
-        map.put("totalCount", count);
-        map.put("maxPage", maxPage);
-        return MapMessage.successMessage().add("data", map);
+        Map<String, Object> finalMap = getFinalMap(count, size, page, list, map);
+        return MapMessage.successMessage().add("data", finalMap);
     }
 
     //预览

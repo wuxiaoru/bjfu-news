@@ -11,11 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class IndexController {
 
-    @RequestMapping(value = "/v1/")
-    public String index() {
-        return "index/index"; //当浏览器输入/index时，会返回 /templates/index.html页面
-    }
-
     @RequestMapping(value = "enum.vpage", method = RequestMethod.GET)
     @ResponseBody
     public MapMessage enumList() {

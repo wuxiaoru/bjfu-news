@@ -6,7 +6,10 @@ import com.alibaba.fastjson.JSONObject;
 import com.bjfu.news.constant.ContributionStatus;
 import com.bjfu.news.constant.UserRoleType;
 import com.bjfu.news.entity.*;
-import com.bjfu.news.model.*;
+import com.bjfu.news.model.ContributionDetail;
+import com.bjfu.news.model.OperateLogBean;
+import com.bjfu.news.model.OperateLogDetail;
+import com.bjfu.news.model.UserInfo;
 import com.bjfu.news.req.ContributionCreateParam;
 import com.bjfu.news.req.ContributionEditParam;
 import com.bjfu.news.req.ContributionReq;
@@ -17,53 +20,29 @@ import com.bjfu.news.untils.MapMessage;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
-import org.springframework.util.MultiValueMap;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 @Controller
 @RequestMapping("/v1/contribution")
 public class WriterContributionController extends AbstractNewsController {
 
-//    String FILE_PATH = "D:\\file";
-
-    String FILE_PATH = "/usr/local/git/news/doc";
-
     @RequestMapping(value = "list.vpage", method = RequestMethod.POST)
     @ResponseBody
     public MapMessage list(@Validated @RequestBody ContributionReq req) {
-        int size = req.getSize() != null ? req.getSize() : 10;
-        int page = req.getPage() != null ? req.getPage() : 0;
-        req.setStart((page - 1) * size > 0 ? (page - 1) * size : 0);
-        req.setSize(size);
-        int count = newsWriterContributionLoader.getCount(req);
-        List<NewsContribution> writerContributions = newsWriterContributionLoader.page(req);
-        List<ContributionList> list = new ArrayList<>();
-        for (NewsContribution contribution : writerContributions) {
-            ContributionList contributionList = new ContributionList();
-            BeanUtils.copyProperties(contribution, contributionList);
-            contributionList.setSubmitTime(DateUtils.DateToString(contribution.getSubmitTime()));
-            list.add(contributionList);
-        }
-        int maxPage = count % size == 0 ? count / size : count / size + 1;
         Map<String, Object> map = new HashMap<>();
-        map.put("list", list);
-        map.put("pageSize", page);
-        map.put("totalCount", count);
-        map.put("maxPage", maxPage);
-        return MapMessage.successMessage().add("data", map);
+        return list(req, map);
     }
 
     //上传
@@ -75,31 +54,20 @@ public class WriterContributionController extends AbstractNewsController {
         if (multipartRequest == null) {
             MapMessage.errorMessage().add("info", "请上传文件");
         }
-        // 为了获取文件，这个类是必须的
-        MultiValueMap<String, MultipartFile> map = ((MultipartHttpServletRequest) request).getMultiFileMap();
-        // 获取到文件的列表
-        List<MultipartFile> listFile = map.get("file");
-        MultipartFile multipartFile = listFile.get(0);
-        InputStream in = null;
-        String filePath = "";
+        List<String> list = FileUtils.uploadFile(request);
+        return MapMessage.successMessage().add("data", list);
+    }
+
+    //下载
+    @RequestMapping(value = "/download.vpage",
+            method = RequestMethod.POST)
+    @ResponseBody
+    public void download(HttpServletResponse response, @Validated @NotNull String path) {
         try {
-            in = multipartFile.getInputStream();
-            String originalFilename = multipartFile.getOriginalFilename();
-            //保存到本地服务器
-            filePath = FileUtils.saveFile(in, originalFilename, FILE_PATH);
-        } catch (Exception e) {
+            FileUtils.downloadLocal(response, path);
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } finally {
-            //一定要关闭资源
-            try {
-                if (in != null) {
-                    in.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
-        return MapMessage.successMessage().add("data", filePath);
     }
 
     @ResponseBody
