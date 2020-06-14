@@ -90,8 +90,7 @@ public class FileUtils {
         return url;
     }
 
-    public static void downloadLocal(HttpServletResponse response, String path) throws FileNotFoundException {
-        // 下载本地文件
+    public static String getFileName(String path) {
         String[] temp;
         String os = System.getProperty("os.name");
         if (os.toLowerCase().startsWith("win")) {
@@ -103,6 +102,21 @@ public class FileUtils {
         if (temp.length > 1) {
             fileName = temp[temp.length - 1];
         }
+        return fileName;
+    }
+
+    public static String getFilePath(String path) {
+        String[] temp = path.split("\\.");
+        String fileName = "";
+        if (temp.length > 1) {
+            fileName = temp[0];
+        }
+        return fileName;
+    }
+
+    public static void downloadLocal(HttpServletResponse response, String path) throws FileNotFoundException {
+        // 下载本地文件
+        String fileName = getFileName(path);
 
         // 读到流中
         InputStream inStream = new FileInputStream(path);// 文件的存放路径

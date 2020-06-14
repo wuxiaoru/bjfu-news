@@ -1,13 +1,10 @@
 package com.bjfu.news.service.impl;
 
-import com.alibaba.fastjson.JSON;
 import com.bjfu.news.constant.ContributionStatus;
 import com.bjfu.news.constant.OperateType;
 import com.bjfu.news.dao.NewsContributionMapper;
 import com.bjfu.news.entity.NewsApproveContribution;
 import com.bjfu.news.entity.NewsContribution;
-import com.bjfu.news.entity.NewsOperateLog;
-import com.bjfu.news.model.OperateLogBean;
 import com.bjfu.news.req.ContributionCreateParam;
 import com.bjfu.news.service.NewsLogService;
 import com.bjfu.news.service.NewsWriterContributionService;
@@ -84,6 +81,7 @@ public class NewsWriterContributionServiceImpl implements NewsWriterContribution
         if (approveContribution1 == null) {
             return MapMessage.errorMessage().add("info", "提交稿件失败");
         }
+        newsLogService.createLog(OperateType.CONTRIBUTOR_SUBMIT.name(), 1L, contribution.getId(), contribution.getStatus(), contribution.getDocAuthor(), contribution.getDocUrl(), contribution.getPicAuthor(), contribution.getPicUrl(), null);
         return MapMessage.successMessage();
     }
 
@@ -102,18 +100,7 @@ public class NewsWriterContributionServiceImpl implements NewsWriterContribution
         approveContribution.setDisabled(false);
         approveContribution.setUserId(approveId);
         newsApproveContributionService.create(approveContribution);
-        NewsOperateLog log = new NewsOperateLog();
-        log.setOperateType(OperateType.CONTRIBUTOR_SUBMIT.name());
-        log.setOperateId(1L);
-        log.setContributionId(contribution.getId());
-        log.setStatus(contribution.getStatus());
-        OperateLogBean bean = new OperateLogBean();
-        bean.setDocAuthor(contribution.getDocAuthor());
-        bean.setDocUrl(contribution.getDocUrl());
-        bean.setPicAuthor(contribution.getPicAuthor());
-        bean.setPicUrl(contribution.getPicUrl());
-        log.setOperateDetail(JSON.toJSONString(bean));
-        newsLogService.insertLog(log);
+        newsLogService.createLog(OperateType.CONTRIBUTOR_SUBMIT.name(), 1L, contribution.getId(), contribution.getStatus(), contribution.getDocAuthor(), contribution.getDocUrl(), contribution.getPicAuthor(), contribution.getPicUrl(), null);
         return MapMessage.successMessage();
     }
 

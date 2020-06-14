@@ -2,6 +2,7 @@ package com.bjfu.news.controller;
 
 import com.bjfu.news.constant.ContributionStatus;
 import com.bjfu.news.constant.EditStatus;
+import com.bjfu.news.constant.OperateType;
 import com.bjfu.news.entity.NewsApproveContribution;
 import com.bjfu.news.entity.NewsContribution;
 import com.bjfu.news.entity.NewsEditContribution;
@@ -89,10 +90,6 @@ public class EditContributionController extends AbstractNewsController {
         return MapMessage.successMessage().add("data", finalMap);
     }
 
-    //预览
-
-    //下载
-
     //审批
     @RequestMapping(value = "deal.vpage", method = RequestMethod.POST)
     @ResponseBody
@@ -115,6 +112,7 @@ public class EditContributionController extends AbstractNewsController {
             contribution.setStatus(ContributionStatus.REJECTION.name());
         }
         newsWriterContributionService.update(contribution);
+        newsLogService.createLog(OperateType.EDITOR_SUBMIT.name(),1L,contribution.getId(),contribution.getStatus(),contribution.getDocAuthor(),contribution.getDocUrl(),contribution.getPicAuthor(),contribution.getPicUrl(),suggestion);
         return MapMessage.successMessage();
     }
 

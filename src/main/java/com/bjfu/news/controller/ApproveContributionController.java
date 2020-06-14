@@ -2,6 +2,7 @@ package com.bjfu.news.controller;
 
 import com.bjfu.news.constant.ApproveStatus;
 import com.bjfu.news.constant.ContributionStatus;
+import com.bjfu.news.constant.OperateType;
 import com.bjfu.news.entity.NewsApproveContribution;
 import com.bjfu.news.entity.NewsContribution;
 import com.bjfu.news.req.ContributionReq;
@@ -39,10 +40,6 @@ public class ApproveContributionController extends AbstractNewsController {
         return list(req, map);
     }
 
-    //预览
-
-    //下载
-
     //审批
     @RequestMapping(value = "approve.vpage", method = RequestMethod.POST)
     @ResponseBody
@@ -67,6 +64,26 @@ public class ApproveContributionController extends AbstractNewsController {
             contribution.setStatus(ContributionStatus.APPROVAL_REJECTION.name());
         }
         newsWriterContributionService.update(contribution);
+        newsLogService.createLog(OperateType.APPROVE_SUBMIT.name(), 1L, contribution.getId(), contribution.getStatus(), contribution.getDocAuthor(), contribution.getDocUrl(), contribution.getPicAuthor(), contribution.getPicUrl(), suggestion);
+        return MapMessage.successMessage();
+    }
+
+    @RequestMapping(value = "withDraw.vpage", method = RequestMethod.POST)
+    @ResponseBody
+    public MapMessage withDraw(@Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id) {
+        NewsContribution newsContribution = newsWriterContributionLoader.selectById(id);
+        if (Objects.isNull(newsContribution)) {
+            return MapMessage.errorMessage().add("info", "id有误");
+        }
+        if (!newsContribution.getStatus().equals(ContributionStatus.APPROVE.name())) {
+            return MapMessage.errorMessage().add("info", "当前稿件不是审稿通过待编辑部处理，不能撤回");
+        }
+        newsContribution.setStatus(ContributionStatus.APPROVAL_PENDING.name());
+        int delete = newsWriterContributionService.update(newsContribution);
+        if (delete == 0) {
+            return MapMessage.errorMessage().add("info", "撤回失败");
+        }
+        newsLogService.createLog(OperateType.APPROVE_WITH_DRAW.name(), 1L, newsContribution.getId(), newsContribution.getStatus(), newsContribution.getDocAuthor(), newsContribution.getDocUrl(), newsContribution.getPicAuthor(), newsContribution.getPicUrl(), null);
         return MapMessage.successMessage();
     }
 }

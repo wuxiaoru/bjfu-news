@@ -4,6 +4,7 @@ package com.bjfu.news.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.bjfu.news.constant.ContributionStatus;
+import com.bjfu.news.constant.OperateType;
 import com.bjfu.news.constant.UserRoleType;
 import com.bjfu.news.entity.*;
 import com.bjfu.news.model.ContributionDetail;
@@ -33,6 +34,8 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.io.FileNotFoundException;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Controller
 @RequestMapping("/v1/contribution")
@@ -68,6 +71,22 @@ public class WriterContributionController extends AbstractNewsController {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    @RequestMapping(value = "/preview.vpage",
+            method = RequestMethod.POST)
+    @ResponseBody
+    public void preview(HttpServletResponse response, @Validated @NotNull String path) throws FileNotFoundException {
+        String suffixes = "doc|docx";
+        Pattern pat = Pattern.compile("[\\\\.](" + suffixes + ")");//正则判断
+        Matcher mc = pat.matcher(path);//条件匹配
+        while (mc.find()) {
+            OpenOffice2PdfUtils opc = new OpenOffice2PdfUtils();
+            String target = FileUtils.getFilePath(path) + ".pdf";
+            opc.convert2PDF(path, target);
+            FileUtils.downloadLocal(response, target);
+        }
+        FileUtils.downloadLocal(response, path);
     }
 
     @ResponseBody
@@ -212,6 +231,7 @@ public class WriterContributionController extends AbstractNewsController {
         if (result == 0) {
             return MapMessage.errorMessage().add("info", "编辑失败");
         }
+        newsLogService.createLog(OperateType.CONTRIBUTOR_EDIT.name(), param.getUserId(), newsContribution.getId(), newsContribution.getStatus(), newsContribution.getDocAuthor(), newsContribution.getDocUrl(), newsContribution.getPicAuthor(), newsContribution.getPicUrl(), null);
         return MapMessage.successMessage();
     }
 
@@ -247,6 +267,7 @@ public class WriterContributionController extends AbstractNewsController {
         if (delete == 0) {
             return MapMessage.errorMessage().add("info", "撤回失败");
         }
+        newsLogService.createLog(OperateType.CONTRIBUTOR_WITH_DRAW.name(), 1L, newsContribution.getId(), newsContribution.getStatus(), newsContribution.getDocAuthor(), newsContribution.getDocUrl(), newsContribution.getPicAuthor(), newsContribution.getPicUrl(), null);
         return MapMessage.successMessage();
     }
 
