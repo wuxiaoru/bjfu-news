@@ -2,6 +2,7 @@ package com.bjfu.news.dao;
 
 import com.bjfu.news.entity.NewsApproveContribution;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.Collection;
 import java.util.List;
@@ -17,7 +18,7 @@ public interface NewsApproveContributionMapper {
 
     NewsApproveContribution selectByCId(Long contributionId);
 
-    List<NewsApproveContribution> selectByCIds(Collection<Long> cIds);
+    List<NewsApproveContribution> selectByCIds(@Param("contributionIds") List<Long> contributionIds);
 
     List<NewsApproveContribution> selectByApproveId(Long approveId);
 

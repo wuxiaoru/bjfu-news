@@ -8,6 +8,7 @@ import com.bjfu.news.entity.NewsContribution;
 import com.bjfu.news.req.ContributionReq;
 import com.bjfu.news.untils.MapMessage;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,6 +38,9 @@ public class ApproveContributionController extends AbstractNewsController {
         }
         List<Long> contributionIds = contributions.stream().map(NewsApproveContribution::getContributionId).collect(Collectors.toList());
         req.setContributionIds(contributionIds);
+        if (req.getStatus() == null || StringUtils.isEmpty(req.getStatus())) {
+            req.setStatusList(ContributionStatus.APPROVE_MAPPING.keySet());
+        }
         return list(req, map);
     }
 
@@ -78,11 +82,18 @@ public class ApproveContributionController extends AbstractNewsController {
         if (!newsContribution.getStatus().equals(ContributionStatus.APPROVE.name())) {
             return MapMessage.errorMessage().add("info", "当前稿件不是审稿通过待编辑部处理，不能撤回");
         }
+        NewsApproveContribution approveContribution = approveContributionLoader.selectByCId(id);
+        if (Objects.isNull(approveContribution)) {
+            return MapMessage.errorMessage().add("info", "稿件id有误");
+        }
         newsContribution.setStatus(ContributionStatus.APPROVAL_PENDING.name());
         int delete = newsWriterContributionService.update(newsContribution);
         if (delete == 0) {
             return MapMessage.errorMessage().add("info", "撤回失败");
         }
+        approveContribution.setSuggestion("");
+        approveContribution.setApproveTime(null);
+        approveContributionService.update(approveContribution);
         newsLogService.createLog(OperateType.APPROVE_WITH_DRAW.name(), 1L, newsContribution.getId(), newsContribution.getStatus(), newsContribution.getDocAuthor(), newsContribution.getDocUrl(), newsContribution.getPicAuthor(), newsContribution.getPicUrl(), null);
         return MapMessage.successMessage();
     }

@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
@@ -65,16 +64,25 @@ public class NewsUserInfoLoaderImpl implements NewsUserInfoLoader {
 
     @Override
     public NewsUserInfo loadById(Long userId) {
+        if (userId == null) {
+            return null;
+        }
         return newsUserInfoMapper.selectById(userId);
     }
 
     @Override
-    public List<NewsUserInfo> loadByIds(Collection<Long> userIds) {
+    public List<NewsUserInfo> loadByIds(List<Long> userIds) {
+        if (CollectionUtils.isEmpty(userIds)) {
+            return Collections.emptyList();
+        }
         return newsUserInfoMapper.selectByIds(userIds);
     }
 
     @Override
-    public List<NewsUserRole> loadByRole(String roleType) {
-        return newUserRoleMapper.loadByRole(roleType);
+    public List<NewsUserRole> loadByUserId(Long userId) {
+        if (userId == null) {
+            return Collections.emptyList();
+        }
+        return newUserRoleMapper.loadByUserId(userId);
     }
 }

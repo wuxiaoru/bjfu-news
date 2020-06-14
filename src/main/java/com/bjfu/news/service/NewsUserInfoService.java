@@ -10,4 +10,8 @@ public interface NewsUserInfoService {
 
     MapMessage createUserInfo(UserInfoCreateParam param);
 
+    int delete(Long id);
+
+     int update(NewsUserInfo newsUserInfo);
+
 }

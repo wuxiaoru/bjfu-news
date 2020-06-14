@@ -1,6 +1,5 @@
 package com.bjfu.news.controller;
 
-import com.bjfu.news.constant.ContributionStatus;
 import com.bjfu.news.entity.NewsContribution;
 import com.bjfu.news.model.ContributionList;
 import com.bjfu.news.req.ContributionReq;
@@ -10,7 +9,6 @@ import com.bjfu.news.untils.MapMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
 
 import java.util.*;
 
@@ -52,9 +50,6 @@ public abstract class AbstractNewsController {
         int page = req.getPage() != null ? req.getPage() : 0;
         req.setStart((page - 1) * size > 0 ? (page - 1) * size : 0);
         req.setSize(size);
-        if (req.getStatus() == null || StringUtils.isEmpty(req.getStatus())) {
-            req.setStatusList(ContributionStatus.APPROVE_MAPPING.keySet());
-        }
         int count = newsWriterContributionLoader.getCount(req);
         List<NewsContribution> writerContributions = newsWriterContributionLoader.page(req);
         List<ContributionList> list = new ArrayList<>();

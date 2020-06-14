@@ -37,9 +37,6 @@ public class EditContributionController extends AbstractNewsController {
     @ResponseBody
     public MapMessage list(@Validated @RequestBody ContributionReq req) {
         Map<String, Object> map = getInitialMap();
-        if (req.getUserId() == null || req.getUserId() <= 0L) {
-            return MapMessage.successMessage().add("data", map);
-        }
         if (req.getStartTime() != null && req.getEndTime() != null) {
             List<NewsApproveContribution> contributions = approveContributionLoader.selectByDate(req.getStartTime(), req.getEndTime());
             if (CollectionUtils.isEmpty(contributions)) {
@@ -112,7 +109,7 @@ public class EditContributionController extends AbstractNewsController {
             contribution.setStatus(ContributionStatus.REJECTION.name());
         }
         newsWriterContributionService.update(contribution);
-        newsLogService.createLog(OperateType.EDITOR_SUBMIT.name(),1L,contribution.getId(),contribution.getStatus(),contribution.getDocAuthor(),contribution.getDocUrl(),contribution.getPicAuthor(),contribution.getPicUrl(),suggestion);
+        newsLogService.createLog(OperateType.EDITOR_SUBMIT.name(), 1L, contribution.getId(), contribution.getStatus(), contribution.getDocAuthor(), contribution.getDocUrl(), contribution.getPicAuthor(), contribution.getPicUrl(), suggestion);
         return MapMessage.successMessage();
     }
 

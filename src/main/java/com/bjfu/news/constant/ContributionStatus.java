@@ -38,7 +38,7 @@ public enum ContributionStatus {
             if (contributionStatus.equals(APPROVAL_PENDING) || contributionStatus.equals(APPROVAL_REJECTION) || contributionStatus.equals(APPROVE) || contributionStatus.equals(RE_APPROVAL_PENDING)) {
                 approveMap.put(contributionStatus.name(), contributionStatus.desc);
             }
-            if (contributionStatus.equals(APPROVAL_REJECTION) || contributionStatus.equals(HIRE) || contributionStatus.equals(REJECTION)) {
+            if (contributionStatus.equals(APPROVE) || contributionStatus.equals(HIRE) || contributionStatus.equals(REJECTION)) {
                 editorMap.put(contributionStatus.name(), contributionStatus.desc);
             }
         }

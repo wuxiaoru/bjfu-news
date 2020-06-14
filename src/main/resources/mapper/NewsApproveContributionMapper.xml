@@ -16,14 +16,17 @@
    </select>
 
     <select id="selectByCIds" resultType="com.bjfu.news.entity.NewsApproveContribution">
-        select * from news_approve_contribution where disabled = false and CONTRIBUTION_ID in
-        <foreach item="item" index="index" collection="cIds">
-            #{item}
-        </foreach>
+        select * from news_approve_contribution where disabled = false
+        <if test="contributionIds!=null and contributionIds.size()>0">
+            and CONTRIBUTION_ID in
+            <foreach collection="contributionIds" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
     </select>
 
     <select id="selectByApproveId" resultType="com.bjfu.news.entity.NewsApproveContribution">
-        select * from news_approve_contribution  where disabled = false and approverId=#{approverId}
+        select * from news_approve_contribution  where disabled = false and USER_ID=#{approverId}
    </select>
 
     <select id="selectByDate"

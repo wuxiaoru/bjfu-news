@@ -1,12 +1,11 @@
-package com.bjfu.news.req;
+package com.bjfu.news.model;
 
 import lombok.Data;
 
 import java.io.Serializable;
 
 @Data
-public class UserInfoCreateParam implements Serializable {
-
+public class UserList implements Serializable {
     private Long id;
 
     private String eno;
@@ -22,6 +21,4 @@ public class UserInfoCreateParam implements Serializable {
     private String officePhone;
 
     private String mobile;
-
-    private String roleType;
 }

@@ -3,8 +3,8 @@ package com.bjfu.news.dao;
 import com.bjfu.news.entity.NewsUserInfo;
 import com.bjfu.news.req.UserReq;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
-import java.util.Collection;
 import java.util.List;
 
 @Mapper
@@ -16,7 +16,7 @@ public interface NewsUserInfoMapper {
 //
     NewsUserInfo selectById(Long id);
 
-    List<NewsUserInfo> selectByIds(Collection<Long> ids);
+    List<NewsUserInfo> selectByIds(@Param("ids") List<Long> ids);
 //
 //    NewsUserInfo selectByEno(String eno);
 
@@ -25,4 +25,6 @@ public interface NewsUserInfoMapper {
     List<NewsUserInfo> page(UserReq req);
 
     int getCount(UserReq req);
+
+    int update(NewsUserInfo newsUserInfo);
 }

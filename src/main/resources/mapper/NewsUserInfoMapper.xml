@@ -71,4 +71,35 @@
             #{item}
         </foreach>
     </select>
+
+    <update id="update" parameterType="com.bjfu.news.entity.NewsUserInfo">
+        update news_user_info
+        <set>
+            <if test="disabled!=null">
+                disabled=#{disabled},
+            </if>
+            <if test="eno!=null">
+                eno=#{eno},
+            </if>
+            <if test="userName!=null">
+                USER_NAME=#{userName},
+            </if>
+            <if test="unit!=null">
+                unit=#{unit},
+            </if>
+            <if test="job!=null">
+                job=#{job},
+            </if>
+            <if test="mail!=null">
+                mail=#{mail},
+            </if>
+            <if test="officePhone!=null">
+                OFFICE_PHONE=#{officePhone}
+            </if>
+            <if test="mobile!=null">
+                mobile=#{mobile},
+            </if>
+        </set>
+        where ID=#{id}
+    </update>
 </mapper>

@@ -6,11 +6,6 @@
     insert into news_edit_contribution (USER_ID, CONTRIBUTION_ID,DISABLED, SUGGESTION)
     values (#{userId,jdbcType=BIGINT}, #{contributionId,jdbcType=BIGINT}, #{disabled,jdbcType=BIT}, #{suggestion,jdbcType=LONGVARCHAR})
   </insert>
-    <select id="selectAll" resultType="com.bjfu.news.entity.NewsEditContribution">
-    select ID, EDITOR_ID, CONTRIBUTION_ID, OPRATION, DISABLED, CREATE_TIME, UPDATE_TIME, 
-    SUGGESTION
-    from news_edit_contribution
-  </select>
 
     <select id="selectById" resultType="com.bjfu.news.entity.NewsEditContribution">
        select * from news_edit_contribution where  DISABLED=false  and ID=#{id}
