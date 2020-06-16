@@ -211,19 +211,17 @@ public class WriterContributionController extends AbstractNewsController {
         return MapMessage.successMessage().add("data", detail);
     }
 
-    //编辑
+    //草稿编辑
     @RequestMapping(value = "edit.vpage", method = RequestMethod.POST)
     @ResponseBody
     public MapMessage edit(@Validated @RequestBody ContributionEditParam param) {
-        if (param.getId() == null || param.getId() <= 0L) {
-            return MapMessage.errorMessage().add("info", "稿件id不能为空");
+        MapMessage mapMessage = checkContribution(param);
+        if (!mapMessage.isSuccess()) {
+            return mapMessage;
         }
-        NewsContribution newsContribution = newsWriterContributionLoader.selectById(param.getId());
-        if (Objects.isNull(newsContribution)) {
-            return MapMessage.errorMessage().add("info", "稿件id有误");
-        }
-        if (!(newsContribution.getStatus().equals(ContributionStatus.DRAFT.name()) || newsContribution.getStatus().equals(ContributionStatus.APPROVAL_REJECTION.name()))) {
-            return MapMessage.errorMessage().add("info", "当前稿件状态不是草稿或者审批不过，不能编辑");
+        NewsContribution newsContribution = (NewsContribution) mapMessage.get("contribution");
+        if (!newsContribution.getStatus().equals(ContributionStatus.DRAFT.name())) {
+            return MapMessage.errorMessage().add("info", "当前稿件状态不是草稿状态，不能编辑");
         }
         BeanUtils.copyProperties(param, newsContribution);
         newsContribution.setSubmitTime(new Date());
@@ -231,8 +229,41 @@ public class WriterContributionController extends AbstractNewsController {
         if (result == 0) {
             return MapMessage.errorMessage().add("info", "编辑失败");
         }
+        return MapMessage.successMessage();
+    }
+
+    //重投待审稿编辑
+    @RequestMapping(value = "reSubmit.vpage", method = RequestMethod.POST)
+    @ResponseBody
+    public MapMessage reSubmit(@Validated @RequestBody ContributionEditParam param) {
+        MapMessage mapMessage = checkContribution(param);
+        if (!mapMessage.isSuccess()) {
+            return mapMessage;
+        }
+        NewsContribution newsContribution = (NewsContribution) mapMessage.get("contribution");
+        if (!newsContribution.getStatus().equals(ContributionStatus.APPROVAL_REJECTION.name())) {
+            return MapMessage.errorMessage().add("info", "当前稿件状态不是审稿不过待修改，不能编辑");
+        }
+        BeanUtils.copyProperties(param, newsContribution);
+        newsContribution.setSubmitTime(new Date());
+        newsContribution.setStatus(ContributionStatus.RE_APPROVAL_PENDING.name());
+        int result = newsWriterContributionService.update(newsContribution);
+        if (result == 0) {
+            return MapMessage.errorMessage().add("info", "编辑失败");
+        }
         newsLogService.createLog(OperateType.CONTRIBUTOR_EDIT.name(), param.getUserId(), newsContribution.getId(), newsContribution.getStatus(), newsContribution.getDocAuthor(), newsContribution.getDocUrl(), newsContribution.getPicAuthor(), newsContribution.getPicUrl(), null);
         return MapMessage.successMessage();
+    }
+
+    private MapMessage checkContribution(ContributionEditParam param) {
+        if (param.getId() == null || param.getId() <= 0L) {
+            return MapMessage.errorMessage().add("info", "稿件id不能为空");
+        }
+        NewsContribution newsContribution = newsWriterContributionLoader.selectById(param.getId());
+        if (Objects.isNull(newsContribution)) {
+            return MapMessage.errorMessage().add("info", "稿件id有误");
+        }
+        return MapMessage.successMessage().add("contribution", newsContribution);
     }
 
     @RequestMapping(value = "delete.vpage", method = RequestMethod.POST)
