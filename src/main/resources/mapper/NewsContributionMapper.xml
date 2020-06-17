@@ -86,7 +86,7 @@
             and USER_ID = #{userId}
         </if>
         <if test="docAuthor!=null">
-            and DOC_AUTHOR like #{docAuthor}
+             and DOC_AUTHOR like concat('%',#{docAuthor},'%')
         </if>
         <if test="title!=null">
             and title like concat('%',#{title},'%')
