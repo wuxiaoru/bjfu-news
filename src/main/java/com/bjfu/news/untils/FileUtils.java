@@ -12,16 +12,20 @@ import java.util.List;
 
 public class FileUtils {
 
-    static String WIN_FILE_PATH = "D:\\file";
-    static String LIN_FILE_PATH = "/usr/local/git/news/doc";
+    static String WIN_FILE_PATH = "D://file/";
+    static String LIN_FILE_PATH = "/usr/local/git/news/doc/";
+
+    static String WIN_ACCESS_PATH = "http://localhost:8561/file";
+    static String LIN_ACCESS_PATH = "http://120.92.155.171:8561/file";
+
 
     public static List<String> uploadFile(HttpServletRequest request) {
         InputStream in = null;
         List<String> list = new ArrayList<>();
-        String FILE_PATH = LIN_FILE_PATH;
+        String FILE_REAL_PATH = LIN_FILE_PATH;
         String os = System.getProperty("os.name");
         if (os.toLowerCase().startsWith("win")) {
-            FILE_PATH = WIN_FILE_PATH;
+            FILE_REAL_PATH = WIN_FILE_PATH;
         }
         try {
             // 为了获取文件，这个类是必须的
@@ -32,7 +36,7 @@ public class FileUtils {
                 in = multipartFile.getInputStream();
                 String originalFilename = multipartFile.getOriginalFilename();
                 //保存到本地服务器
-                String filePath = FileUtils.saveFile(in, originalFilename, FILE_PATH);
+                String filePath = FileUtils.saveFile(in, originalFilename, FILE_REAL_PATH);
                 list.add(filePath);
             }
         } catch (Exception e) {
@@ -50,7 +54,7 @@ public class FileUtils {
         return list;
     }
 
-    public static String saveFile(InputStream inputStream, String fileName, String path) {
+    public static String saveFile(InputStream inputStream, String fileName, String realPath) {
         OutputStream os = null;
         try {
             // 1K的数据缓冲
@@ -59,7 +63,7 @@ public class FileUtils {
             // 读取到的数据长度
             int len;
             // 输出的文件流保存到本地文件
-            File tempFile = new File(path);
+            File tempFile = new File(realPath);
             if (!tempFile.exists()) {
                 tempFile.mkdirs();
             }
@@ -82,10 +86,10 @@ public class FileUtils {
             }
         }
 
-        String url = path + "/" + fileName;
+        String url = LIN_ACCESS_PATH + "/" + fileName;
         String systemName = System.getProperty("os.name");
         if (systemName.toLowerCase().startsWith("win")) {
-            url = path + "\\" + fileName;
+            url = WIN_ACCESS_PATH + "/" + fileName;
         }
         return url;
     }

@@ -21,6 +21,7 @@ import com.bjfu.news.untils.MapMessage;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,12 +35,18 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.io.FileNotFoundException;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @Controller
 @RequestMapping("/v1/contribution")
 public class WriterContributionController extends AbstractNewsController {
+
+    private static String LIN_ACCESS_PATH = "http://120.92.155.171:8561/file/";
+
+    private static String WIN_ACCESS_PATH = "http://localhost:8561/file/";
+
+    private static String WIN_FILE_PATH = "D:\\file\\";
+
+    private static String LIN_FILE_PATH = "/usr/local/git/news/doc/";
 
     @RequestMapping(value = "list.vpage", method = RequestMethod.POST)
     @ResponseBody
@@ -74,19 +81,42 @@ public class WriterContributionController extends AbstractNewsController {
     }
 
     @RequestMapping(value = "/preview.vpage",
-            method = RequestMethod.POST)
+            method = RequestMethod.GET)
     @ResponseBody
-    public void preview(HttpServletResponse response, @Validated @NotNull String path) throws FileNotFoundException {
-        String suffixes = "doc|docx";
-        Pattern pat = Pattern.compile("[\\\\.](" + suffixes + ")");//正则判断
-        Matcher mc = pat.matcher(path);//条件匹配
-        while (mc.find()) {
-            OpenOffice2PdfUtils opc = new OpenOffice2PdfUtils();
-            String target = FileUtils.getFilePath(path) + ".pdf";
-            opc.convert2PDF(path, target);
-            FileUtils.downloadLocal(response, target);
+    public MapMessage preview(@Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id) throws FileNotFoundException {
+        NewsContribution newsContribution = newsWriterContributionLoader.selectById(id);
+        if (Objects.isNull(newsContribution)) {
+            return MapMessage.errorMessage().add("info", "稿件id有误");
         }
-        FileUtils.downloadLocal(response, path);
+        if (newsContribution.getDocUrl() == null || StringUtils.isEmpty(newsContribution.getDocUrl())) {
+            return MapMessage.errorMessage().add("info", "此稿件还没上传文档");
+        }
+        String path = LIN_FILE_PATH;
+        String accessPath = LIN_ACCESS_PATH;
+        String os = System.getProperty("os.name");
+        if (os.toLowerCase().startsWith("win")) {
+            path = WIN_FILE_PATH;
+            accessPath = WIN_ACCESS_PATH;
+        }
+        String[] split = StringUtils.split(newsContribution.getDocUrl(), ".");
+        if (split == null || split.length < 1) {
+            return MapMessage.errorMessage().add("info", "此稿件文档有误");
+        }
+        OpenOffice2PdfUtils opc = new OpenOffice2PdfUtils();
+        opc.convert2PDF(path + newsContribution.getDocUrl(), path + split[0] + ".pdf");
+        List<String> picUrls = new ArrayList<>();
+        if (newsContribution.getPicUrl() != null && !StringUtils.isEmpty(newsContribution.getPicUrl())) {
+            String[] picSplit = StringUtils.split(newsContribution.getPicUrl(), ",");
+            if (picSplit != null && picSplit.length > 0) {
+                for (String url : picSplit) {
+                    picUrls.add(accessPath + url);
+                }
+            }
+        }
+        Map<String, Object> map = new HashMap<>();
+        map.put("pdf", accessPath + split[0] + ".pdf");
+        map.put("pic", picUrls);
+        return MapMessage.successMessage().add("data", map);
     }
 
     @ResponseBody
