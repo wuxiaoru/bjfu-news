@@ -4,6 +4,7 @@ package com.bjfu.news.controller;
 import org.artofsolving.jodconverter.OfficeDocumentConverter;
 import org.artofsolving.jodconverter.office.DefaultOfficeManagerConfiguration;
 import org.artofsolving.jodconverter.office.OfficeManager;
+import org.thymeleaf.util.StringUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,7 +23,8 @@ public class OpenOffice2PdfUtils {
      * @param args
      */
     private static OfficeManager officeManager;
-    private static String OFFICE_HOME = "C:\\Program Files (x86)\\OpenOffice 4\\";//C:\Program Files (x86)
+    private static String WIN_OFFICE_HOME = "C:\\Program Files (x86)\\OpenOffice 4\\";//C:\Program Files (x86)
+    private static String LIN_OFFICE_HOME = "/opt/openoffice4";
     private static int port[] = {8100};
 
     public static void convert2PDF(String inputFile, String outputFile) throws FileNotFoundException {//File file, String pdfUrl
@@ -41,6 +43,12 @@ public class OpenOffice2PdfUtils {
         DefaultOfficeManagerConfiguration configuration = new DefaultOfficeManagerConfiguration();
         try {
             System.out.println("准备启动服务....");
+            String OFFICE_HOME = LIN_OFFICE_HOME;
+            String os = System.getProperty("os.name");
+            if (!StringUtils.isEmpty(os) && os.toLowerCase().startsWith("win")) {
+                System.out.println("当前是 windows 系统");
+                OFFICE_HOME = WIN_OFFICE_HOME;
+            }
             configuration.setOfficeHome(OFFICE_HOME);// 设置OpenOffice.org安装目录
             configuration.setPortNumbers(port); // 设置转换端口，默认为8100
             configuration.setTaskExecutionTimeout(1000 * 60 * 5L);// 设置任务执行超时为5分钟

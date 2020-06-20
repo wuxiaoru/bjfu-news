@@ -15,10 +15,6 @@ public class FileUtils {
     static String WIN_FILE_PATH = "D://file/";
     static String LIN_FILE_PATH = "/usr/local/git/news/doc/";
 
-    static String WIN_ACCESS_PATH = "http://localhost:8561/file";
-    static String LIN_ACCESS_PATH = "http://120.92.155.171:8561/file";
-
-
     public static List<String> uploadFile(HttpServletRequest request) {
         InputStream in = null;
         List<String> list = new ArrayList<>();
@@ -85,13 +81,7 @@ public class FileUtils {
                 e.printStackTrace();
             }
         }
-
-        String url = LIN_ACCESS_PATH + "/" + fileName;
-        String systemName = System.getProperty("os.name");
-        if (systemName.toLowerCase().startsWith("win")) {
-            url = WIN_ACCESS_PATH + "/" + fileName;
-        }
-        return url;
+        return fileName;
     }
 
     public static String getFileName(String path) {
@@ -105,15 +95,6 @@ public class FileUtils {
         String fileName = "";
         if (temp.length > 1) {
             fileName = temp[temp.length - 1];
-        }
-        return fileName;
-    }
-
-    public static String getFilePath(String path) {
-        String[] temp = path.split("\\.");
-        String fileName = "";
-        if (temp.length > 1) {
-            fileName = temp[0];
         }
         return fileName;
     }
