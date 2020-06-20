@@ -84,32 +84,20 @@ public class FileUtils {
         return fileName;
     }
 
-    public static String getFileName(String path) {
-        String[] temp;
-        String os = System.getProperty("os.name");
-        if (os.toLowerCase().startsWith("win")) {
-            temp = path.split("\\\\");
-        } else {
-            temp = path.split("/");
-        }
-        String fileName = "";
-        if (temp.length > 1) {
-            fileName = temp[temp.length - 1];
-        }
-        return fileName;
-    }
-
     public static void downloadLocal(HttpServletResponse response, String path) throws FileNotFoundException {
         // 下载本地文件
-        String fileName = getFileName(path);
-
+        String FILE_REAL_PATH = LIN_FILE_PATH;
+        String os = System.getProperty("os.name");
+        if (os.toLowerCase().startsWith("win")) {
+            FILE_REAL_PATH = WIN_FILE_PATH;
+        }
         // 读到流中
-        InputStream inStream = new FileInputStream(path);// 文件的存放路径
+        InputStream inStream = new FileInputStream(FILE_REAL_PATH + path);// 文件的存放路径
         // 设置输出的格式
         response.reset();
         response.addHeader("content-Type", "application/octet-stream");
         //URLEncoder.encode(fileName, "UTF-8")
-        response.addHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
+        response.addHeader("Content-Disposition", "attachment; filename=\"" + path + "\"");
         // 循环取出流中的数据
         byte[] b = new byte[100];
         int len;
