@@ -106,9 +106,9 @@ public class WriterContributionController extends AbstractNewsController {
         opc.convert2PDF(path + newsContribution.getDocUrl(), path + split[0] + ".pdf");
         List<String> picUrls = new ArrayList<>();
         if (newsContribution.getPicUrl() != null && !StringUtils.isEmpty(newsContribution.getPicUrl())) {
-            String[] picSplit = StringUtils.split(newsContribution.getPicUrl(), ",");
-            if (picSplit != null && picSplit.length > 0) {
-                for (String url : picSplit) {
+            List<String> list = Arrays.asList(newsContribution.getPicUrl().split(","));
+            if (!CollectionUtils.isEmpty(list)) {
+                for (String url : list) {
                     picUrls.add(accessPath + url);
                 }
             }
