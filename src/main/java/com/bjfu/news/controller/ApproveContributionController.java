@@ -41,6 +41,7 @@ public class ApproveContributionController extends AbstractNewsController {
         if (req.getStatus() == null || StringUtils.isEmpty(req.getStatus())) {
             req.setStatusList(ContributionStatus.APPROVE_MAPPING.keySet());
         }
+        req.setUserId(null);
         return list(req, map);
     }
 

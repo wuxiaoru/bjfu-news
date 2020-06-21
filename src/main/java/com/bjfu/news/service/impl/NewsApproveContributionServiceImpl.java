@@ -4,8 +4,11 @@ import com.bjfu.news.dao.NewsApproveContributionMapper;
 import com.bjfu.news.entity.NewsApproveContribution;
 import com.bjfu.news.service.NewsApproveContributionService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Objects;
 
 @Service
 @Slf4j
@@ -26,6 +29,12 @@ public class NewsApproveContributionServiceImpl implements NewsApproveContributi
 
     @Override
     public NewsApproveContribution create(NewsApproveContribution contribution) {
+        NewsApproveContribution approveContribution = newsApproveContributionMapper.selectByCId(contribution.getContributionId());
+        if (Objects.nonNull(approveContribution)) {
+            BeanUtils.copyProperties(contribution, approveContribution);
+            newsApproveContributionMapper.update(contribution);
+            return contribution;
+        }
         try {
             newsApproveContributionMapper.insert(contribution);
             return contribution;
