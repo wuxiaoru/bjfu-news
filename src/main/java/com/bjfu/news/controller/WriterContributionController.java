@@ -71,7 +71,6 @@ public class WriterContributionController extends AbstractNewsController {
     //下载
     @RequestMapping(value = "/download.vpage",
             method = RequestMethod.POST)
-    @ResponseBody
     public void download(HttpServletResponse response, @Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id) {
         NewsContribution newsContribution = newsWriterContributionLoader.selectById(id);
         if (Objects.isNull(newsContribution)) {
