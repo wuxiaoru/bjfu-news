@@ -72,9 +72,16 @@ public class WriterContributionController extends AbstractNewsController {
     @RequestMapping(value = "/download.vpage",
             method = RequestMethod.POST)
     @ResponseBody
-    public void download(HttpServletResponse response, @Validated @NotNull String path) {
+    public void download(HttpServletResponse response, @Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id) {
+        NewsContribution newsContribution = newsWriterContributionLoader.selectById(id);
+        if (Objects.isNull(newsContribution)) {
+            return;
+        }
+        if (newsContribution.getDocUrl() == null || StringUtils.isEmpty(newsContribution.getDocUrl())) {
+            return;
+        }
         try {
-            FileUtils.downloadLocal(response, path);
+            FileUtils.downloadLocal(response, newsContribution.getDocUrl());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

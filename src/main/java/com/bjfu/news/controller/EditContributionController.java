@@ -75,7 +75,9 @@ public class EditContributionController extends AbstractNewsController {
             BeanUtils.copyProperties(contribution, contributionList);
             NewsApproveContribution approveContribution = approveContributionMap.get(contribution.getId());
             if (Objects.nonNull(approveContribution)) {
-                contributionList.setApproveTime(DateUtils.DateToString(approveContribution.getApproveTime()));
+                if (approveContribution.getApproveTime() != null) {
+                    contributionList.setApproveTime(DateUtils.DateToString(approveContribution.getApproveTime()));
+                }
                 NewsUserInfo newsUserInfo = userMap.get(approveContribution.getUserId());
                 if (Objects.nonNull(newsUserInfo)) {
                     contributionList.setApproveName(newsUserInfo.getUserName());

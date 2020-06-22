@@ -1,6 +1,7 @@
 package com.bjfu.news.controller;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.artofsolving.jodconverter.OfficeDocumentConverter;
 import org.artofsolving.jodconverter.office.DefaultOfficeManagerConfiguration;
 import org.artofsolving.jodconverter.office.OfficeManager;
@@ -17,6 +18,7 @@ import java.io.FileNotFoundException;
  * @Version V1.0
  **/
 //转换文档为pdf
+@Slf4j
 public class OpenOffice2PdfUtils {
 
     /**
@@ -28,14 +30,16 @@ public class OpenOffice2PdfUtils {
     private static int port[] = {8100};
 
     public static void convert2PDF(String inputFile, String outputFile) throws FileNotFoundException {//File file, String pdfUrl
-        startService();
-        System.out.println("进行文档转换转换:" + inputFile + " --> " + outputFile);
-
-        OfficeDocumentConverter converter = new OfficeDocumentConverter(officeManager);
-        converter.convert(new File(inputFile), new File(outputFile));
-
-        stopService();
-        System.out.println();
+        try {
+            startService();
+            System.out.println("进行文档转换转换:" + inputFile + " --> " + outputFile);
+            OfficeDocumentConverter converter = new OfficeDocumentConverter(officeManager);
+            converter.convert(new File(inputFile), new File(outputFile));
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        } finally {
+            stopService();
+        }
     }
 
     // 打开服务器
