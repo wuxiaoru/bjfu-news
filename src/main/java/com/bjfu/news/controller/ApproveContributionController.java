@@ -98,4 +98,31 @@ public class ApproveContributionController extends AbstractNewsController {
         newsLogService.createLog(OperateType.APPROVE_WITH_DRAW.name(), 1L, newsContribution.getId(), newsContribution.getStatus(), newsContribution.getDocAuthor(), newsContribution.getDocUrl(), newsContribution.getPicAuthor(), newsContribution.getPicUrl(), null);
         return MapMessage.successMessage();
     }
+
+    @RequestMapping(value = "suggestion.vpage", method = RequestMethod.GET)
+    @ResponseBody
+    public MapMessage suggestion(@Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id) {
+        NewsApproveContribution approveContribution = approveContributionLoader.selectByCId(id);
+        if (Objects.isNull(approveContribution)) {
+            return MapMessage.errorMessage().add("info", "稿件id有误");
+        }
+        return MapMessage.successMessage().add("data", approveContribution.getSuggestion());
+    }
+
+    @RequestMapping(value = "addSuggestion.vpage", method = RequestMethod.POST)
+    @ResponseBody
+    public MapMessage addSuggestion(@Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id, @Validated @NotBlank String suggestion) {
+        NewsApproveContribution approveContribution = approveContributionLoader.selectByCId(id);
+        if (Objects.isNull(approveContribution)) {
+            return MapMessage.errorMessage().add("info", "稿件id有误");
+        }
+        if (StringUtils.isEmpty(suggestion)) {
+            return MapMessage.errorMessage().add("info", "建议不能为空");
+        }
+        approveContribution.setSuggestion(suggestion);
+        approveContributionService.update(approveContribution);
+        return MapMessage.successMessage();
+    }
+
+
 }
