@@ -95,6 +95,9 @@ public class FileUtils {
         InputStream inStream = new FileInputStream(FILE_REAL_PATH + path);// 文件的存放路径
         // 设置输出的格式
         response.reset();
+        response.addHeader("Access-Control-Allow-Origin", "*");
+        response.addHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+        response.addHeader("Access-Control-Allow-Headers", "Content-Type");
         response.addHeader("content-Type", "application/octet-stream");
         //URLEncoder.encode(fileName, "UTF-8")
         response.addHeader("Content-Disposition", "attachment; filename=\"" + path + "\"");

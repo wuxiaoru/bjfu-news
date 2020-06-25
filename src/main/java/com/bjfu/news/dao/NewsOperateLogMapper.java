@@ -10,6 +10,8 @@ public interface NewsOperateLogMapper {
 
     List<NewsOperateLog> selectByCId(Long id);
 
+    NewsOperateLog loadById(Long id);
+
     int insertLog(NewsOperateLog log);
 
 }

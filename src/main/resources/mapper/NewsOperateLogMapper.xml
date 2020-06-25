@@ -13,4 +13,8 @@
        select * from news_operate_log where CONTRIBUTION_ID=#{id} order by OPERATE_TIME desc
    </select>
 
+    <select id="loadById" resultType="com.bjfu.news.entity.NewsOperateLog">
+       select * from news_operate_log where ID=#{id}
+   </select>
+
 </mapper>

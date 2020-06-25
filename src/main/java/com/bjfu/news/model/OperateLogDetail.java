@@ -7,6 +7,7 @@ import java.io.Serializable;
 @Data
 public class OperateLogDetail implements Serializable {
 
+    private Long id;
     private String operateTime;
     private Long operateId;
     private String operateName;

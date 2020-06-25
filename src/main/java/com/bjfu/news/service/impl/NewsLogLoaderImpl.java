@@ -20,4 +20,9 @@ public class NewsLogLoaderImpl implements NewsLogLoader {
     public List<NewsOperateLog> loadByCId(Long id) {
         return newsOperateLogMapper.selectByCId(id);
     }
+
+    @Override
+    public NewsOperateLog loadById(Long id) {
+        return newsOperateLogMapper.loadById(id);
+    }
 }

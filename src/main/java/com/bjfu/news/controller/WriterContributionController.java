@@ -72,6 +72,7 @@ public class WriterContributionController extends AbstractNewsController {
     @RequestMapping(value = "/download.vpage",
             method = RequestMethod.POST)
     public void download(HttpServletResponse response, @Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id) {
+        System.out.println("进入方法");
         NewsContribution newsContribution = newsWriterContributionLoader.selectById(id);
         if (Objects.isNull(newsContribution)) {
             return;
@@ -81,6 +82,28 @@ public class WriterContributionController extends AbstractNewsController {
         }
         try {
             FileUtils.downloadLocal(response, newsContribution.getDocUrl());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @RequestMapping(value = "/log/download.vpage",
+            method = RequestMethod.POST)
+    public void logDownload(HttpServletResponse response, @Validated @NotNull @Min(value = 1, message = "id必须大于0") Long logId) {
+        System.out.println("进入方法");
+        NewsOperateLog newsOperateLogs = newsLogLoader.loadById(logId);
+        if (Objects.isNull(newsOperateLogs)) {
+            return;
+        }
+        OperateLogBean jsonObject = JSONObject.toJavaObject(JSON.parseObject(newsOperateLogs.getOperateDetail()), OperateLogBean.class);
+        if (Objects.isNull(jsonObject)) {
+            return;
+        }
+        if (jsonObject.getDocUrl() == null || StringUtils.isEmpty(jsonObject.getDocUrl())) {
+            return;
+        }
+        try {
+            FileUtils.downloadLocal(response, jsonObject.getDocUrl());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -229,6 +252,7 @@ public class WriterContributionController extends AbstractNewsController {
             List<OperateLogDetail> list = new ArrayList<>();
             for (NewsOperateLog log : newsOperateLogs) {
                 OperateLogDetail logDetail = new OperateLogDetail();
+                logDetail.setId(log.getId());
                 logDetail.setOperateId(log.getOperateId());
                 logDetail.setOperateTime(DateUtils.DateToString(log.getOperateTime()));
                 logDetail.setStatus(log.getStatus());
