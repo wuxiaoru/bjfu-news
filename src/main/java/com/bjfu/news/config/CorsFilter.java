@@ -14,7 +14,7 @@ import java.util.Enumeration;
  * @author: wuxiaoru
  * @date: 2020/6/13 09:32
  */
-@WebFilter(urlPatterns = {"/*"}, filterName = "CorsFilter")
+@WebFilter(urlPatterns = {"/**"}, filterName = "CorsFilter")
 public class CorsFilter implements Filter {
 
     @Override
