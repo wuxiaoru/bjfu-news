@@ -94,7 +94,7 @@
                 mail=#{mail},
             </if>
             <if test="officePhone!=null">
-                OFFICE_PHONE=#{officePhone}
+                OFFICE_PHONE=#{officePhone},
             </if>
             <if test="mobile!=null">
                 mobile=#{mobile},
