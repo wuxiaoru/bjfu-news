@@ -88,7 +88,7 @@ public class WriterContributionController extends AbstractNewsController {
     }
 
     @RequestMapping(value = "/log/download.vpage",
-            method = RequestMethod.POST)
+            method = RequestMethod.GET)
     public void logDownload(HttpServletResponse response, @Validated @NotNull @Min(value = 1, message = "id必须大于0") Long logId) {
         System.out.println("进入方法");
         NewsOperateLog newsOperateLogs = newsLogLoader.loadById(logId);
