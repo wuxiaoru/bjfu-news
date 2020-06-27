@@ -29,17 +29,19 @@ public class NewsApproveContributionServiceImpl implements NewsApproveContributi
 
     @Override
     public NewsApproveContribution create(NewsApproveContribution contribution) {
+        if (contribution.getId() == null) {
+            try {
+                newsApproveContributionMapper.insert(contribution);
+                return contribution;
+            } catch (Exception e) {
+                log.error(e.getMessage(), e);
+            }
+        }
         NewsApproveContribution approveContribution = newsApproveContributionMapper.selectByCId(contribution.getContributionId());
         if (Objects.nonNull(approveContribution)) {
             BeanUtils.copyProperties(contribution, approveContribution);
             newsApproveContributionMapper.update(contribution);
             return contribution;
-        }
-        try {
-            newsApproveContributionMapper.insert(contribution);
-            return contribution;
-        } catch (Exception e) {
-            log.error(e.getMessage(), e);
         }
         return null;
     }

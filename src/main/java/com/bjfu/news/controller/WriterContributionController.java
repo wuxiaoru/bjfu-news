@@ -70,7 +70,7 @@ public class WriterContributionController extends AbstractNewsController {
 
     //下载
     @RequestMapping(value = "/download.vpage",
-            method = RequestMethod.POST)
+            method = RequestMethod.GET)
     public void download(HttpServletResponse response, @Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id) {
         System.out.println("进入方法");
         NewsContribution newsContribution = newsWriterContributionLoader.selectById(id);
