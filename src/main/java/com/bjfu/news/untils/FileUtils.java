@@ -84,7 +84,7 @@ public class FileUtils {
         return fileName;
     }
 
-    public static void downloadLocal(HttpServletResponse response, String path) throws FileNotFoundException {
+    public static void downloadLocal(HttpServletResponse response, String path) throws FileNotFoundException, UnsupportedEncodingException {
         // 下载本地文件
         String FILE_REAL_PATH = LIN_FILE_PATH;
         String os = System.getProperty("os.name");
@@ -100,6 +100,7 @@ public class FileUtils {
         response.addHeader("Access-Control-Allow-Headers", "Content-Type");
         response.addHeader("content-Type", "application/octet-stream");
         //URLEncoder.encode(fileName, "UTF-8")
+        path = new String(path.getBytes("UTF-8"), "iso-8859-1");
         response.addHeader("Content-Disposition", "attachment; filename=\"" + path + "\"");
         // 循环取出流中的数据
         byte[] b = new byte[100];

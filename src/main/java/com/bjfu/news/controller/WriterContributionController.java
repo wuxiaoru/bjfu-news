@@ -34,7 +34,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/v1/contribution")
@@ -84,6 +87,8 @@ public class WriterContributionController extends AbstractNewsController {
             FileUtils.downloadLocal(response, newsContribution.getDocUrl());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         }
     }
 
@@ -105,6 +110,8 @@ public class WriterContributionController extends AbstractNewsController {
         try {
             FileUtils.downloadLocal(response, jsonObject.getDocUrl());
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
     }
@@ -250,10 +257,16 @@ public class WriterContributionController extends AbstractNewsController {
         List<NewsOperateLog> newsOperateLogs = newsLogLoader.loadByCId(newsContribution.getId());
         if (!CollectionUtils.isEmpty(newsOperateLogs)) {
             List<OperateLogDetail> list = new ArrayList<>();
+            List<Long> operatorIds = newsOperateLogs.stream().map(NewsOperateLog::getOperateId).collect(Collectors.toList());
+            Map<Long, NewsUserInfo> userInfosMap = newsUserInfoLoader.loadByIds(operatorIds).stream().collect(Collectors.toMap(NewsUserInfo::getId, Function.identity(), (l, r) -> r));
             for (NewsOperateLog log : newsOperateLogs) {
                 OperateLogDetail logDetail = new OperateLogDetail();
                 logDetail.setId(log.getId());
                 logDetail.setOperateId(log.getOperateId());
+                NewsUserInfo newsUserInfo = userInfosMap.get(log.getOperateId());
+                if (Objects.nonNull(newsUserInfo)) {
+                    logDetail.setOperateName(newsUserInfo.getUserName());
+                }
                 logDetail.setOperateTime(DateUtils.DateToString(log.getOperateTime()));
                 logDetail.setStatus(log.getStatus());
                 OperateLogBean jsonObject = JSONObject.toJavaObject(JSON.parseObject(log.getOperateDetail()), OperateLogBean.class);
