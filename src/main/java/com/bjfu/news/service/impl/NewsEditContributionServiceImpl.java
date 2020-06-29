@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @Service
 @Slf4j
 public class NewsEditContributionServiceImpl implements NewsEditContributionService {
@@ -27,6 +29,11 @@ public class NewsEditContributionServiceImpl implements NewsEditContributionServ
     @Override
     public int create(NewsEditContribution newsEditContribution) {
         try {
+            NewsEditContribution editContribution = newsEditContributionMapper.selectByCId(newsEditContribution.getContributionId());
+            if (Objects.nonNull(editContribution)) {
+                newsEditContribution.setId(editContribution.getId());
+                return update(newsEditContribution);
+            }
             return newsEditContributionMapper.insert(newsEditContribution);
         } catch (Exception e) {
             log.error(e.getMessage(), e);

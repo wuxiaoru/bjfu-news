@@ -33,6 +33,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 import java.util.*;
@@ -75,7 +76,6 @@ public class WriterContributionController extends AbstractNewsController {
     @RequestMapping(value = "/download.vpage",
             method = RequestMethod.GET)
     public void download(HttpServletResponse response, @Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id) {
-        System.out.println("进入方法");
         NewsContribution newsContribution = newsWriterContributionLoader.selectById(id);
         if (Objects.isNull(newsContribution)) {
             return;
@@ -85,17 +85,15 @@ public class WriterContributionController extends AbstractNewsController {
         }
         try {
             FileUtils.downloadLocal(response, newsContribution.getDocUrl());
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
+        } catch (FileNotFoundException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+
     }
 
     @RequestMapping(value = "/log/download.vpage",
             method = RequestMethod.GET)
     public void logDownload(HttpServletResponse response, @Validated @NotNull @Min(value = 1, message = "id必须大于0") Long logId) {
-        System.out.println("进入方法");
         NewsOperateLog newsOperateLogs = newsLogLoader.loadById(logId);
         if (Objects.isNull(newsOperateLogs)) {
             return;
@@ -109,9 +107,7 @@ public class WriterContributionController extends AbstractNewsController {
         }
         try {
             FileUtils.downloadLocal(response, jsonObject.getDocUrl());
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
+        } catch (FileNotFoundException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }
     }
@@ -138,8 +134,11 @@ public class WriterContributionController extends AbstractNewsController {
         if (split == null || split.length < 1) {
             return MapMessage.errorMessage().add("info", "此稿件文档有误");
         }
-        OpenOffice2PdfUtils opc = new OpenOffice2PdfUtils();
-        opc.convert2PDF(path + newsContribution.getDocUrl(), path + split[0] + ".pdf");
+        File file = new File(path + split[0] + ".pdf");
+        if (!file.exists()) {
+            OpenOffice2PdfUtils opc = new OpenOffice2PdfUtils();
+            opc.convert2PDF(path + newsContribution.getDocUrl(), path + split[0] + ".pdf");
+        }
         List<String> picUrls = new ArrayList<>();
         if (newsContribution.getPicUrl() != null && !StringUtils.isEmpty(newsContribution.getPicUrl())) {
             List<String> list = Arrays.asList(newsContribution.getPicUrl().split(","));
