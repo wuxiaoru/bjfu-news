@@ -45,6 +45,8 @@ public class EditContributionController extends AbstractNewsController {
             List<Long> contributionIds = contributions.stream().map(NewsApproveContribution::getContributionId).collect(Collectors.toList());
             req.setContributionIds(contributionIds);
         }
+        req.setStart(null);
+        req.setEndTime(null);
         if (req.getUnit() != null && !StringUtils.isEmpty(req.getUnit())) {
             UserReq req1 = new UserReq();
             req1.setUnit(req.getUnit());
