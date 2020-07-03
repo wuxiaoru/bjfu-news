@@ -18,7 +18,7 @@ public interface NewsUserInfoMapper {
 
     List<NewsUserInfo> selectByIds(@Param("ids") List<Long> ids);
 //
-//    NewsUserInfo selectByEno(String eno);
+    NewsUserInfo selectByEno(String eno);
 
     List<NewsUserInfo> list(UserReq req);
 

@@ -9,6 +9,7 @@ import com.bjfu.news.req.UserReq;
 import com.bjfu.news.untils.MapMessage;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/v1/user/info")
@@ -118,12 +120,17 @@ public class UserInfoController extends AbstractNewsController {
 
     @RequestMapping(value = "role.vpage", method = RequestMethod.GET)
     @ResponseBody
-    public MapMessage roleList(@Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id) {
-        NewsUserInfo newsUserInfo = newsUserInfoLoader.loadById(id);
-        if (Objects.isNull(newsUserInfo)) {
-            return MapMessage.errorMessage().add("info", "id有误");
+    public MapMessage roleList(@Validated @NotNull String eno) {
+        if (StringUtils.isEmpty(eno)) {
+            return MapMessage.errorMessage().add("info", "职工号不能为空");
         }
-        List<NewsUserRole> newsUserRoles = newsUserInfoLoader.loadByUserId(id);
-        return MapMessage.successMessage().add("role", newsUserRoles);
+        NewsUserInfo newsUserInfo = newsUserInfoLoader.loadByEno(eno);
+        List<String> roles = new ArrayList<>();
+        if (Objects.isNull(newsUserInfo)) {
+            return MapMessage.successMessage().add("role", roles);
+        }
+        List<NewsUserRole> newsUserRoles = newsUserInfoLoader.loadByUserId(newsUserInfo.getId());
+        roles = newsUserRoles.stream().map(NewsUserRole::getRole).collect(Collectors.toList());
+        return MapMessage.successMessage().add("role", roles).add("userInfo", newsUserInfo);
     }
 }

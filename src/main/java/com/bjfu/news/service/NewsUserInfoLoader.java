@@ -19,4 +19,6 @@ public interface NewsUserInfoLoader {
     List<NewsUserInfo> loadByIds(List<Long> userId);
 
     List<NewsUserRole> loadByUserId(Long userId);
+
+    NewsUserInfo loadByEno(String eno);
 }

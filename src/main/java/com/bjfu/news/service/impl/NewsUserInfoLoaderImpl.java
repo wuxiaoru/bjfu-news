@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 
 import java.util.Collections;
 import java.util.List;
@@ -84,5 +85,13 @@ public class NewsUserInfoLoaderImpl implements NewsUserInfoLoader {
             return Collections.emptyList();
         }
         return newUserRoleMapper.loadByUserId(userId);
+    }
+
+    @Override
+    public NewsUserInfo loadByEno(String eno) {
+        if (StringUtils.isEmpty(eno)) {
+            return null;
+        }
+        return newsUserInfoMapper.selectByEno(eno);
     }
 }
