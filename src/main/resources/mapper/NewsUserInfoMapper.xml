@@ -15,8 +15,11 @@
         <if test="userName!=null">
             and USER_NAME like concat('%',#{userName},'%')
         </if>
-        <if test="unit!=null">
+        <if test="unit!=null and unit!=''">
             and UNIT = #{unit}
+        </if>
+        <if test="eno!=null and eno!=''">
+            and ENO = #{eno}
         </if>
         <if test="userIds!=null and userIds.size()>0">
             and ID in
@@ -32,8 +35,11 @@
         <if test="userName!=null">
             and USER_NAME like concat('%',#{userName},'%')
         </if>
-        <if test="unit!=null">
+        <if test="unit!=null and unit!=''">
             and UNIT = #{unit}
+        </if>
+        <if test="eno!=null and eno!=''">
+            and ENO = #{eno}
         </if>
         <if test="userIds!=null and userIds.size()>0">
             and ID in
@@ -50,8 +56,11 @@
         <if test="userName!=null">
             and USER_NAME like concat('%',#{userName},'%')
         </if>
-        <if test="unit!=null">
+        <if test="unit!=null and unit!=''">
             and UNIT = #{unit}
+        </if>
+        <if test="eno!=null and eno!=''">
+            and ENO = #{eno}
         </if>
         <if test="userIds!=null and userIds.size()>0">
             and ID in
