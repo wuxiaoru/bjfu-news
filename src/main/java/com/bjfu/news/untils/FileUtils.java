@@ -13,7 +13,7 @@ import java.util.List;
 public class FileUtils {
 
     static String WIN_FILE_PATH = "D://file/";
-    static String LIN_FILE_PATH = "/usr/local/git/news/doc/";
+    static String LIN_FILE_PATH = "/usr/local/news/doc/";
 
     public static List<String> uploadFile(HttpServletRequest request) {
         InputStream in = null;

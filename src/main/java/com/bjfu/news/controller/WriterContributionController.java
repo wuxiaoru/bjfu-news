@@ -44,13 +44,13 @@ import java.util.stream.Collectors;
 @RequestMapping("/v1/contribution")
 public class WriterContributionController extends AbstractNewsController {
 
-    private static String LIN_ACCESS_PATH = "http://120.92.155.171:8561/file/";
+    private static String LIN_ACCESS_PATH = "http://202.204.121.200:8561/file/";
 
     private static String WIN_ACCESS_PATH = "http://localhost:8561/file/";
 
     private static String WIN_FILE_PATH = "D:\\file\\";
 
-    private static String LIN_FILE_PATH = "/usr/local/git/news/doc/";
+    private static String LIN_FILE_PATH = "/usr/local/news/doc/";
 
     @RequestMapping(value = "list.vpage", method = RequestMethod.POST)
     @ResponseBody

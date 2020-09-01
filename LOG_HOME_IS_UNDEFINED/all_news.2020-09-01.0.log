@@ -1,0 +1,8 @@
+Application_Stdout 20200901 12:01:39.975|INFO|xiaorus-MacBook-Pro.local|main|com.bjfu.news.NewsApplication|? --> Starting NewsApplication on xiaorus-MacBook-Pro.local with PID 10164 (/Users/xiaoruwu/Desktop/WORK/bjfu/bjfu-news/target/classes started by xiaoruwu in /Users/xiaoruwu/Desktop/WORK/bjfu/bjfu-news) 
+Application_Stdout 20200901 12:01:39.980|INFO|xiaorus-MacBook-Pro.local|main|com.bjfu.news.NewsApplication|logStartupProfileInfo --> The following profiles are active: local 
+Application_Stdout 20200901 12:01:40.990|INFO|xiaorus-MacBook-Pro.local|main|o.a.coyote.http11.Http11NioProtocol|? --> Initializing ProtocolHandler ["http-nio-8561"] 
+Application_Stdout 20200901 12:01:40.991|INFO|xiaorus-MacBook-Pro.local|main|o.a.catalina.core.StandardService|log --> Starting service [Tomcat] 
+Application_Stdout 20200901 12:01:40.991|INFO|xiaorus-MacBook-Pro.local|main|o.a.catalina.core.StandardEngine|? --> Starting Servlet engine: [Apache Tomcat/9.0.29] 
+Application_Stdout 20200901 12:01:41.070|INFO|xiaorus-MacBook-Pro.local|main|o.a.c.c.C.[Tomcat].[localhost].[/]|? --> Initializing Spring embedded WebApplicationContext 
+Application_Stdout 20200901 12:01:41.839|INFO|xiaorus-MacBook-Pro.local|main|o.a.coyote.http11.Http11NioProtocol|? --> Starting ProtocolHandler ["http-nio-8561"] 
+Application_Stdout 20200901 12:01:41.861|INFO|xiaorus-MacBook-Pro.local|main|com.bjfu.news.NewsApplication|logStarted --> Started NewsApplication in 27.223 seconds (JVM running for 32.624) 
