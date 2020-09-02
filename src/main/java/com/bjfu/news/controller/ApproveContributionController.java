@@ -69,7 +69,7 @@ public class ApproveContributionController extends AbstractNewsController {
             contribution.setStatus(ContributionStatus.APPROVAL_REJECTION.name());
         }
         newsWriterContributionService.update(contribution);
-        newsLogService.createLog(OperateType.APPROVE_SUBMIT.name(), 1L, contribution.getId(), contribution.getStatus(), contribution.getDocAuthor(), contribution.getDocUrl(), contribution.getPicAuthor(), contribution.getPicUrl(), suggestion);
+        newsLogService.createLog(OperateType.APPROVE_SUBMIT.name(), 33L, contribution.getId(), contribution.getStatus(), contribution.getDocAuthor(), contribution.getDocUrl(), contribution.getPicAuthor(), contribution.getPicUrl(), suggestion);
         return MapMessage.successMessage();
     }
 
@@ -95,7 +95,7 @@ public class ApproveContributionController extends AbstractNewsController {
         approveContribution.setSuggestion("");
         approveContribution.setApproveTime(null);
         approveContributionService.update(approveContribution);
-        newsLogService.createLog(OperateType.APPROVE_WITH_DRAW.name(), 1L, newsContribution.getId(), newsContribution.getStatus(), newsContribution.getDocAuthor(), newsContribution.getDocUrl(), newsContribution.getPicAuthor(), newsContribution.getPicUrl(), null);
+        newsLogService.createLog(OperateType.APPROVE_WITH_DRAW.name(), 33L, newsContribution.getId(), newsContribution.getStatus(), newsContribution.getDocAuthor(), newsContribution.getDocUrl(), newsContribution.getPicAuthor(), newsContribution.getPicUrl(), null);
         return MapMessage.successMessage();
     }
 

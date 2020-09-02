@@ -81,7 +81,7 @@ public class NewsWriterContributionServiceImpl implements NewsWriterContribution
         if (approveContribution1 == null) {
             return MapMessage.errorMessage().add("info", "提交稿件失败");
         }
-        newsLogService.createLog(OperateType.CONTRIBUTOR_SUBMIT.name(), 1L, contribution.getId(), contribution.getStatus(), contribution.getDocAuthor(), contribution.getDocUrl(), contribution.getPicAuthor(), contribution.getPicUrl(), null);
+        newsLogService.createLog(OperateType.CONTRIBUTOR_SUBMIT.name(), 31L, contribution.getId(), contribution.getStatus(), contribution.getDocAuthor(), contribution.getDocUrl(), contribution.getPicAuthor(), contribution.getPicUrl(), null);
         return MapMessage.successMessage();
     }
 
@@ -100,7 +100,7 @@ public class NewsWriterContributionServiceImpl implements NewsWriterContribution
         approveContribution.setDisabled(false);
         approveContribution.setUserId(approveId);
         newsApproveContributionService.create(approveContribution);
-        newsLogService.createLog(OperateType.CONTRIBUTOR_SUBMIT.name(), 1L, contribution.getId(), contribution.getStatus(), contribution.getDocAuthor(), contribution.getDocUrl(), contribution.getPicAuthor(), contribution.getPicUrl(), null);
+        newsLogService.createLog(OperateType.CONTRIBUTOR_SUBMIT.name(), 31L, contribution.getId(), contribution.getStatus(), contribution.getDocAuthor(), contribution.getDocUrl(), contribution.getPicAuthor(), contribution.getPicUrl(), null);
         return MapMessage.successMessage();
     }
 

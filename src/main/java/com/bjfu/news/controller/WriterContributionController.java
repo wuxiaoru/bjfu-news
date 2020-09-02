@@ -370,7 +370,7 @@ public class WriterContributionController extends AbstractNewsController {
         if (delete == 0) {
             return MapMessage.errorMessage().add("info", "撤回失败");
         }
-        newsLogService.createLog(OperateType.CONTRIBUTOR_WITH_DRAW.name(), 1L, newsContribution.getId(), newsContribution.getStatus(), newsContribution.getDocAuthor(), newsContribution.getDocUrl(), newsContribution.getPicAuthor(), newsContribution.getPicUrl(), null);
+        newsLogService.createLog(OperateType.CONTRIBUTOR_WITH_DRAW.name(), 31L, newsContribution.getId(), newsContribution.getStatus(), newsContribution.getDocAuthor(), newsContribution.getDocUrl(), newsContribution.getPicAuthor(), newsContribution.getPicUrl(), null);
         return MapMessage.successMessage();
     }
 

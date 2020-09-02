@@ -113,7 +113,7 @@ public class EditContributionController extends AbstractNewsController {
             contribution.setStatus(ContributionStatus.REJECTION.name());
         }
         newsWriterContributionService.update(contribution);
-        newsLogService.createLog(OperateType.EDITOR_SUBMIT.name(), 1L, contribution.getId(), contribution.getStatus(), contribution.getDocAuthor(), contribution.getDocUrl(), contribution.getPicAuthor(), contribution.getPicUrl(), suggestion);
+        newsLogService.createLog(OperateType.EDITOR_SUBMIT.name(), 34L, contribution.getId(), contribution.getStatus(), contribution.getDocAuthor(), contribution.getDocUrl(), contribution.getPicAuthor(), contribution.getPicUrl(), suggestion);
         return MapMessage.successMessage();
     }
 
