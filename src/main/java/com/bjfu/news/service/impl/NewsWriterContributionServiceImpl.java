@@ -2,6 +2,7 @@ package com.bjfu.news.service.impl;
 
 import com.bjfu.news.constant.ContributionStatus;
 import com.bjfu.news.constant.OperateType;
+import com.bjfu.news.dao.NewsApproveContributionMapper;
 import com.bjfu.news.dao.NewsContributionMapper;
 import com.bjfu.news.entity.NewsApproveContribution;
 import com.bjfu.news.entity.NewsContribution;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.Objects;
 
 @Service
 @Slf4j
@@ -29,6 +31,9 @@ public class NewsWriterContributionServiceImpl implements NewsWriterContribution
 
     @Autowired
     private NewsLogService newsLogService;
+
+    @Autowired
+    private NewsApproveContributionMapper newsApproveContributionMapper;
 
     @Override
     public int delete(Long id) {
@@ -95,11 +100,19 @@ public class NewsWriterContributionServiceImpl implements NewsWriterContribution
         contribution.setStatus(ContributionStatus.APPROVAL_PENDING.name());
         contribution.setSubmitTime(new Date());
         update(contribution);
-        NewsApproveContribution approveContribution = new NewsApproveContribution();
-        approveContribution.setContributionId(contribution.getId());
-        approveContribution.setDisabled(false);
-        approveContribution.setUserId(approveId);
-        newsApproveContributionService.create(approveContribution);
+        NewsApproveContribution approveContribution = newsApproveContributionMapper.selectByCId(contribution.getId());
+        if (Objects.nonNull(approveContribution)) {
+            approveContribution.setContributionId(contribution.getId());
+            approveContribution.setDisabled(false);
+            approveContribution.setUserId(approveId);
+            newsApproveContributionService.update(approveContribution);
+        } else {
+            approveContribution = new NewsApproveContribution();
+            approveContribution.setContributionId(contribution.getId());
+            approveContribution.setDisabled(false);
+            approveContribution.setUserId(approveId);
+            newsApproveContributionService.create(approveContribution);
+        }
         newsLogService.createLog(OperateType.CONTRIBUTOR_SUBMIT.name(), 31L, contribution.getId(), contribution.getStatus(), contribution.getDocAuthor(), contribution.getDocUrl(), contribution.getPicAuthor(), contribution.getPicUrl(), null);
         return MapMessage.successMessage();
     }
