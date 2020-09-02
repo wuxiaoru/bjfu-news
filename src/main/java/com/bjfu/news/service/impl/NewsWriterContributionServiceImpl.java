@@ -102,8 +102,6 @@ public class NewsWriterContributionServiceImpl implements NewsWriterContribution
         update(contribution);
         NewsApproveContribution approveContribution = newsApproveContributionMapper.selectByCId(contribution.getId());
         if (Objects.nonNull(approveContribution)) {
-            approveContribution.setContributionId(contribution.getId());
-            approveContribution.setDisabled(false);
             approveContribution.setUserId(approveId);
             newsApproveContributionService.update(approveContribution);
         } else {

@@ -43,6 +43,9 @@
             <if test="suggestion!=null">
                 suggestion=#{suggestion},
             </if>
+            <if test="userId!=null">
+                userId=#{userId},
+            </if>
         </set>
         where ID=#{id}
     </update>
