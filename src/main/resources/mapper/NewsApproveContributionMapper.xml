@@ -44,7 +44,7 @@
                 suggestion=#{suggestion},
             </if>
             <if test="userId!=null">
-                userId=#{userId},
+                USER_ID=#{userId},
             </if>
         </set>
         where ID=#{id}
