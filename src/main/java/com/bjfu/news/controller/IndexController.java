@@ -3,12 +3,16 @@ package com.bjfu.news.controller;
 import com.bjfu.news.constant.ContributionStatus;
 import com.bjfu.news.constant.UserRoleType;
 import com.bjfu.news.untils.MapMessage;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+/**
+ * @author anne
+ */
+@RestController
+@RequestMapping("/v1/news")
 public class IndexController {
 
     @RequestMapping(value = "enum.vpage", method = RequestMethod.GET)

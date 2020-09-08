@@ -1,0 +1,898 @@
+Application_Stdout 20200907 22:01:00.713|INFO|annedeMacBook-Pro.local|main|com.bjfu.news.NewsApplication|? --> Starting NewsApplication on annedeMacBook-Pro.local with PID 6600 (/Study/project/bjfu-news/target/classes started by anne in /Study/project/bjfu-news) 
+Application_Stdout 20200907 22:01:00.718|INFO|annedeMacBook-Pro.local|main|com.bjfu.news.NewsApplication|? --> The following profiles are active: local 
+Application_Stdout 20200907 22:01:02.554|INFO|annedeMacBook-Pro.local|main|o.a.coyote.http11.Http11NioProtocol|log --> Initializing ProtocolHandler ["http-nio-8561"] 
+Application_Stdout 20200907 22:01:02.555|INFO|annedeMacBook-Pro.local|main|o.a.catalina.core.StandardService|log --> Starting service [Tomcat] 
+Application_Stdout 20200907 22:01:02.555|INFO|annedeMacBook-Pro.local|main|o.a.catalina.core.StandardEngine|log --> Starting Servlet engine: [Apache Tomcat/9.0.29] 
+Application_Stdout 20200907 22:01:02.656|INFO|annedeMacBook-Pro.local|main|o.a.c.c.C.[Tomcat].[localhost].[/]|? --> Initializing Spring embedded WebApplicationContext 
+Application_Stdout 20200907 22:01:03.731|INFO|annedeMacBook-Pro.local|main|o.a.coyote.http11.Http11NioProtocol|? --> Starting ProtocolHandler ["http-nio-8561"] 
+Application_Stdout 20200907 22:01:03.777|INFO|annedeMacBook-Pro.local|main|com.bjfu.news.NewsApplication|? --> Started NewsApplication in 4.133 seconds (JVM running for 5.781) 
+Application_Stdout 20200907 22:01:32.200|INFO|annedeMacBook-Pro.local|http-nio-8561-exec-1|o.a.c.c.C.[Tomcat].[localhost].[/]|? --> Initializing Spring DispatcherServlet 'dispatcherServlet' 
+Application_Stdout 20200907 22:01:32.482|INFO|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.alibaba.druid.pool.DruidDataSource|? --> {dataSource-1} inited 
+Application_Stdout 20200907 22:02:58.747|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByApproveId|? --> ==>  Preparing: select * from news_approve_contribution where disabled = false and USER_ID=?  
+Application_Stdout 20200907 22:02:58.773|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByApproveId|? --> ==> Parameters: 35(Long) 
+Application_Stdout 20200907 22:02:58.807|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByApproveId|? --> <==      Total: 1 
+Application_Stdout 20200907 22:02:58.809|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByApproveId|debug --> ==>  Preparing: select * from news_approve_contribution where disabled = false and USER_ID=?  
+Application_Stdout 20200907 22:02:58.810|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByApproveId|debug --> ==> Parameters: 35(Long) 
+Application_Stdout 20200907 22:02:58.820|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByApproveId|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:02:58.821|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectByApproveId|debug --> ==>  Preparing: select * from news_approve_contribution where disabled = false and USER_ID=?  
+Application_Stdout 20200907 22:02:58.822|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectByApproveId|debug --> ==> Parameters: 35(Long) 
+Application_Stdout 20200907 22:02:58.832|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectByApproveId|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:02:58.833|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectByApproveId|debug --> ==>  Preparing: select * from news_approve_contribution where disabled = false and USER_ID=?  
+Application_Stdout 20200907 22:02:58.834|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectByApproveId|debug --> ==> Parameters: 35(Long) 
+Application_Stdout 20200907 22:02:58.845|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectByApproveId|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:02:58.846|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectByApproveId|debug --> ==>  Preparing: select * from news_approve_contribution where disabled = false and USER_ID=?  
+Application_Stdout 20200907 22:02:58.846|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectByApproveId|debug --> ==> Parameters: 35(Long) 
+Application_Stdout 20200907 22:02:58.856|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectByApproveId|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:02:58.856|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectByApproveId|debug --> ==>  Preparing: select * from news_approve_contribution where disabled = false and USER_ID=?  
+Application_Stdout 20200907 22:02:58.857|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectByApproveId|debug --> ==> Parameters: 35(Long) 
+Application_Stdout 20200907 22:02:58.867|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectByApproveId|? --> <==      Total: 1 
+Application_Stdout 20200907 22:02:58.876|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|debug --> ==>  Preparing: select count(*) from news_contribution where disabled = false and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') and status = ? and ID in ( ? )  
+Application_Stdout 20200907 22:02:58.877|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> ==> Parameters: (String), (String), APPROVAL_PENDING(String), 7(Long) 
+Application_Stdout 20200907 22:02:58.888|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:02:58.889|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') and status = ? and ID in ( ? )  
+Application_Stdout 20200907 22:02:58.891|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|? --> ==> Parameters: (String), (String), APPROVAL_PENDING(String), 7(Long) 
+Application_Stdout 20200907 22:02:58.899|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:02:58.900|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') and ID in ( ? ) and status in ( ? , ? , ? , ? , ? , ? )  
+Application_Stdout 20200907 22:02:58.901|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|? --> ==> Parameters: (String), (String), 7(Long), APPROVAL_PENDING(String), RE_APPROVAL_PENDING(String), APPROVE(String), APPROVAL_REJECTION(String), HIRE(String), REJECTION(String) 
+Application_Stdout 20200907 22:02:58.909|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:02:58.910|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') and ID in ( ? ) and status in ( ? , ? , ? , ? , ? , ? )  
+Application_Stdout 20200907 22:02:58.912|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> ==> Parameters: (String), (String), 7(Long), APPROVAL_PENDING(String), RE_APPROVAL_PENDING(String), APPROVE(String), APPROVAL_REJECTION(String), HIRE(String), REJECTION(String) 
+Application_Stdout 20200907 22:02:58.922|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:02:58.923|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') and ID in ( ? ) and status in ( ? , ? , ? , ? , ? , ? )  
+Application_Stdout 20200907 22:02:58.925|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|debug --> ==> Parameters: (String), (String), 7(Long), APPROVAL_PENDING(String), RE_APPROVAL_PENDING(String), APPROVE(String), APPROVAL_REJECTION(String), HIRE(String), REJECTION(String) 
+Application_Stdout 20200907 22:02:58.935|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:02:58.936|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.getCount|debug --> ==>  Preparing: select count(*) from news_contribution where disabled = false and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') and ID in ( ? ) and status in ( ? , ? , ? , ? , ? , ? )  
+Application_Stdout 20200907 22:02:58.938|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.getCount|? --> ==> Parameters: (String), (String), 7(Long), APPROVAL_PENDING(String), RE_APPROVAL_PENDING(String), APPROVE(String), APPROVAL_REJECTION(String), HIRE(String), REJECTION(String) 
+Application_Stdout 20200907 22:02:58.949|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:02:58.949|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') and status = ? and ID in ( ? ) order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:02:58.950|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: (String), (String), APPROVAL_PENDING(String), 7(Long), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:02:58.959|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 1 
+Application_Stdout 20200907 22:02:58.961|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') and status = ? and ID in ( ? ) order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:02:58.961|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: (String), (String), APPROVAL_PENDING(String), 7(Long), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:02:58.978|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:02:58.980|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') and ID in ( ? ) and status in ( ? , ? , ? , ? , ? , ? ) order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:02:58.982|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: (String), (String), 7(Long), APPROVAL_PENDING(String), RE_APPROVAL_PENDING(String), APPROVE(String), APPROVAL_REJECTION(String), HIRE(String), REJECTION(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:02:58.991|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 1 
+Application_Stdout 20200907 22:02:58.992|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') and ID in ( ? ) and status in ( ? , ? , ? , ? , ? , ? ) order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:02:58.996|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: (String), (String), 7(Long), APPROVAL_PENDING(String), RE_APPROVAL_PENDING(String), APPROVE(String), APPROVAL_REJECTION(String), HIRE(String), REJECTION(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:02:59.015|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 1 
+Application_Stdout 20200907 22:02:59.019|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') and ID in ( ? ) and status in ( ? , ? , ? , ? , ? , ? ) order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:02:59.020|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: (String), (String), 7(Long), APPROVAL_PENDING(String), RE_APPROVAL_PENDING(String), APPROVE(String), APPROVAL_REJECTION(String), HIRE(String), REJECTION(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:02:59.033|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 1 
+Application_Stdout 20200907 22:02:59.034|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') and ID in ( ? ) and status in ( ? , ? , ? , ? , ? , ? ) order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:02:59.035|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: (String), (String), 7(Long), APPROVAL_PENDING(String), RE_APPROVAL_PENDING(String), APPROVE(String), APPROVAL_REJECTION(String), HIRE(String), REJECTION(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:02:59.045|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:04:57.586|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:04:57.592|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|debug --> ==> Parameters: 35(Long), (String), (String) 
+Application_Stdout 20200907 22:04:57.593|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectById|debug --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:04:57.594|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectById|debug --> ==> Parameters: 35(Long) 
+Application_Stdout 20200907 22:04:57.601|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:04:57.602|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:04:57.603|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 35(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:04:57.609|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:04:57.612|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:04:57.613|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:04:57.613|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:04:57.622|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:04:57.629|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:04:57.630|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:04:57.642|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:19:07.136|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:19:07.137|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|? --> ==> Parameters: 35(Long) 
+Application_Stdout 20200907 22:19:07.149|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:19:07.150|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:19:07.151|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:19:07.161|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:19:07.163|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:19:07.163|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:19:07.181|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:19:07.406|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:19:07.407|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|? --> ==> Parameters: 35(Long), (String), (String) 
+Application_Stdout 20200907 22:19:07.431|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:19:07.434|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:19:07.435|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 35(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:19:07.455|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 1 
+Application_Stdout 20200907 22:19:22.324|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectByEno|? --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200907 22:19:22.325|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectByEno|debug --> ==> Parameters: 1(String) 
+Application_Stdout 20200907 22:19:22.354|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectByEno|? --> <==      Total: 1 
+Application_Stdout 20200907 22:19:22.355|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.loadByUserId|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and USER_ID=?  
+Application_Stdout 20200907 22:19:22.356|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.loadByUserId|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:19:22.380|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.loadByUserId|? --> <==      Total: 1 
+Application_Stdout 20200907 22:19:25.004|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|debug --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:19:25.005|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:19:25.012|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:19:25.012|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:19:25.027|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:19:25.028|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:19:25.028|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:19:25.033|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:19:25.035|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:19:25.036|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:19:25.052|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:19:25.056|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:19:25.057|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:19:25.058|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:19:25.081|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.news.dao.NewsUserInfoMapper.list|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:19:32.138|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.getCount|debug --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:19:32.139|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:19:32.152|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.getCount|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:19:32.153|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:19:32.154|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:19:32.173|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:20:15.594|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') and status = ?  
+Application_Stdout 20200907 22:20:15.596|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String), APPROVAL_PENDING(String) 
+Application_Stdout 20200907 22:20:15.608|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:20:15.609|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') and status = ? order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:20:15.609|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), APPROVAL_PENDING(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:20:15.618|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 2 
+Application_Stdout 20200907 22:20:22.450|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') and status = ?  
+Application_Stdout 20200907 22:20:22.451|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String), HIRE(String) 
+Application_Stdout 20200907 22:20:22.460|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:20:22.462|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') and status = ? order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:20:22.462|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), HIRE(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:20:22.474|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 1 
+Application_Stdout 20200907 22:22:44.847|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:22:44.847|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:22:44.856|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:22:44.857|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:22:44.858|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:22:44.867|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:22:44.867|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:22:44.868|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:22:44.875|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:22:44.876|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:22:44.877|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:22:44.879|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:22:44.879|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:22:44.884|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:22:44.886|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:22:44.886|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:22:44.886|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:22:44.887|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:22:44.887|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:22:44.897|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:22:44.898|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:22:44.914|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:22:44.915|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:22:44.923|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:22:44.924|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:22:44.924|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:22:44.932|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:22:44.933|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:22:44.934|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:22:44.942|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:22:58.405|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:22:58.405|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:22:58.415|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:22:58.416|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:22:58.417|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:22:58.427|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:24:43.222|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:24:43.223|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:24:43.230|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:24:43.231|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:24:43.232|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:24:43.240|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:24:43.243|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:24:43.244|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:24:43.253|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:24:43.426|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:24:43.427|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:24:43.436|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:24:43.438|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:24:43.438|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:24:43.448|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:32:50.084|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectByEno|debug --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200907 22:32:50.090|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectByEno|debug --> ==> Parameters: 1(String) 
+Application_Stdout 20200907 22:32:50.103|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectByEno|? --> <==      Total: 1 
+Application_Stdout 20200907 22:32:50.104|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.loadByUserId|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and USER_ID=?  
+Application_Stdout 20200907 22:32:50.105|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.loadByUserId|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:32:50.113|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.loadByUserId|? --> <==      Total: 1 
+Application_Stdout 20200907 22:32:53.213|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:32:53.214|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|debug --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:32:53.298|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:32:53.298|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:32:53.299|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:32:53.318|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:32:53.320|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:32:53.321|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:32:53.325|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:32:53.326|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:32:53.335|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:32:53.336|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:32:53.337|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:32:53.350|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:32:53.352|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:34:06.744|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|debug --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:34:06.745|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:34:06.746|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|debug --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:34:06.747|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|debug --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:34:06.753|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:34:06.754|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:34:06.754|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:34:06.755|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:34:06.755|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:34:06.756|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:34:06.764|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:34:06.764|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 6 
+Application_Stdout 20200907 22:34:06.765|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:34:06.765|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:34:06.773|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:34:40.407|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:34:40.408|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:34:40.413|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:34:40.413|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectById|debug --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:34:40.418|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:34:40.419|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:34:40.420|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:34:40.421|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:34:40.422|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:34:40.423|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:34:40.431|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 6 
+Application_Stdout 20200907 22:34:40.434|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:34:40.436|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:34:40.437|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:34:40.445|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:35:18.968|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|debug --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:35:18.968|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:35:18.973|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|debug --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:35:18.974|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|debug --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:35:18.979|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:35:18.981|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:35:18.982|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:35:18.991|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:35:18.992|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:35:18.992|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:35:19.005|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:35:19.005|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 6 
+Application_Stdout 20200907 22:35:19.006|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:35:19.006|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:35:19.023|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:36:16.252|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|debug --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:36:16.252|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:36:16.258|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:36:16.258|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectById|debug --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:36:16.259|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:36:16.260|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:36:16.261|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:36:16.265|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectById|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:36:16.266|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:36:16.267|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:36:16.270|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 6 
+Application_Stdout 20200907 22:36:16.275|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:36:16.275|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:36:16.276|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:36:16.284|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:37:01.603|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByEno|debug --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200907 22:37:01.604|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByEno|? --> ==> Parameters: 1(String) 
+Application_Stdout 20200907 22:37:01.615|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByEno|? --> <==      Total: 1 
+Application_Stdout 20200907 22:37:01.616|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.loadByUserId|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and USER_ID=?  
+Application_Stdout 20200907 22:37:01.616|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.loadByUserId|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:37:01.624|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.loadByUserId|? --> <==      Total: 1 
+Application_Stdout 20200907 22:37:04.291|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:37:04.291|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:37:04.296|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:37:04.297|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:37:04.300|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:37:04.301|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:37:04.301|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:37:04.304|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:37:04.305|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:37:04.305|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:37:04.311|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:37:04.313|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:37:04.314|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:37:04.314|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:37:04.323|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:38:03.262|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:38:03.263|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:38:03.264|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:38:03.266|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:38:03.274|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:38:03.275|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:38:03.275|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectById|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:38:03.276|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:38:03.276|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:38:03.276|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:38:03.286|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 6 
+Application_Stdout 20200907 22:38:03.287|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:38:03.287|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:38:03.288|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:38:03.296|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:38:28.738|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|debug --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:38:28.738|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:38:28.744|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:38:28.744|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|debug --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:38:28.753|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:38:28.754|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:38:28.754|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:38:28.755|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:38:28.756|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:38:28.757|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:38:28.764|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:38:28.764|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:38:28.765|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:38:28.765|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:38:28.775|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:39:40.695|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|debug --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:39:40.695|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:39:40.696|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|debug --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:39:40.698|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|debug --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:39:40.705|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:39:40.706|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:39:40.707|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:39:40.707|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:39:40.709|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:39:40.710|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:39:40.718|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:39:40.718|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 6 
+Application_Stdout 20200907 22:39:40.719|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:39:40.719|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:39:40.729|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:40:43.254|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:40:43.254|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:40:43.257|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:40:43.257|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:40:43.262|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:40:43.262|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:40:43.263|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:40:43.264|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:40:43.265|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:40:43.265|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:40:43.272|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:40:43.272|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 6 
+Application_Stdout 20200907 22:40:43.274|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:40:43.274|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:40:43.285|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:41:04.209|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:41:04.210|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:41:04.215|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectById|debug --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:41:04.215|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectById|debug --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:41:04.219|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:41:04.220|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:41:04.221|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:41:04.223|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:41:04.223|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:41:04.224|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:41:04.231|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:41:04.231|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:41:04.233|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:41:04.233|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:41:04.241|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:41:40.246|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectById|debug --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:41:40.246|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|debug --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:41:40.246|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:41:40.247|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectById|debug --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:41:40.260|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:41:40.260|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectById|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:41:40.261|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:41:40.261|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:41:40.262|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:41:40.262|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:41:40.272|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 6 
+Application_Stdout 20200907 22:41:40.276|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:41:40.277|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:41:40.277|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:41:40.287|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.news.dao.NewsUserInfoMapper.list|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:51:35.655|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByEno|? --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200907 22:51:35.659|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByEno|? --> ==> Parameters: 1(String) 
+Application_Stdout 20200907 22:51:35.670|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByEno|? --> <==      Total: 1 
+Application_Stdout 20200907 22:51:35.671|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.loadByUserId|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and USER_ID=?  
+Application_Stdout 20200907 22:51:35.671|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.loadByUserId|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:51:35.680|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.loadByUserId|? --> <==      Total: 1 
+Application_Stdout 20200907 22:51:43.373|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectById|debug --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:51:43.374|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectById|debug --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:51:43.388|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectById|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:51:43.389|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:51:43.390|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:51:43.400|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:51:43.403|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:51:43.403|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:51:43.406|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:51:43.407|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:51:43.414|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:51:43.422|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:51:43.429|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:51:43.429|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:51:43.440|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 6 
+Application_Stdout 20200907 22:52:09.607|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:52:09.608|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:52:09.611|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:52:09.612|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:52:09.616|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:09.617|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:52:09.618|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:52:09.620|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:09.620|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:52:09.621|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:52:09.627|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:52:09.627|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:09.629|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:52:09.629|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:52:09.637|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:12.803|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:52:12.804|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:52:12.811|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:52:12.812|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:52:12.812|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:12.813|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:52:12.814|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:52:12.820|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:12.820|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:52:12.821|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:52:12.824|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:52:12.830|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:52:12.833|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:52:12.833|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:52:12.842|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:20.681|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:52:20.681|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:52:20.686|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:52:20.686|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:52:20.691|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:20.691|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:52:20.692|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:52:20.693|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:20.694|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:52:20.694|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:52:20.702|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:20.703|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:52:20.703|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:52:20.704|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:52:20.713|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:24.054|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:52:24.055|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:52:24.061|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:52:24.061|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:52:24.064|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:24.065|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:52:24.065|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:52:24.069|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:24.070|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:52:24.070|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:52:24.074|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 6 
+Application_Stdout 20200907 22:52:24.077|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:24.077|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:52:24.078|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:52:24.086|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:24.882|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:52:24.883|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:52:24.887|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:52:24.887|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:52:24.890|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:24.891|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:52:24.891|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:52:24.899|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:24.899|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:52:24.900|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:52:24.902|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:52:24.908|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:24.908|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:52:24.909|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:52:24.916|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:34.712|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectByEno|debug --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200907 22:52:34.712|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectByEno|? --> ==> Parameters: 1(String) 
+Application_Stdout 20200907 22:52:34.722|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectByEno|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:34.723|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.loadByUserId|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and USER_ID=?  
+Application_Stdout 20200907 22:52:34.723|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.loadByUserId|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:52:34.731|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.loadByUserId|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:37.017|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:52:37.017|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:52:37.019|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:52:37.020|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:52:37.025|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:37.025|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:52:37.026|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:52:37.027|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:52:37.027|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:52:37.028|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:52:37.033|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 6 
+Application_Stdout 20200907 22:52:37.035|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:52:37.036|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:52:37.036|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:52:37.045|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.news.dao.NewsUserInfoMapper.list|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:53:05.780|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:53:05.780|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:53:05.786|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:53:05.786|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:53:05.788|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:05.789|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:53:05.790|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:53:05.793|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectById|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:53:05.794|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:53:05.794|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:53:05.799|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:53:05.801|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:53:05.802|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:53:05.802|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:53:05.810|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:08.415|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:53:08.415|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:53:08.419|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:53:08.419|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectById|debug --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:53:08.424|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:08.425|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:53:08.426|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:53:08.427|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:08.427|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:53:08.427|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:53:08.436|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 6 
+Application_Stdout 20200907 22:53:08.436|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:08.437|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:53:08.438|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:53:08.446|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:09.931|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:53:09.932|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|debug --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:53:09.943|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|debug --> <==      Total: 1 
+Application_Stdout 20200907 22:53:09.944|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:53:09.945|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:53:09.951|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:09.952|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:53:09.952|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:53:09.961|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:10.568|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:53:10.569|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:53:10.572|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:53:10.573|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:53:10.577|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:10.578|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:53:10.579|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:53:10.581|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:10.582|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:53:10.583|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:53:10.589|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:53:10.590|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:10.591|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:53:10.591|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:53:10.599|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:28.884|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.selectByEno|? --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200907 22:53:28.884|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.selectByEno|? --> ==> Parameters: 1(String) 
+Application_Stdout 20200907 22:53:28.894|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.selectByEno|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:28.895|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.loadByUserId|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and USER_ID=?  
+Application_Stdout 20200907 22:53:28.897|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.loadByUserId|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:53:28.905|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.loadByUserId|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:31.383|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:53:31.384|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:53:31.387|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:53:31.387|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:53:31.394|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:31.395|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:31.395|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:53:31.395|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:53:31.396|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:53:31.396|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:53:31.403|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:53:31.404|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:53:31.404|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:53:31.405|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:53:31.412|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:56:53.607|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByEno|? --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200907 22:56:53.608|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByEno|? --> ==> Parameters: 1(String) 
+Application_Stdout 20200907 22:56:53.617|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByEno|? --> <==      Total: 1 
+Application_Stdout 20200907 22:56:53.618|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.loadByUserId|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and USER_ID=?  
+Application_Stdout 20200907 22:56:53.618|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.loadByUserId|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:56:53.628|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.loadByUserId|? --> <==      Total: 1 
+Application_Stdout 20200907 22:56:56.349|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|debug --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:56:56.349|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:56:56.359|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:56:56.360|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:56:56.360|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:56:56.363|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:56:56.364|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:56:56.369|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:56:56.373|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:56:56.373|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:56:56.374|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:56:56.386|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:56:56.387|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:56:56.387|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:56:56.395|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:57:03.512|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:57:03.512|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:57:03.519|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:57:03.519|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:57:03.521|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:57:03.523|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:57:03.524|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:57:03.527|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:57:03.528|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:57:03.528|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:57:03.533|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:57:03.535|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:57:03.536|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:57:03.537|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:57:03.545|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 22:57:08.729|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 22:57:08.730|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 22:57:08.738|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 22:57:08.739|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 22:57:08.740|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 22:57:08.741|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 22:57:08.741|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 22:57:08.748|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 22:57:08.748|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 22:57:08.749|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 22:57:08.750|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 22:57:08.755|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 22:57:08.757|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 22:57:08.757|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 22:57:08.764|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 23:00:01.655|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectByEno|? --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200907 23:00:01.655|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectByEno|debug --> ==> Parameters: 1(String) 
+Application_Stdout 20200907 23:00:01.664|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectByEno|? --> <==      Total: 1 
+Application_Stdout 20200907 23:00:01.664|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.loadByUserId|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and USER_ID=?  
+Application_Stdout 20200907 23:00:01.664|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.loadByUserId|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 23:00:01.672|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.loadByUserId|? --> <==      Total: 1 
+Application_Stdout 20200907 23:00:16.716|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 23:00:16.717|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 23:00:16.724|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|debug --> <==      Total: 1 
+Application_Stdout 20200907 23:00:16.725|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:00:16.725|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:00:16.728|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 23:00:16.728|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 23:00:16.735|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 23:00:16.736|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectById|debug --> <==      Total: 1 
+Application_Stdout 20200907 23:00:16.737|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 23:00:16.737|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 23:00:16.745|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> <==      Total: 1 
+Application_Stdout 20200907 23:00:16.745|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 23:00:16.746|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 23:00:16.753|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 23:01:49.652|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByEno|? --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200907 23:01:49.653|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByEno|debug --> ==> Parameters: 1(String) 
+Application_Stdout 20200907 23:01:49.661|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByEno|? --> <==      Total: 1 
+Application_Stdout 20200907 23:01:49.662|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.loadByUserId|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and USER_ID=?  
+Application_Stdout 20200907 23:01:49.662|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.loadByUserId|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 23:01:49.670|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.loadByUserId|? --> <==      Total: 1 
+Application_Stdout 20200907 23:01:56.287|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 23:01:56.287|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 23:01:56.295|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 23:01:56.296|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:01:56.296|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:01:56.297|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 23:01:56.297|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 23:01:56.304|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 23:01:56.305|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 23:01:56.306|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 23:01:56.306|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 23:01:56.314|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 23:01:56.315|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 23:01:56.315|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 23:01:56.322|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 23:02:41.481|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 23:02:41.481|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 23:02:41.485|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 23:02:41.485|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 23:02:41.911|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 23:02:41.912|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 23:02:41.912|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 23:02:41.919|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 23:02:41.920|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 23:02:41.921|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 23:02:41.930|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 23:02:42.320|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 23:02:42.321|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:02:42.321|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:02:42.330|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 23:03:07.256|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 23:03:07.257|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|debug --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 23:03:07.260|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 23:03:07.261|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 23:03:07.267|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 23:03:07.269|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:03:07.269|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:03:07.270|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 23:03:07.270|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 23:03:07.271|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 23:03:07.279|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 23:03:07.279|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 23:03:07.280|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 23:03:07.281|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 23:03:07.289|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 23:04:12.881|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 23:04:12.882|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 23:04:12.884|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectById|debug --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 23:04:12.885|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 23:04:12.889|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 23:04:12.890|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:04:12.891|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:04:12.893|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 23:04:12.894|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 23:04:12.895|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 23:04:12.900|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 23:04:12.901|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 23:04:12.902|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 23:04:12.903|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 23:04:12.911|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 23:04:18.772|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 23:04:18.772|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 23:04:18.773|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 23:04:18.773|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 23:04:18.784|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 23:04:18.784|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 23:04:18.784|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 23:04:18.784|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:04:18.785|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 23:04:18.785|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:04:18.792|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 23:04:18.792|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 23:04:18.793|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 23:04:18.794|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 23:04:18.801|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 23:05:35.454|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectByEno|? --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200907 23:05:35.454|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectByEno|? --> ==> Parameters: 1(String) 
+Application_Stdout 20200907 23:05:35.463|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectByEno|? --> <==      Total: 1 
+Application_Stdout 20200907 23:05:35.464|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.loadByUserId|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and USER_ID=?  
+Application_Stdout 20200907 23:05:35.464|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.loadByUserId|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 23:05:35.471|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.loadByUserId|? --> <==      Total: 1 
+Application_Stdout 20200907 23:05:43.189|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 23:05:43.190|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 23:05:43.202|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 23:05:43.203|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:05:43.203|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:05:43.217|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 23:05:43.412|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectById|debug --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 23:05:43.412|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectById|debug --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 23:05:43.426|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectById|debug --> <==      Total: 1 
+Application_Stdout 20200907 23:05:43.427|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 23:05:43.427|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 23:05:43.435|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> <==      Total: 1 
+Application_Stdout 20200907 23:05:43.436|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 23:05:43.436|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 23:05:43.449|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.news.dao.NewsUserInfoMapper.list|debug --> <==      Total: 1 
+Application_Stdout 20200907 23:29:27.264|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200907 23:29:27.276|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200907 23:29:27.277|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200907 23:29:27.280|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200907 23:29:27.303|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 23:29:27.305|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200907 23:29:27.305|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:29:27.306|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|debug --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:29:27.309|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200907 23:29:27.309|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200907 23:29:27.340|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200907 23:29:27.343|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200907 23:29:27.347|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200907 23:29:27.349|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200907 23:29:27.357|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200907 23:33:16.640|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectByEno|? --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200907 23:33:16.640|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectByEno|debug --> ==> Parameters: 2(String) 
+Application_Stdout 20200907 23:33:16.649|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectByEno|? --> <==      Total: 0 
+Application_Stdout 20200907 23:33:25.634|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByEno|? --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200907 23:33:25.634|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByEno|? --> ==> Parameters: 3(String) 
+Application_Stdout 20200907 23:33:25.644|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByEno|? --> <==      Total: 1 
+Application_Stdout 20200907 23:33:25.644|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.loadByUserId|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and USER_ID=?  
+Application_Stdout 20200907 23:33:25.644|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.loadByUserId|? --> ==> Parameters: 34(Long) 
+Application_Stdout 20200907 23:33:25.653|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.loadByUserId|? --> <==      Total: 1 
+Application_Stdout 20200907 23:33:27.862|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and status = ?  
+Application_Stdout 20200907 23:33:27.863|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> ==> Parameters: APPROVE(String) 
+Application_Stdout 20200907 23:33:27.872|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 23:33:27.872|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and status = ? order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:33:27.873|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: APPROVE(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:33:27.881|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 1 
+Application_Stdout 20200907 23:33:27.894|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByCIds|? --> ==>  Preparing: select * from news_approve_contribution where disabled = false and CONTRIBUTION_ID in ( ? )  
+Application_Stdout 20200907 23:33:27.894|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByCIds|? --> ==> Parameters: 6(Long) 
+Application_Stdout 20200907 23:33:27.909|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByCIds|? --> <==      Total: 1 
+Application_Stdout 20200907 23:33:27.911|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByIds|? --> ==>  Preparing: select * from news_user_info where disabled = false and id in ( ? )  
+Application_Stdout 20200907 23:33:27.912|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByIds|? --> ==> Parameters: 33(Long) 
+Application_Stdout 20200907 23:33:27.919|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByIds|? --> <==      Total: 0 
+Application_Stdout 20200907 23:33:29.212|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and status = ?  
+Application_Stdout 20200907 23:33:29.212|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|debug --> ==> Parameters: REJECTION(String) 
+Application_Stdout 20200907 23:33:29.229|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|debug --> <==      Total: 1 
+Application_Stdout 20200907 23:33:29.230|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and status = ? order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:33:29.233|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: REJECTION(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:33:29.243|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 1 
+Application_Stdout 20200907 23:33:29.247|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByCIds|? --> ==>  Preparing: select * from news_approve_contribution where disabled = false and CONTRIBUTION_ID in ( ? )  
+Application_Stdout 20200907 23:33:29.247|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByCIds|? --> ==> Parameters: 8(Long) 
+Application_Stdout 20200907 23:33:29.255|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByCIds|? --> <==      Total: 1 
+Application_Stdout 20200907 23:33:29.256|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByIds|? --> ==>  Preparing: select * from news_user_info where disabled = false and id in ( ? )  
+Application_Stdout 20200907 23:33:29.256|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByIds|? --> ==> Parameters: 33(Long) 
+Application_Stdout 20200907 23:33:29.263|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByIds|? --> <==      Total: 0 
+Application_Stdout 20200907 23:33:30.227|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|debug --> ==>  Preparing: select count(*) from news_contribution where disabled = false and status = ?  
+Application_Stdout 20200907 23:33:30.228|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|debug --> ==> Parameters: HIRE(String) 
+Application_Stdout 20200907 23:33:30.238|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 23:33:30.239|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and status = ? order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:33:30.240|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: HIRE(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:33:30.247|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 1 
+Application_Stdout 20200907 23:33:30.248|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectByCIds|? --> ==>  Preparing: select * from news_approve_contribution where disabled = false and CONTRIBUTION_ID in ( ? )  
+Application_Stdout 20200907 23:33:30.248|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectByCIds|? --> ==> Parameters: 2(Long) 
+Application_Stdout 20200907 23:33:30.257|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectByCIds|? --> <==      Total: 1 
+Application_Stdout 20200907 23:33:30.258|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectByIds|? --> ==>  Preparing: select * from news_user_info where disabled = false and id in ( ? )  
+Application_Stdout 20200907 23:33:30.258|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectByIds|? --> ==> Parameters: 33(Long) 
+Application_Stdout 20200907 23:33:30.265|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectByIds|? --> <==      Total: 0 
+Application_Stdout 20200907 23:33:31.850|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and status = ?  
+Application_Stdout 20200907 23:33:31.851|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|debug --> ==> Parameters: REJECTION(String) 
+Application_Stdout 20200907 23:33:31.861|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|debug --> <==      Total: 1 
+Application_Stdout 20200907 23:33:31.863|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and status = ? order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:33:31.863|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: REJECTION(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:33:31.872|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 1 
+Application_Stdout 20200907 23:33:31.873|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectByCIds|? --> ==>  Preparing: select * from news_approve_contribution where disabled = false and CONTRIBUTION_ID in ( ? )  
+Application_Stdout 20200907 23:33:31.873|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectByCIds|? --> ==> Parameters: 8(Long) 
+Application_Stdout 20200907 23:33:31.881|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectByCIds|? --> <==      Total: 1 
+Application_Stdout 20200907 23:33:31.882|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectByIds|? --> ==>  Preparing: select * from news_user_info where disabled = false and id in ( ? )  
+Application_Stdout 20200907 23:33:31.882|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectByIds|? --> ==> Parameters: 33(Long) 
+Application_Stdout 20200907 23:33:31.889|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.selectByIds|? --> <==      Total: 0 
+Application_Stdout 20200907 23:33:33.176|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and status = ?  
+Application_Stdout 20200907 23:33:33.177|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> ==> Parameters: HIRE(String) 
+Application_Stdout 20200907 23:33:33.197|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 23:33:33.197|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and status = ? order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:33:33.198|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: HIRE(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:33:33.210|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.NewsContributionMapper.page|debug --> <==      Total: 1 
+Application_Stdout 20200907 23:33:33.211|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectByCIds|? --> ==>  Preparing: select * from news_approve_contribution where disabled = false and CONTRIBUTION_ID in ( ? )  
+Application_Stdout 20200907 23:33:33.212|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectByCIds|? --> ==> Parameters: 2(Long) 
+Application_Stdout 20200907 23:33:33.220|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectByCIds|? --> <==      Total: 1 
+Application_Stdout 20200907 23:33:33.221|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectByIds|? --> ==>  Preparing: select * from news_user_info where disabled = false and id in ( ? )  
+Application_Stdout 20200907 23:33:33.221|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectByIds|? --> ==> Parameters: 33(Long) 
+Application_Stdout 20200907 23:33:33.228|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectByIds|? --> <==      Total: 0 
+Application_Stdout 20200907 23:36:06.658|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and status = ?  
+Application_Stdout 20200907 23:36:06.658|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|? --> ==> Parameters: APPROVE(String) 
+Application_Stdout 20200907 23:36:06.666|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:06.667|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and status = ? order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:36:06.667|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: APPROVE(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:36:06.675|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:06.675|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByCIds|? --> ==>  Preparing: select * from news_approve_contribution where disabled = false and CONTRIBUTION_ID in ( ? )  
+Application_Stdout 20200907 23:36:06.676|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByCIds|? --> ==> Parameters: 6(Long) 
+Application_Stdout 20200907 23:36:06.695|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByCIds|debug --> <==      Total: 1 
+Application_Stdout 20200907 23:36:06.697|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByIds|debug --> ==>  Preparing: select * from news_user_info where disabled = false and id in ( ? )  
+Application_Stdout 20200907 23:36:06.698|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByIds|debug --> ==> Parameters: 33(Long) 
+Application_Stdout 20200907 23:36:06.710|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByIds|debug --> <==      Total: 0 
+Application_Stdout 20200907 23:36:07.766|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and status = ?  
+Application_Stdout 20200907 23:36:07.767|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|? --> ==> Parameters: APPROVE(String) 
+Application_Stdout 20200907 23:36:07.776|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:07.777|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and status = ? order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:36:07.777|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: APPROVE(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:36:07.786|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:07.787|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectByCIds|? --> ==>  Preparing: select * from news_approve_contribution where disabled = false and CONTRIBUTION_ID in ( ? )  
+Application_Stdout 20200907 23:36:07.787|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectByCIds|? --> ==> Parameters: 6(Long) 
+Application_Stdout 20200907 23:36:07.795|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectByCIds|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:07.795|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectByIds|? --> ==>  Preparing: select * from news_user_info where disabled = false and id in ( ? )  
+Application_Stdout 20200907 23:36:07.796|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectByIds|? --> ==> Parameters: 33(Long) 
+Application_Stdout 20200907 23:36:07.803|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-9|c.b.n.d.N.selectByIds|? --> <==      Total: 0 
+Application_Stdout 20200907 23:36:11.014|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and status = ?  
+Application_Stdout 20200907 23:36:11.015|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.getCount|? --> ==> Parameters: HIRE(String) 
+Application_Stdout 20200907 23:36:11.290|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:11.291|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and status = ? order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:36:11.291|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: HIRE(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:36:11.299|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:11.300|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByCIds|? --> ==>  Preparing: select * from news_approve_contribution where disabled = false and CONTRIBUTION_ID in ( ? )  
+Application_Stdout 20200907 23:36:11.300|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByCIds|? --> ==> Parameters: 2(Long) 
+Application_Stdout 20200907 23:36:11.308|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByCIds|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:11.309|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByIds|? --> ==>  Preparing: select * from news_user_info where disabled = false and id in ( ? )  
+Application_Stdout 20200907 23:36:11.309|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByIds|? --> ==> Parameters: 33(Long) 
+Application_Stdout 20200907 23:36:11.316|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByIds|? --> <==      Total: 0 
+Application_Stdout 20200907 23:36:12.203|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and status = ?  
+Application_Stdout 20200907 23:36:12.205|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> ==> Parameters: REJECTION(String) 
+Application_Stdout 20200907 23:36:12.214|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:12.214|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and status = ? order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:36:12.215|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: REJECTION(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:36:12.222|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:12.223|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectByCIds|? --> ==>  Preparing: select * from news_approve_contribution where disabled = false and CONTRIBUTION_ID in ( ? )  
+Application_Stdout 20200907 23:36:12.223|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectByCIds|? --> ==> Parameters: 8(Long) 
+Application_Stdout 20200907 23:36:12.231|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectByCIds|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:12.232|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectByIds|? --> ==>  Preparing: select * from news_user_info where disabled = false and id in ( ? )  
+Application_Stdout 20200907 23:36:12.232|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectByIds|? --> ==> Parameters: 33(Long) 
+Application_Stdout 20200907 23:36:12.238|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.selectByIds|? --> <==      Total: 0 
+Application_Stdout 20200907 23:36:13.104|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|debug --> ==>  Preparing: select count(*) from news_contribution where disabled = false and status = ?  
+Application_Stdout 20200907 23:36:13.105|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|debug --> ==> Parameters: APPROVE(String) 
+Application_Stdout 20200907 23:36:13.322|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:13.323|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and status = ? order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:36:13.323|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: APPROVE(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:36:13.331|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:13.332|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByCIds|? --> ==>  Preparing: select * from news_approve_contribution where disabled = false and CONTRIBUTION_ID in ( ? )  
+Application_Stdout 20200907 23:36:13.332|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByCIds|? --> ==> Parameters: 6(Long) 
+Application_Stdout 20200907 23:36:13.342|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByCIds|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:13.342|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByIds|? --> ==>  Preparing: select * from news_user_info where disabled = false and id in ( ? )  
+Application_Stdout 20200907 23:36:13.343|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByIds|? --> ==> Parameters: 33(Long) 
+Application_Stdout 20200907 23:36:13.350|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-10|c.b.n.d.N.selectByIds|? --> <==      Total: 0 
+Application_Stdout 20200907 23:36:14.367|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and status = ?  
+Application_Stdout 20200907 23:36:14.367|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|? --> ==> Parameters: HIRE(String) 
+Application_Stdout 20200907 23:36:14.374|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:14.375|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and status = ? order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200907 23:36:14.375|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: HIRE(String), 0(Integer), 10(Integer) 
+Application_Stdout 20200907 23:36:14.383|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:14.385|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByCIds|? --> ==>  Preparing: select * from news_approve_contribution where disabled = false and CONTRIBUTION_ID in ( ? )  
+Application_Stdout 20200907 23:36:14.385|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByCIds|? --> ==> Parameters: 2(Long) 
+Application_Stdout 20200907 23:36:14.393|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByCIds|? --> <==      Total: 1 
+Application_Stdout 20200907 23:36:14.393|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByIds|? --> ==>  Preparing: select * from news_user_info where disabled = false and id in ( ? )  
+Application_Stdout 20200907 23:36:14.394|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByIds|? --> ==> Parameters: 33(Long) 
+Application_Stdout 20200907 23:36:14.401|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByIds|? --> <==      Total: 0 

@@ -83,6 +83,7 @@ public class EditContributionController extends AbstractNewsController {
                 NewsUserInfo newsUserInfo = userMap.get(approveContribution.getUserId());
                 if (Objects.nonNull(newsUserInfo)) {
                     contributionList.setApproveName(newsUserInfo.getUserName());
+                    contributionList.setUnit(newsUserInfo.getUnit());
                 }
             }
             list.add(contributionList);

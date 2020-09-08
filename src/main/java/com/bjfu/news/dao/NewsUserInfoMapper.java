@@ -16,6 +16,8 @@ public interface NewsUserInfoMapper {
 //
     NewsUserInfo selectById(Long id);
 
+    NewsUserInfo selectInCluDisableById(Long id);
+
     List<NewsUserInfo> selectByIds(@Param("ids") List<Long> ids);
 //
     NewsUserInfo selectByEno(String eno);

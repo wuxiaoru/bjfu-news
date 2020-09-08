@@ -16,6 +16,8 @@ public interface NewsUserInfoLoader {
 
     NewsUserInfo loadById(Long userId);
 
+    NewsUserInfo loadInCluDisableById(Long userId);
+
     List<NewsUserInfo> loadByIds(List<Long> userId);
 
     List<NewsUserRole> loadByUserId(Long userId);

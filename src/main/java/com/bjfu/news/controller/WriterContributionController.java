@@ -225,7 +225,7 @@ public class WriterContributionController extends AbstractNewsController {
         if (Objects.nonNull(newsApproveContribution)) {
             if (newsApproveContribution.getUserId() != null) {
                 detail.setApproveId(newsApproveContribution.getUserId());
-                NewsUserInfo newsUserInfo = newsUserInfoLoader.loadById(newsApproveContribution.getUserId());
+                NewsUserInfo newsUserInfo = newsUserInfoLoader.loadInCluDisableById(newsApproveContribution.getUserId());
                 if (Objects.nonNull(newsUserInfo)) {
                     detail.setApproveName(newsUserInfo.getUserName());
                 }
@@ -241,7 +241,7 @@ public class WriterContributionController extends AbstractNewsController {
         if (Objects.nonNull(newsEditContribution)) {
             if (newsEditContribution.getUserId() != null) {
                 detail.setEditorId(newsEditContribution.getUserId());
-                NewsUserInfo newsUserInfo = newsUserInfoLoader.loadById(newsEditContribution.getUserId());
+                NewsUserInfo newsUserInfo = newsUserInfoLoader.loadInCluDisableById(newsEditContribution.getUserId());
                 if (Objects.nonNull(newsUserInfo)) {
                     detail.setEditorName(newsUserInfo.getUserName());
                 }

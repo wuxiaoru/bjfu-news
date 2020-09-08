@@ -1,0 +1,182 @@
+Application_Stdout 20200906 11:43:35.986|INFO|annedeMacBook-Pro.local|main|com.bjfu.news.NewsApplication|? --> Starting NewsApplication on annedeMacBook-Pro.local with PID 43095 (/Study/project/bjfu-news/target/classes started by anne in /Study/project/bjfu-news) 
+Application_Stdout 20200906 11:43:35.993|INFO|annedeMacBook-Pro.local|main|com.bjfu.news.NewsApplication|? --> The following profiles are active: local 
+Application_Stdout 20200906 11:43:37.955|INFO|annedeMacBook-Pro.local|main|o.a.coyote.http11.Http11NioProtocol|? --> Initializing ProtocolHandler ["http-nio-8561"] 
+Application_Stdout 20200906 11:43:37.956|INFO|annedeMacBook-Pro.local|main|o.a.catalina.core.StandardService|log --> Starting service [Tomcat] 
+Application_Stdout 20200906 11:43:37.956|INFO|annedeMacBook-Pro.local|main|o.a.catalina.core.StandardEngine|? --> Starting Servlet engine: [Apache Tomcat/9.0.29] 
+Application_Stdout 20200906 11:43:38.055|INFO|annedeMacBook-Pro.local|main|o.a.c.c.C.[Tomcat].[localhost].[/]|? --> Initializing Spring embedded WebApplicationContext 
+Application_Stdout 20200906 11:43:39.435|INFO|annedeMacBook-Pro.local|main|o.a.coyote.http11.Http11NioProtocol|log --> Starting ProtocolHandler ["http-nio-8561"] 
+Application_Stdout 20200906 11:43:39.480|INFO|annedeMacBook-Pro.local|main|com.bjfu.news.NewsApplication|? --> Started NewsApplication in 4.623 seconds (JVM running for 6.21) 
+Application_Stdout 20200906 15:58:12.216|INFO|annedeMacBook-Pro.local|http-nio-8561-exec-1|o.a.c.c.C.[Tomcat].[localhost].[/]|? --> Initializing Spring DispatcherServlet 'dispatcherServlet' 
+Application_Stdout 20200906 16:35:49.553|INFO|annedeMacBook-Pro.local|main|com.bjfu.news.NewsApplication|? --> Starting NewsApplication on annedeMacBook-Pro.local with PID 1205 (/Study/project/bjfu-news/target/classes started by anne in /Study/project/bjfu-news) 
+Application_Stdout 20200906 16:35:49.561|INFO|annedeMacBook-Pro.local|main|com.bjfu.news.NewsApplication|? --> The following profiles are active: local 
+Application_Stdout 20200906 16:35:51.143|INFO|annedeMacBook-Pro.local|main|o.a.coyote.http11.Http11NioProtocol|? --> Initializing ProtocolHandler ["http-nio-8561"] 
+Application_Stdout 20200906 16:35:51.144|INFO|annedeMacBook-Pro.local|main|o.a.catalina.core.StandardService|? --> Starting service [Tomcat] 
+Application_Stdout 20200906 16:35:51.144|INFO|annedeMacBook-Pro.local|main|o.a.catalina.core.StandardEngine|? --> Starting Servlet engine: [Apache Tomcat/9.0.29] 
+Application_Stdout 20200906 16:35:51.249|INFO|annedeMacBook-Pro.local|main|o.a.c.c.C.[Tomcat].[localhost].[/]|? --> Initializing Spring embedded WebApplicationContext 
+Application_Stdout 20200906 16:35:52.341|INFO|annedeMacBook-Pro.local|main|o.a.coyote.http11.Http11NioProtocol|? --> Starting ProtocolHandler ["http-nio-8561"] 
+Application_Stdout 20200906 16:35:52.387|INFO|annedeMacBook-Pro.local|main|com.bjfu.news.NewsApplication|? --> Started NewsApplication in 3.631 seconds (JVM running for 5.672) 
+Application_Stdout 20200906 16:59:51.486|INFO|annedeMacBook-Pro.local|http-nio-8561-exec-1|o.a.c.c.C.[Tomcat].[localhost].[/]|? --> Initializing Spring DispatcherServlet 'dispatcherServlet' 
+Application_Stdout 20200906 16:59:51.672|INFO|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.alibaba.druid.pool.DruidDataSource|? --> {dataSource-1} inited 
+Application_Stdout 20200906 17:03:42.018|ERROR|annedeMacBook-Pro.local|Druid-ConnectionPool-Create-335379552|c.alibaba.druid.pool.DruidDataSource|? --> create connection SQLException, url: jdbc:mysql://202.204.121.200:3306/news?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&autoReconnect=true, errorCode 0, state 08001 
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.Util.getInstance(Util.java:381)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:984)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:956)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:926)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2253)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:718)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:302)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:282)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1513)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1578)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2466)
+Caused by: java.net.ConnectException: Operation timed out (Connection timed out)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:253)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2177)
+	... 12 common frames omitted
+Application_Stdout 20200906 17:06:28.324|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByEno|? --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200906 17:06:28.360|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByEno|? --> ==> Parameters: 1(String) 
+Application_Stdout 20200906 17:06:28.396|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByEno|? --> <==      Total: 1 
+Application_Stdout 20200906 17:06:28.401|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.loadByUserId|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and USER_ID=?  
+Application_Stdout 20200906 17:06:28.402|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.loadByUserId|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200906 17:06:28.411|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.loadByUserId|? --> <==      Total: 1 
+Application_Stdout 20200906 17:06:28.636|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByEno|debug --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200906 17:06:28.637|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByEno|debug --> ==> Parameters: 1(String) 
+Application_Stdout 20200906 17:06:28.659|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByEno|debug --> <==      Total: 1 
+Application_Stdout 20200906 17:06:28.660|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.loadByUserId|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and USER_ID=?  
+Application_Stdout 20200906 17:06:28.666|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.loadByUserId|debug --> ==> Parameters: 32(Long) 
+Application_Stdout 20200906 17:06:28.695|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.loadByUserId|debug --> <==      Total: 1 
+Application_Stdout 20200906 17:06:33.104|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200906 17:06:33.105|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200906 17:06:33.117|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectById|debug --> <==      Total: 1 
+Application_Stdout 20200906 17:06:33.119|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200906 17:06:33.120|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200906 17:06:33.127|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200906 17:06:33.192|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200906 17:06:33.193|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200906 17:06:33.202|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200906 17:06:33.302|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200906 17:06:33.305|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200906 17:06:33.404|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.N.getCount|? --> <==      Total: 1 
+Application_Stdout 20200906 17:06:33.411|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200906 17:06:33.427|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200906 17:06:33.463|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200906 17:06:37.738|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|? --> ==>  Preparing: select count(*) from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%')  
+Application_Stdout 20200906 17:06:37.739|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|? --> ==> Parameters: 32(Long), (String), (String) 
+Application_Stdout 20200906 17:06:37.748|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.N.getCount|debug --> <==      Total: 1 
+Application_Stdout 20200906 17:06:37.749|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|debug --> ==>  Preparing: select * from news_contribution where disabled = false and USER_ID = ? and DOC_AUTHOR like concat('%',?,'%') and title like concat('%',?,'%') order by SUBMIT_TIME desc limit ?,?  
+Application_Stdout 20200906 17:06:37.750|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|? --> ==> Parameters: 32(Long), (String), (String), 0(Integer), 10(Integer) 
+Application_Stdout 20200906 17:06:37.762|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsContributionMapper.page|? --> <==      Total: 6 
+Application_Stdout 20200906 17:06:37.763|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.selectById|? --> ==>  Preparing: select * from news_user_info where disabled = false and id = ?  
+Application_Stdout 20200906 17:06:37.764|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.selectById|? --> ==> Parameters: 32(Long) 
+Application_Stdout 20200906 17:06:37.773|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.N.selectById|? --> <==      Total: 1 
+Application_Stdout 20200906 17:06:37.774|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200906 17:06:37.775|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200906 17:06:37.782|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200906 17:06:37.784|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and UNIT = ? and ID in ( ? )  
+Application_Stdout 20200906 17:06:37.784|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: 信息学院(String), 35(Long) 
+Application_Stdout 20200906 17:06:37.793|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.news.dao.NewsUserInfoMapper.list|debug --> <==      Total: 1 
+Application_Stdout 20200906 17:06:42.317|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByEno|debug --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200906 17:06:42.318|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByEno|? --> ==> Parameters: 9(String) 
+Application_Stdout 20200906 17:06:42.328|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.N.selectByEno|? --> <==      Total: 0 
+Application_Stdout 20200906 17:14:46.508|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByEno|? --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200906 17:14:46.519|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByEno|? --> ==> Parameters: 9(String) 
+Application_Stdout 20200906 17:14:46.531|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByEno|? --> <==      Total: 0 
+Application_Stdout 20200906 17:14:46.536|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByEno|debug --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200906 17:14:46.539|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByEno|? --> ==> Parameters: 9(String) 
+Application_Stdout 20200906 17:14:46.551|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-2|c.b.n.d.N.selectByEno|? --> <==      Total: 0 
+Application_Stdout 20200906 17:14:46.557|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectByEno|debug --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200906 17:14:46.558|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectByEno|debug --> ==> Parameters: 1(String) 
+Application_Stdout 20200906 17:14:46.581|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.selectByEno|debug --> <==      Total: 1 
+Application_Stdout 20200906 17:14:46.584|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.loadByUserId|debug --> ==>  Preparing: select * from news_user_role where DISABLED=false and USER_ID=?  
+Application_Stdout 20200906 17:14:46.584|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.loadByUserId|debug --> ==> Parameters: 32(Long) 
+Application_Stdout 20200906 17:14:46.601|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-4|c.b.n.d.N.loadByUserId|debug --> <==      Total: 1 
+Application_Stdout 20200906 18:03:31.963|INFO|annedeMacBook-Pro.local|SpringContextShutdownHook|c.alibaba.druid.pool.DruidDataSource|? --> {dataSource-1} closed 
+Application_Stdout 20200906 18:03:38.732|INFO|annedeMacBook-Pro.local|main|com.bjfu.news.NewsApplication|? --> Starting NewsApplication on annedeMacBook-Pro.local with PID 4490 (/Study/project/bjfu-news/target/classes started by anne in /Study/project/bjfu-news) 
+Application_Stdout 20200906 18:03:38.736|INFO|annedeMacBook-Pro.local|main|com.bjfu.news.NewsApplication|? --> The following profiles are active: local 
+Application_Stdout 20200906 18:03:40.328|INFO|annedeMacBook-Pro.local|main|o.a.coyote.http11.Http11NioProtocol|? --> Initializing ProtocolHandler ["http-nio-8561"] 
+Application_Stdout 20200906 18:03:40.329|INFO|annedeMacBook-Pro.local|main|o.a.catalina.core.StandardService|? --> Starting service [Tomcat] 
+Application_Stdout 20200906 18:03:40.329|INFO|annedeMacBook-Pro.local|main|o.a.catalina.core.StandardEngine|? --> Starting Servlet engine: [Apache Tomcat/9.0.29] 
+Application_Stdout 20200906 18:03:40.446|INFO|annedeMacBook-Pro.local|main|o.a.c.c.C.[Tomcat].[localhost].[/]|? --> Initializing Spring embedded WebApplicationContext 
+Application_Stdout 20200906 18:03:41.506|INFO|annedeMacBook-Pro.local|main|o.a.coyote.http11.Http11NioProtocol|? --> Starting ProtocolHandler ["http-nio-8561"] 
+Application_Stdout 20200906 18:03:41.552|INFO|annedeMacBook-Pro.local|main|com.bjfu.news.NewsApplication|? --> Started NewsApplication in 3.723 seconds (JVM running for 5.142) 
+Application_Stdout 20200906 18:03:46.605|INFO|annedeMacBook-Pro.local|http-nio-8561-exec-1|o.a.c.c.C.[Tomcat].[localhost].[/]|? --> Initializing Spring DispatcherServlet 'dispatcherServlet' 
+Application_Stdout 20200906 18:03:46.684|INFO|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.alibaba.druid.pool.DruidDataSource|? --> {dataSource-1} inited 
+Application_Stdout 20200906 18:03:57.494|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByEno|? --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200906 18:03:57.509|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByEno|? --> ==> Parameters: 9(String) 
+Application_Stdout 20200906 18:03:57.528|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-1|c.b.n.d.N.selectByEno|? --> <==      Total: 0 
+Application_Stdout 20200906 18:14:01.877|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectByEno|? --> ==>  Preparing: select * from news_user_info where disabled = false and eno=?  
+Application_Stdout 20200906 18:14:01.881|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectByEno|? --> ==> Parameters: 5(String) 
+Application_Stdout 20200906 18:14:01.899|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.selectByEno|? --> <==      Total: 1 
+Application_Stdout 20200906 18:14:01.901|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.loadByUserId|debug --> ==>  Preparing: select * from news_user_role where DISABLED=false and USER_ID=?  
+Application_Stdout 20200906 18:14:01.903|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.loadByUserId|? --> ==> Parameters: 35(Long) 
+Application_Stdout 20200906 18:14:01.914|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-3|c.b.n.d.N.loadByUserId|? --> <==      Total: 4 
+Application_Stdout 20200906 18:14:04.839|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200906 18:14:04.840|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200906 18:14:04.849|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200906 18:14:04.883|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsUserInfoMapper.getCount|? --> ==>  Preparing: select count(*) from news_user_info where disabled = false and USER_NAME like concat('%',?,'%') and ID in ( ? )  
+Application_Stdout 20200906 18:14:04.883|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsUserInfoMapper.getCount|? --> ==> Parameters: (String), 35(Long) 
+Application_Stdout 20200906 18:14:04.892|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewsUserInfoMapper.getCount|? --> <==      Total: 1 
+Application_Stdout 20200906 18:14:04.892|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200906 18:14:04.893|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: APPROVER(String) 
+Application_Stdout 20200906 18:14:04.903|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 1 
+Application_Stdout 20200906 18:14:04.904|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and USER_NAME like concat('%',?,'%') and ID in ( ? )  
+Application_Stdout 20200906 18:14:04.904|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: (String), 35(Long) 
+Application_Stdout 20200906 18:14:04.914|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-5|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 1 
+Application_Stdout 20200906 18:14:12.779|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200906 18:14:12.780|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: EDITOR(String) 
+Application_Stdout 20200906 18:14:12.999|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 2 
+Application_Stdout 20200906 18:14:13.001|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsUserInfoMapper.getCount|? --> ==>  Preparing: select count(*) from news_user_info where disabled = false and USER_NAME like concat('%',?,'%') and ID in ( ? , ? )  
+Application_Stdout 20200906 18:14:13.002|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsUserInfoMapper.getCount|? --> ==> Parameters: (String), 34(Long), 35(Long) 
+Application_Stdout 20200906 18:14:13.010|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewsUserInfoMapper.getCount|? --> <==      Total: 1 
+Application_Stdout 20200906 18:14:13.010|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200906 18:14:13.011|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: EDITOR(String) 
+Application_Stdout 20200906 18:14:13.021|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 2 
+Application_Stdout 20200906 18:14:13.022|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and USER_NAME like concat('%',?,'%') and ID in ( ? , ? )  
+Application_Stdout 20200906 18:14:13.023|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: (String), 34(Long), 35(Long) 
+Application_Stdout 20200906 18:14:13.034|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-6|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 2 
+Application_Stdout 20200906 18:14:18.833|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200906 18:14:18.834|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==> Parameters: EDITOR(String) 
+Application_Stdout 20200906 18:14:18.846|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 2 
+Application_Stdout 20200906 18:14:18.847|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewsUserInfoMapper.getCount|? --> ==>  Preparing: select count(*) from news_user_info where disabled = false and USER_NAME like concat('%',?,'%') and ID in ( ? , ? )  
+Application_Stdout 20200906 18:14:18.847|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewsUserInfoMapper.getCount|? --> ==> Parameters: (String), 34(Long), 35(Long) 
+Application_Stdout 20200906 18:14:18.854|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewsUserInfoMapper.getCount|? --> <==      Total: 1 
+Application_Stdout 20200906 18:14:18.855|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200906 18:14:18.856|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: EDITOR(String) 
+Application_Stdout 20200906 18:14:18.865|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 2 
+Application_Stdout 20200906 18:14:18.867|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.news.dao.NewsUserInfoMapper.list|? --> ==>  Preparing: select * from news_user_info where DISABLED = false and USER_NAME like concat('%',?,'%') and ID in ( ? , ? )  
+Application_Stdout 20200906 18:14:18.868|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.news.dao.NewsUserInfoMapper.list|? --> ==> Parameters: (String), 34(Long), 35(Long) 
+Application_Stdout 20200906 18:14:18.877|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-7|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 2 
+Application_Stdout 20200906 18:14:22.273|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200906 18:14:22.276|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> ==> Parameters: EDITOR(String) 
+Application_Stdout 20200906 18:14:22.290|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewUserRoleMapper.loadByRole|debug --> <==      Total: 2 
+Application_Stdout 20200906 18:14:22.296|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsUserInfoMapper.getCount|? --> ==>  Preparing: select count(*) from news_user_info where disabled = false and USER_NAME like concat('%',?,'%') and ID in ( ? , ? )  
+Application_Stdout 20200906 18:14:22.297|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsUserInfoMapper.getCount|? --> ==> Parameters: (String), 34(Long), 35(Long) 
+Application_Stdout 20200906 18:14:22.307|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewsUserInfoMapper.getCount|? --> <==      Total: 1 
+Application_Stdout 20200906 18:14:22.310|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==>  Preparing: select * from news_user_role where DISABLED=false and ROLE=?  
+Application_Stdout 20200906 18:14:22.311|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewUserRoleMapper.loadByRole|? --> ==> Parameters: EDITOR(String) 
+Application_Stdout 20200906 18:14:22.320|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.n.d.NewUserRoleMapper.loadByRole|? --> <==      Total: 2 
+Application_Stdout 20200906 18:14:22.321|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==>  Preparing: select * from news_user_info where DISABLED = false and USER_NAME like concat('%',?,'%') and ID in ( ? , ? )  
+Application_Stdout 20200906 18:14:22.322|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.news.dao.NewsUserInfoMapper.list|debug --> ==> Parameters: (String), 34(Long), 35(Long) 
+Application_Stdout 20200906 18:14:22.334|DEBUG|annedeMacBook-Pro.local|http-nio-8561-exec-8|c.b.news.dao.NewsUserInfoMapper.list|? --> <==      Total: 2 

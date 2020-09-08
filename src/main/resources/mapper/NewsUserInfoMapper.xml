@@ -74,12 +74,16 @@
          select * from news_user_info where disabled = false and id = #{id}
   </select>
 
+    <select id="selectInCluDisableById" resultType="com.bjfu.news.entity.NewsUserInfo">
+         select * from news_user_info where id = #{id}
+  </select>
+
     <select id="selectByEno" resultType="com.bjfu.news.entity.NewsUserInfo">
          select * from news_user_info where disabled = false and eno=#{eno}
   </select>
 
     <select id="selectByIds" resultType="com.bjfu.news.entity.NewsUserInfo">
-        select * from news_user_info where disabled = false and id in
+        select * from news_user_info where id in
         <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">
             #{item}
         </foreach>

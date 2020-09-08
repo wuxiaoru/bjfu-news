@@ -35,7 +35,7 @@ public enum ContributionStatus {
         Map<String, String> editorMap = new LinkedHashMap<>();
         for (ContributionStatus contributionStatus : ContributionStatus.values()) {
             codeMap.put(contributionStatus.name(), contributionStatus.desc);
-            if (contributionStatus.equals(APPROVAL_PENDING) || contributionStatus.equals(APPROVAL_REJECTION) || contributionStatus.equals(APPROVE) || contributionStatus.equals(RE_APPROVAL_PENDING)) {
+            if (!contributionStatus.equals(DRAFT)) {
                 approveMap.put(contributionStatus.name(), contributionStatus.desc);
             }
             if (contributionStatus.equals(APPROVE) || contributionStatus.equals(HIRE) || contributionStatus.equals(REJECTION)) {

@@ -72,6 +72,14 @@ public class NewsUserInfoLoaderImpl implements NewsUserInfoLoader {
     }
 
     @Override
+    public NewsUserInfo loadInCluDisableById(Long userId) {
+        if (userId == null) {
+            return null;
+        }
+        return newsUserInfoMapper.selectInCluDisableById(userId);
+    }
+
+    @Override
     public List<NewsUserInfo> loadByIds(List<Long> userIds) {
         if (CollectionUtils.isEmpty(userIds)) {
             return Collections.emptyList();
