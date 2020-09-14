@@ -1,9 +1,0 @@
-Application_Stdout 20200905 21:44:23.890|INFO|annedeMacBook-Pro.local|main|com.bjfu.news.NewsApplication|? --> Starting NewsApplication on annedeMacBook-Pro.local with PID 39273 (/Study/project/bjfu-news/target/classes started by anne in /Study/project/bjfu-news) 
-Application_Stdout 20200905 21:44:23.893|INFO|annedeMacBook-Pro.local|main|com.bjfu.news.NewsApplication|? --> The following profiles are active: local 
-Application_Stdout 20200905 21:44:25.665|INFO|annedeMacBook-Pro.local|main|o.a.coyote.http11.Http11NioProtocol|? --> Initializing ProtocolHandler ["http-nio-8561"] 
-Application_Stdout 20200905 21:44:25.666|INFO|annedeMacBook-Pro.local|main|o.a.catalina.core.StandardService|log --> Starting service [Tomcat] 
-Application_Stdout 20200905 21:44:25.666|INFO|annedeMacBook-Pro.local|main|o.a.catalina.core.StandardEngine|? --> Starting Servlet engine: [Apache Tomcat/9.0.29] 
-Application_Stdout 20200905 21:44:25.751|INFO|annedeMacBook-Pro.local|main|o.a.c.c.C.[Tomcat].[localhost].[/]|? --> Initializing Spring embedded WebApplicationContext 
-Application_Stdout 20200905 21:44:26.733|INFO|annedeMacBook-Pro.local|main|o.a.coyote.http11.Http11NioProtocol|? --> Starting ProtocolHandler ["http-nio-8561"] 
-Application_Stdout 20200905 21:44:26.775|INFO|annedeMacBook-Pro.local|main|com.bjfu.news.NewsApplication|logStarted --> Started NewsApplication in 3.947 seconds (JVM running for 6.581) 
-Application_Stdout 20200905 22:52:59.632|INFO|annedeMacBook-Pro.local|http-nio-8561-exec-1|o.a.c.c.C.[Tomcat].[localhost].[/]|? --> Initializing Spring DispatcherServlet 'dispatcherServlet' 
