@@ -112,6 +112,26 @@ public class WriterContributionController extends AbstractNewsController {
         }
     }
 
+    @RequestMapping(value = "/pic/download.vpage",
+            method = RequestMethod.GET)
+    public void picDownload(HttpServletResponse response, @Validated @NotNull @Min(value = 1, message = "id必须大于0") Long id) {
+        NewsContribution newsContribution = newsWriterContributionLoader.selectById(id);
+        if (Objects.isNull(newsContribution)) {
+            return;
+        }
+        if (newsContribution.getPicUrl() == null || StringUtils.isEmpty(newsContribution.getPicUrl())) {
+            return;
+        }
+        try {
+            List<String> list = Arrays.asList(newsContribution.getPicUrl().split(","));
+            for (String picUrl : list) {
+                FileUtils.downloadLocal(response, picUrl);
+            }
+        } catch (FileNotFoundException | UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+    }
+
     @RequestMapping(value = "/preview.vpage",
             method = RequestMethod.GET)
     @ResponseBody
