@@ -7,6 +7,8 @@ import com.bjfu.news.model.UserList;
 import com.bjfu.news.req.UserInfoCreateParam;
 import com.bjfu.news.req.UserReq;
 import com.bjfu.news.untils.MapMessage;
+import com.neusoft.education.tp.sso.client.filter.CASFilterRequestWrapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.*;
@@ -23,6 +26,7 @@ import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/v1/user/info")
+@Slf4j
 public class UserInfoController extends AbstractNewsController {
 
     //新增
@@ -120,7 +124,11 @@ public class UserInfoController extends AbstractNewsController {
 
     @RequestMapping(value = "role.vpage", method = RequestMethod.GET)
     @ResponseBody
-    public MapMessage roleList(@Validated @NotNull String eno) {
+    public MapMessage roleList(HttpServletRequest request, @Validated @NotNull String eno) {
+        CASFilterRequestWrapper reqWrapper = new CASFilterRequestWrapper(request);
+        log.info("check login info session:{}", reqWrapper.getSession().getAttributeNames());
+        String userID = reqWrapper.getRemoteUser();
+        log.info("check login info userId:{}", userID);
         if (StringUtils.isEmpty(eno)) {
             return MapMessage.errorMessage().add("info", "职工号不能为空");
         }

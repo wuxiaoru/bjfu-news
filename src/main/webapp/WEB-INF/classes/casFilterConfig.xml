@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <loginServer>http://i.pumc.edu.cn/cas</loginServer>
+    <validateServer>http://i.pumc.edu.cn/cas</validateServer>
+    <this>localhost:8561</this>
+    <wrapRequest>true</wrapRequest>
+    <checkAlive>false</checkAlive>
+    <notForceAuthUrls>
+    </notForceAuthUrls>
+</config>
